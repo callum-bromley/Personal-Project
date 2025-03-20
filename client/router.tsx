@@ -1,16 +1,11 @@
-/* eslint-disable react/jsx-key */
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom'
-import Home from './components/Home'
-import Layout from './components/Layout'
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import Home from './components/Home';  // Import the Home component
+import ContactForm from './components/ContactForm';  // Import the ContactForm component
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Layout />} >
-    <Route index element={<Home />} ></Route>
-  </Route>)
-)
+  createRoutesFromElements(
+    <Route path="/" element={<Home />} />  // Route for Home page
+  )
+);
 
-export default router
+export default router;

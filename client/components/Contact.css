@@ -1,0 +1,105 @@
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i0.wp.com/socialdhara.com/wp-content/uploads/2022/07/close-up-of-new-orange-roof-with-chimney-and-small-modern-window-concept-of-modern-roof-with.jpg'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  
+  
+  z-index: -2; 
+}
+
+.contact > * {
+  position: relative;
+  z-index: 1; 
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(40, 56, 67, 0.8); 
+  padding:20px ;
+  padding-top: 0px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px black;
+  color: green;
+  margin: 25px;
+  position: relative;
+  z-index: 2; 
+
+  
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(3px); 
+}
+
+
+.contact::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); 
+  z-index: -1; 
+}
+
+
+form h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+form .input-box {
+  margin-top: 20px;
+}
+
+.input-box .field {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 16px;
+  color: black;
+  margin-top: 8px;
+}
+
+.input-box .field.mess {
+  height: 200px;
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  height: 55px;
+  background: blue;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  font-size: 16px;
+  color: aliceblue;
+  font-weight: 500;
+  margin-top: 25px;
+  transition: .5s;
+}
+
+form button:hover {
+  background: pink;
+}
