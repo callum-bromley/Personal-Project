@@ -1,10 +1,11 @@
-import React from "react";
 import "./Contact.css";
 
 const Contact = () => {
   return (
+    
     <section className="contact">
       <form>
+        
         <div className="input-box">
           <label></label>
           <input type="text" className="field" placeholder="Name" required />

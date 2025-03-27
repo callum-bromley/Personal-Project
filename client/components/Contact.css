@@ -3,8 +3,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 85vh;
   background-color: transparent;
+}
+
+.contact-text {
+  flex: 1; /* Takes up 1 part of the space */
+  text-align: left; /* Aligns the text to the left */
+  color: white; /* Optional: Adjust text color */
 }
 
 .contact::before {
@@ -14,11 +20,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://i0.wp.com/socialdhara.com/wp-content/uploads/2022/07/close-up-of-new-orange-roof-with-chimney-and-small-modern-window-concept-of-modern-roof-with.jpg'); /* Replace with your background image */
+  background-image: url('/Public/images/maera1.jpeg');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  
-  
   z-index: -2; 
 }
 
@@ -31,20 +36,17 @@ form {
   max-width: 500px;
   width: 100%;
   background-color: rgba(40, 56, 67, 0.8); 
-  padding:20px ;
-  padding-top: 0px;
+  padding: 20px;
+  padding-top: 0;
   border-radius: 8px;
   box-shadow: 0 0 10px black;
   color: green;
   margin: 25px;
   position: relative;
   z-index: 2; 
-
-  
   backdrop-filter: blur(5px); 
   -webkit-backdrop-filter: blur(3px); 
 }
-
 
 .contact::after {
   content: '';
@@ -56,7 +58,6 @@ form {
   background-color: rgba(0, 0, 0, 0.2); 
   z-index: -1; 
 }
-
 
 form h2 {
   font-size: 30px;
