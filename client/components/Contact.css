@@ -5,12 +5,45 @@
   align-items: center;
   min-height: 85vh;
   background-color: transparent;
+  padding: 40px 0;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
 }
 
 .contact-text {
-  flex: 1; /* Takes up 1 part of the space */
-  text-align: left; /* Aligns the text to the left */
-  color: white; /* Optional: Adjust text color */
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding-right: 50px;
+}
+
+.contact-text h1 {
+  font-size: 32px;
+}
+
+.contact-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.quote-btn {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quote-btn:hover {
+  background-color: pink;
 }
 
 .contact::before {
@@ -24,28 +57,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -2; 
-}
-
-.contact > * {
-  position: relative;
-  z-index: 1; 
-}
-
-form {
-  max-width: 500px;
-  width: 100%;
-  background-color: rgba(40, 56, 67, 0.8); 
-  padding: 20px;
-  padding-top: 0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px black;
-  color: green;
-  margin: 25px;
-  position: relative;
-  z-index: 2; 
-  backdrop-filter: blur(5px); 
-  -webkit-backdrop-filter: blur(3px); 
+  z-index: -2;
 }
 
 .contact::after {
@@ -55,17 +67,29 @@ form {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); 
-  z-index: -1; 
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+/* Form Styling */
+form {
+  flex: 1;
+  max-width: 500px;
+  background-color: rgba(40, 56, 67, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px black;
+  color: green;
+  backdrop-filter: blur(5px);
 }
 
 form h2 {
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
 }
 
-form .input-box {
-  margin-top: 20px;
+.input-box {
+  margin-top: 15px;
 }
 
 .input-box .field {
@@ -75,20 +99,19 @@ form .input-box {
   border: 2px solid white;
   outline: none;
   border-radius: 6px;
-  padding: 15px;
+  padding: 10px;
   font-size: 16px;
   color: black;
-  margin-top: 8px;
 }
 
 .input-box .field.mess {
-  height: 200px;
+  height: 150px;
   resize: none;
 }
 
 form button {
   width: 100%;
-  height: 55px;
+  height: 50px;
   background: blue;
   border: none;
   border-radius: 6px;
@@ -97,10 +120,25 @@ form button {
   font-size: 16px;
   color: aliceblue;
   font-weight: 500;
-  margin-top: 25px;
-  transition: .5s;
+  margin-top: 15px;
+  transition: 0.3s;
 }
 
 form button:hover {
   background: pink;
+}
+
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 100%;
+  }
 }
