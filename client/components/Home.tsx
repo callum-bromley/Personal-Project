@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import React from "react";
-import ContactForm from "./Contact.jsx";
+import Contact from "./contact/Contact";
 
 export default function Home() {
   return (
@@ -47,15 +44,38 @@ export default function Home() {
       </nav>
 
       <div className="home-content">
-        <ContactForm />
+        <Contact />
       </div>
 
-      {/* Add your new section here */}
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
-        <h2>Welcome to Our Website!</h2>
+        <h1 className='text-white'>/</h1>
+        <h1 className='text-white'>/</h1>
+
+
+        <div className="flex items-center justify-center">
+  <div className="w-[80px] h-[2px] bg-gray-500 "></div>
+  <span className="mx-3 text-4xl font-bold text-black-500 ">Welcome to my Website!</span>
+  <div className="w-[80px] h-[2px] bg-gray-500"></div>
+</div>
+
+<h1 className='text-white'>/</h1>
+
         <p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
       </div>
+      <div className="photo-gallery flex justify-center gap-40 mt-8">
+
+  <img src="/path/to/image2.jpg" alt="" className="w-[400px] h-[297px] object-cover rounded-lg shadow-lg"/>
+  <img src="/path/to/image3.jpg" alt="" className="w-[400px] h-[297px] object-cover rounded-lg shadow-lg"/>
+</div>
+
+<p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+<p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+<p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+
+
     </div>
+
+    
   );
 }
 

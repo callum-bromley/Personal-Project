@@ -1,11 +1,11 @@
 import "./Contact.css";
 
-const Contact = () => {
+export const ContactForm = () => {
   return (
     <section className="contact">
       <div className="contact-container">
         <div className="contact-text">
-          <h1>Auckland’s Roofing Experts</h1>
+          <span className="text-5xl font-bold text-white mb-4 block">Welcome to my Website!</span>
           <p>
             Aspect Roofing offers decades of combined experience in the roofing indus
           </p>
@@ -27,11 +27,9 @@ const Contact = () => {
           <div className="input-box">
             <textarea className="field mess" placeholder="Enter your message" required />
           </div>
-          <button type="submit">Send Message</button>
+          <button type="submit">Send Messagee</button>
         </form>
       </div>
     </section>
   );
 };
-
-export default Contact;
