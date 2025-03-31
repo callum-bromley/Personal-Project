@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Use a percentage for width (it will not reach the edges) */
+  max-width: 1400px; /* Limits the max-width to prevent stretching too much */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 40px 20px; /* Internal padding for space inside */
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 60vh; /* Ensures the container covers 80% of the viewport height */
+}
+
+.text-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-section {
+  flex: 1;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Ensures landscape aspect ratio */
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  max-height: 500px; /* Increases the max-height for a bigger image */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it fills the container */
+  border-radius: 0; /* Removes the rounded corners */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+

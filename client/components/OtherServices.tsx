@@ -1,0 +1,68 @@
+export const OtherServices = () => {
+  return (
+    <div>
+      <div className="flex items-center justify-center">
+        <div className="w-[80px] h-[2px] bg-gray-500"></div>
+        <span className="mx-3 text-4xl font-bold text-black-500">ADDITIONAL SERVICES</span>
+        <div className="w-[80px] h-[2px] bg-gray-500"></div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center text-center">
+  <h1 className="text-white">/</h1>
+  <p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+</div>
+
+      <div className="photo-gallery flex justify-center gap-40 mt-8">
+      </div>
+
+      <div className="photo-gallery flex justify-center gap-14 mb-8">
+      <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
+      <img
+            src="/images/maera4.jpeg"
+            alt="Windows & Doors"
+            className="w-full h-[230px] object-cover border-4 border-blue-500"
+          />
+          <div className="p-4 text-center">
+            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          </div>
+        </div>
+
+        <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
+          <img
+            src="/images/maera4.jpeg"
+            alt="Windows & Doors"
+            className="w-full h-[230px] object-cover border-4 border-blue-500"
+          />
+          <div className="p-4 text-center">
+            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          </div>
+        </div>
+
+        <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
+          <img
+            src="/images/maera4.jpeg"
+            alt="Windows & Doors"
+            className="w-full h-[230px] object-cover border-4 border-blue-500"
+          />
+          <div className="p-4 text-center">
+            <h1 className="text-xl font-semibold">Windows & Doors</h1>
+          </div>
+        </div>
+
+        <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
+          <img
+            src="/images/maera4.jpeg"
+            alt="Windows & Doors"
+            className="w-full h-[230px] object-cover border-4 border-blue-500"
+          />
+          <div className="p-4 text-center">
+            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          </div>
+          
+
+        
+        </div>
+      </div>
+    </div>
+  )
+} 
