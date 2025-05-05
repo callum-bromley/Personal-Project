@@ -5,6 +5,7 @@ import "./contact/Contact.css";
 import { HomeGallery } from "./HomeGallery";
 import Footer from "./Footer";
 import { FaFacebookF, FaGoogle } from 'react-icons/fa';
+import { FooterLogo } from "./FooterLogo";
 
 export default function Home() {
   return (
@@ -115,6 +116,9 @@ export default function Home() {
         <HomeGallery />
       </div>
 
+      <div className="about-section">
+        <FooterLogo />
+      </div>
       <div className="about-section">
         <Footer />
       </div>
