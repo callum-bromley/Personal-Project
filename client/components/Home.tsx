@@ -34,16 +34,16 @@ export default function Home() {
 
         <div className="space-x-6 flex-shrink-0 flex items-center">
 
-          <a href="/" className="text-sm hover:text-blue-600 px-3">HOME</a>
+          <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
 
-          <a href="/services" className="text-sm hover:text-blue-600 px-3">SERVICES</a>
+          <a href="/services" className="text-md hover:text-blue-600 px-3">Services</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/gallery" className="text-sm hover:text-blue-600 px-3">WORK GALLERY</a>
+          <a href="/gallery" className="text-md hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/gallery" className="text-sm hover:text-blue-600 px-3">ABOUT</a>
+          <a href="/gallery" className="text-md hover:text-blue-600 px-3">About</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/contact" className="text-sm hover:text-blue-600 px-3">CONTACT US</a>
+          <a href="/contact" className="text-md hover:text-blue-600 px-3">Contact Us</a>
           <span className="mx-2 text-white flex items-center">|</span>
 
 
