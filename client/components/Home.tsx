@@ -4,13 +4,29 @@ import { About } from "./About";
 import "./contact/Contact.css";
 import { HomeGallery } from "./HomeGallery";
 import Footer from "./Footer";
+import { FaFacebookF, FaGoogle } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'Lato, sans-serif' }}> {/* Applied Lato globally */}
-      <nav style={{ backgroundColor: 'blue', display: 'flex', justifyContent: 'right', alignItems: 'right', padding: 10 }}>
-        <h1 style={{ margin: 0, color: 'white' }}>Give us a call today! (022) 123 456</h1>
-      </nav>
+    <div style={{ fontFamily: 'Lato, sans-serif' }}>
+      <div style={{ fontFamily: 'Lato, sans-serif' }}>
+        <nav className="bg-gray-700 text-white flex justify-end items-center p-4">
+          <div className="flex space-x-4 mr-3">
+            <a href="/" aria-label="Facebook" className="hover:text-blue-400">
+              <FaFacebookF />
+            </a>
+            <a href="/" aria-label="Google" className="hover:text-blue-400">
+              <FaGoogle />
+            </a>
+          </div>
+          <h1 className="text-md font-semibold m-0 text-right ml-4">
+            Give us a call today! 
+          </h1>
+          <h1 className="text-md font-semibold m-0 text-right ml-2 mr-4">
+            (022) 123 456
+          </h1>
+        </nav>
+      </div>
 
       <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
@@ -60,7 +76,7 @@ export default function Home() {
           </p>
           
           <a href="your-link-here" className="blue-link">Learn More</a>
-          </div>
+        </div>
 
         <div className="max-w-sm text-center border rounded-lg shadow-lg p-2">
           <img src="/images/maintenence1.jpeg" alt="Roofing Project 3" className="w-[400px] h-[297px] object-cover rounded-lg shadow-lg border-4 border-blue-500"/>
@@ -69,7 +85,6 @@ export default function Home() {
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
           <a href="your-link-here" className="blue-link">Learn More</a>
-
         </div>
 
         <div className="max-w-sm text-center border rounded-lg shadow-lg p-2">
@@ -79,7 +94,6 @@ export default function Home() {
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
           <a href="your-link-here" className="blue-link">Learn More</a>
-
         </div>
       </div>
 
@@ -93,7 +107,6 @@ export default function Home() {
         <OtherServices />
       </div>
 
-
       <div className="about-section">
         <About />
       </div>
@@ -105,8 +118,6 @@ export default function Home() {
       <div className="about-section">
         <Footer />
       </div>
-
-</div>
-
-  )
+    </div>
+  );
 }
