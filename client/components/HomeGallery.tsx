@@ -15,7 +15,7 @@ export const HomeGallery = () => {
           </div>
       <div className="flex items-center justify-center">
         <div className="w-[80px] h-[2px] bg-gray-500"></div>
-        <span className="mx-3 text-4xl font-bold text-black-500 mt-4">Photo Gallery</span>
+        <span className="mx-3 text-4xl font-bold text-black-500 mt-4">Work Gallery</span>
         <div className="w-[80px] h-[2px] bg-gray-500"></div>
       </div>
 
@@ -24,7 +24,7 @@ export const HomeGallery = () => {
   <p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
 </div>
 
-<div className="px-56 mt-8 relative">
+<div className="px-44 mt-8 relative">
 
   <div className="grid grid-cols-3 gap-4">
 
@@ -41,6 +41,11 @@ export const HomeGallery = () => {
     View More
   </button>
 </div>
+<h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
+
+
 
     </div>
   )

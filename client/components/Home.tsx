@@ -3,6 +3,7 @@ import { OtherServices } from "./OtherServices";
 import { About } from "./About";
 import "./contact/Contact.css";
 import { HomeGallery } from "./HomeGallery";
+import Footer from "./Footer";
 
 export default function Home() {
   return (
@@ -99,6 +100,10 @@ export default function Home() {
 
       <div className="about-section">
         <HomeGallery />
+      </div>
+
+      <div className="about-section">
+        <Footer />
       </div>
 
 </div>
