@@ -1,11 +1,11 @@
-import Contact from "./contact/Contact";
-import { OtherServices } from "./OtherServices";
-import { About } from "./About";
+import Contact from "../components/contact/Contact";
+import { OtherServices } from "../components/OtherServices";
+import { About } from "../components/About";
 import "./contact/Contact.css";
-import { HomeGallery } from "./HomeGallery";
-import Footer from "./Footer";
+import { HomeGallery } from "../components/HomeGallery";
+import Footer from "../components/Footer";
 import { FaFacebookF, FaGoogle } from 'react-icons/fa';
-import { FooterLogo } from "./FooterLogo";
+import { FooterLogo } from "../components/FooterLogo";
 
 export default function Home() {
   return (
@@ -37,8 +37,17 @@ export default function Home() {
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
 
-          <a href="/services" className="text-md hover:text-blue-600 px-3">Services</a>
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
+          <div className="relative group inline-block">
+  <span className="cursor-pointer text-md px-3 hover:text-blue-600 transition-colors">
+    Services
+  </span>
+  
+  <div className="absolute left-0 mt-2 w-56 bg-white shadow-lg border rounded-md z-50 hidden group-hover:block">
+    <a href="/services/residential" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Residential Roofing</a>
+    <a href="/services/maintenance" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Maintenance</a>
+    <a href="/services/commercial" className="block px-4 py-2 text-gray-800 hover:bg-blue-100">Commercial Roofing</a>
+  </div>
+</div>
           <a href="/gallery" className="text-md hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
           <a href="/gallery" className="text-md hover:text-blue-600 px-3">About</a>
