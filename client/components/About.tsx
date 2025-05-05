@@ -2,6 +2,7 @@ import "./About.css";
 
 export const About = () => {
   return (
+    
     <div className="container">
       <div className="text-section">
       <p className="text-white mt-2">

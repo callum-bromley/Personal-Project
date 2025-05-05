@@ -1,3 +1,5 @@
+import "./contact/Contact.css"
+
 export const OtherServices = () => {
   return (
     <div>
@@ -23,7 +25,7 @@ export const OtherServices = () => {
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
           <div className="p-4 text-center">
-            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          <a href="your-link-here" className="link">Leak Repairs</a>
           </div>
         </div>
 
@@ -34,7 +36,7 @@ export const OtherServices = () => {
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
           <div className="p-4 text-center">
-            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          <a href="your-link-here" className="link">Gutters</a>
           </div>
         </div>
 
@@ -45,7 +47,7 @@ export const OtherServices = () => {
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
           <div className="p-4 text-center">
-            <h1 className="text-xl font-semibold">Windows & Doors</h1>
+          <a href="google" className="link">Wall Cladding</a>
           </div>
         </div>
 
@@ -56,10 +58,9 @@ export const OtherServices = () => {
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
           <div className="p-4 text-center">
-            <h2 className="text-xl font-semibold">Windows & Doors</h2>
+          <a href="your-link-here" className="link">Flashings</a>
           </div>
-          
-
+         
         
         </div>
       </div>

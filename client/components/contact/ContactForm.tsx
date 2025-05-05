@@ -86,11 +86,11 @@ export const ContactForm = () => {
             <textarea
               name="message"
               className="field mess"
-              placeholder="Enter your message"
+              placeholder="Tell us a bit about the job..."
               required
             />
           </div>
-          <button type="submit">Send Message</button>
+          <button type="submit">Get a Free Quote!</button>
         </form>
         {result && <p>{result}</p>}
       </div>
