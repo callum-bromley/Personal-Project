@@ -31,18 +31,22 @@ export default function Home() {
 
       <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
-        <span className="mx-2 text-blue-600 flex items-center">|</span>
 
         <div className="space-x-6 flex-shrink-0 flex items-center">
-          <a href="/" className="text-l hover:text-blue-600 px-3">HOME</a>
+
+          <a href="/" className="text-sm hover:text-blue-600 px-3">HOME</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/services" className="text-l hover:text-blue-600 px-3">SERVICES</a>
+
+          <a href="/services" className="text-sm hover:text-blue-600 px-3">SERVICES</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/projects" className="text-l hover:text-blue-600 px-3">PROJECTS</a>
+          <a href="/gallery" className="text-sm hover:text-blue-600 px-3">WORK GALLERY</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/gallery" className="text-l hover:text-blue-600 px-3">WORK GALLERY</a>
+          <a href="/gallery" className="text-sm hover:text-blue-600 px-3">ABOUT</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/contact" className="text-l hover:text-blue-600 px-3">CONTACT US</a>
+          <a href="/contact" className="text-sm hover:text-blue-600 px-3">CONTACT US</a>
+          <span className="mx-2 text-white flex items-center">|</span>
+
+
         </div>
       </nav>
 
