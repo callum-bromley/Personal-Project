@@ -116,7 +116,7 @@ form h2 {
 form button {
   width: 100%;
   height: 50px;
-  background: #60A5FA;
+  background: #3B82F6;
   border: none;
   border-radius: 6px;
   box-shadow: 0 0 10px black;
@@ -129,7 +129,7 @@ form button {
 }
 
 form button:hover {
-  background: #374151;
+  background: #60A5FA;
 }
 
 .contact-text {
