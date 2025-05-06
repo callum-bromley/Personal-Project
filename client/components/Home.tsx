@@ -64,6 +64,9 @@ export default function Home() {
     <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Roof Inspection</a>
     <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Emergency Repair</a>
   </div>
+  <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
+      Commercial Roofing
+    </a>
 </div>
   </div>
 
