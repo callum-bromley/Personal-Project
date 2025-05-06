@@ -43,12 +43,17 @@ export default function Home() {
     <span className="ml-2">▾</span>
   </button>
 
+  
+
   <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
     <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
       Residential Roofing
     </a>
     <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
       Maintenance
+    </a>
+    <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
+      Commercial
     </a>
 
     {/* Additional Services */}
@@ -64,9 +69,7 @@ export default function Home() {
     <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Roof Inspection</a>
     <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Emergency Repair</a>
   </div>
-  <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
-      Commercial Roofing
-    </a>
+ 
 </div>
   </div>
 
@@ -109,7 +112,7 @@ export default function Home() {
           <p className="text-gray-700 text-sm mt-2">
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
-          <a href="/services/residential" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          <a href="/services/residential" className="text-blue-700 hover:underline text-sm mt-2 inline-block underline font-bold">Learn More</a>
         </div>
 
         <div className="w-[300px] text-center border rounded-lg shadow-lg p-4">
@@ -118,7 +121,7 @@ export default function Home() {
           <p className="text-gray-700 text-sm mt-2">
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
-          <a href="/services/maintenance" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          <a href="/services/maintenance" className="text-blue-700 hover:underline text-sm mt-2 inline-block font-bold underline">Learn More</a>
         </div>
 
         <div className="w-[300px] text-center border rounded-lg shadow-lg p-4">
@@ -127,7 +130,7 @@ export default function Home() {
           <p className="text-gray-700 text-sm mt-2">
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
-          <a href="/services/commercial" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          <a href="/services/commercial" className="text-blue-600 hover:underline text-sm mt-2 inline-block underline font-bold">Learn More</a>
         </div>
       </div>
 
