@@ -130,7 +130,7 @@ export default function Home() {
           <p className="text-gray-700 text-sm mt-2">
             No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
           </p>
-          <a href="/services/commercial" className="text-blue-600 hover:underline text-sm mt-2 inline-block underline font-bold">Learn More</a>
+          <a href="/services/commercial" className="text-blue-700 hover:underline text-sm mt-2 inline-block underline font-bold">Learn More</a>
         </div>
       </div>
 

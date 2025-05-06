@@ -24,7 +24,7 @@ export const OtherServices = () => {
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
-          <div className="p-4 text-center">
+          <div className="p-4 text-center font-semibold">
           <a href="your-link-here" className="link">Leak Repairs</a>
           </div>
         </div>
@@ -35,7 +35,7 @@ export const OtherServices = () => {
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
-          <div className="p-4 text-center">
+          <div className="p-4 text-center font-semibold">
           <a href="your-link-here" className="link">Gutters</a>
           </div>
         </div>
@@ -46,7 +46,7 @@ export const OtherServices = () => {
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
-          <div className="p-4 text-center">
+          <div className="p-4 text-center font-semibold">
           <a href="google" className="link">Wall Cladding</a>
           </div>
         </div>
@@ -57,7 +57,7 @@ export const OtherServices = () => {
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
-          <div className="p-4 text-center">
+          <div className="p-4 text-center font-semibold">
           <a href="your-link-here" className="link">Flashings</a>
           </div>
          
