@@ -38,20 +38,35 @@ export default function Home() {
 
           {/* Dropdown for Services */}
           <div className="relative group">
-            <button className="text-md hover:text-blue-600 px-3 focus:outline-none">
-              Services
-            </button>
-            <div className="absolute left-0 mt-6 w-48 bg-white text-black   shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
-  <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8 ">
-    Residential Roofing
-  </a>
-  <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
-    Maintenance
-  </a>
-  <a href="/services/commercial" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
-    Commercial Roofing
-  </a>
+  <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
+    <span>Services</span>
+    <span className="ml-2">▾</span>
+  </button>
+
+  <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
+    <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
+      Residential Roofing
+    </a>
+    <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
+      Maintenance
+    </a>
+
+    {/* Additional Services */}
+    <div className="relative group/additional">
+  <div className="flex items-center px-3 py-2 text-sm pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
+    <span>Additional Services</span>
+    <span className="ml-2">▸</span>
+  </div>
+
+  <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
+    <a href="/services/option1" className="block px-4 py-2 text-sm hover:bg-blue-400">Skylight Installation</a>
+    <a href="/services/option2" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutter Cleaning</a>
+    <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Roof Inspection</a>
+    <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Emergency Repair</a>
+  </div>
 </div>
+  </div>
+
 
           </div>
 
@@ -113,7 +128,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Spacers */}
       <h1 className="text-white">/</h1>
       <p>/</p>
       <p>/</p>
