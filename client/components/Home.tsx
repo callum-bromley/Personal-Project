@@ -64,10 +64,10 @@ export default function Home() {
   </div>
 
   <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
-    <a href="/services/option1" className="block px-4 py-2 text-sm hover:bg-blue-400">Skylight Installation</a>
-    <a href="/services/option2" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutter Cleaning</a>
-    <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Roof Inspection</a>
-    <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Emergency Repair</a>
+    <a href="/services/option1" className="block px-4 py-2 text-sm hover:bg-blue-400">Leak Repairs</a>
+    <a href="/services/option2" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
+    <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Wall Cladding</a>
+    <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Flashings</a>
   </div>
  
 </div>
@@ -159,6 +159,14 @@ export default function Home() {
       <div className="about-section">
         <Footer />
       </div>
+
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+   <p>© 2025 Geros Roofing - Designed by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
+
+
+
     </div>
   );
 }
