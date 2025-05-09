@@ -158,15 +158,17 @@ export default function Services() {
         <h1 className="text-white">/</h1>
         
         <div className=" text-md">
-  <div>
-    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
-  </div>
-  <div className="mt-2">
-    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
-  </div>
-  <div className="mt-2">
-    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
-  </div>
+        <div>
+  At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we specialize in expert flashing installation and repair services to protect your home or business from water intrusion, ensuring roof joints, chimneys, skylights, and walls stay dry.
+</div>
+<div className="mt-4 mx-16">
+  Whether you&apos;re dealing with damaged flashing or need new installations, we use high-quality, durable materials that provide long-lasting protection against leaks and water damage.
+</div>
+<div className="mt-4 mx-16">
+  Our flashing services are available for both residential and commercial properties, offering reliable craftsmanship to keep your roof and walls safe from the elements.
+</div>
+
+
 </div>
 <h1 className="text-white">/</h1>
 

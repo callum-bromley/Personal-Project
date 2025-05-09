@@ -152,21 +152,25 @@ export default function Services() {
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <span className="mx-3 text-4xl font-bold text-black-500">LEAK REPAIRS</span>
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
         <div className=" text-md">
-  <div>
-    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
-  </div>
-  <div className="mt-2">
-    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
-  </div>
-  <div className="mt-2">
-    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
-  </div>
+        <div>
+  At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in fast and effective leak repair services, ensuring that your home or business stays dry and secure.
+</div>
+<div className="mt-4 mx-16">
+  Whether it&apos;s a small drip or a major leak, our experienced team quickly identifies the source and provides lasting solutions to prevent further damage. We understand the urgency of leak issues and respond promptly to protect your property.
+</div>
+<div className="mt-4">
+  Our leak repair services include thorough inspections, precision patching, and the use of durable materials that withstand the elements, ensuring long-term protection for your roof and structure.
+</div>
+<div className="mt-4">
+  No matter the size of the leak, our team is committed to restoring your peace of mind with transparent pricing, reliable craftsmanship, and a dedication to customer satisfaction.
+</div>
+
 </div>
 <h1 className="text-white">/</h1>
 

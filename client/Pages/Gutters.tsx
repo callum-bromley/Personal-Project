@@ -158,15 +158,19 @@ export default function Services() {
         <h1 className="text-white">/</h1>
         
         <div className=" text-md">
-  <div>
-    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
-  </div>
-  <div className="mt-2">
-    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
-  </div>
-  <div className="mt-2">
-    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
-  </div>
+        <div>
+  At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in reliable and efficient gutter services to protect your home or business from water damage.
+</div>
+<div className="mt-4 mx-16">
+  Whether you&apos;re in need of gutter installation, repair, or maintenance, our experienced team ensures that your gutters function properly, diverting water away from your property and preventing costly damage.
+</div>
+<div className="mt-4 mx-16">
+  We use high-quality materials that are built to withstand the elements, and our expert team ensures that every gutter system is installed with precision and care for long-lasting performance.
+</div>
+<div className="mt-4 mx-16">
+  From routine cleaning to major repairs, our gutter services provide peace of mind, keeping your home or business safe, dry, and protected from the damaging effects of water runoff.
+</div>
+
 </div>
 <h1 className="text-white">/</h1>
 

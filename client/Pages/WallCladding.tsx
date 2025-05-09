@@ -158,15 +158,19 @@ export default function Services() {
         <h1 className="text-white">/</h1>
         
         <div className=" text-md">
-  <div>
-    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
-  </div>
-  <div className="mt-2">
-    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
-  </div>
-  <div className="mt-2">
-    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
-  </div>
+        <div>
+  At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality wall cladding services designed to enhance the appearance and protection of your home or business.
+</div>
+<div className="mt-4 mx-16">
+  Whether you&apos;re looking for modern aesthetics or durable protection, our team of experts provides top-notch wall cladding solutions that are both stylish and functional. We work with a range of materials to suit your needs and budget.
+</div>
+<div className="mt-4 mx-16">
+  Our wall cladding services include installation, repairs, and maintenance, ensuring that your property remains protected from the elements while also improving its curb appeal. We use premium materials that are built to last, providing long-term benefits.
+</div>
+<div className="mt-4 mx-16">
+  From residential to commercial projects, we are committed to delivering exceptional craftsmanship and customer satisfaction. Let us help you transform your property with reliable and beautiful wall cladding solutions.
+</div>
+
 </div>
 <h1 className="text-white">/</h1>
 
