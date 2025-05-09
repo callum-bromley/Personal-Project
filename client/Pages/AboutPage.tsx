@@ -4,6 +4,7 @@ import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function Services() {
   const [result, setResult] = React.useState("");
 
@@ -57,7 +58,7 @@ export default function Services() {
     <div>
       {/* Top bar */}
       <nav
-        className="bg-gray-700 text-white flex justify-end items-center p-4"
+        className="bg-gray-700 text-white flex justify-end items-center p-4" style={{ fontFamily: "Lato, sans-serif" }}
      
       >
         <div className="flex space-x-4 mr-3">

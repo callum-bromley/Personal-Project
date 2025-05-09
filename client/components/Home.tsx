@@ -6,10 +6,16 @@ import { HomeGallery } from "../components/HomeGallery";
 import Footer from "../components/Footer";
 import { FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, [])
   return (
-    <div style={{ fontFamily: 'Lato, sans-serif' }}>
+    <div data-aos="fade-up" style={{ fontFamily: 'Lato, sans-serif' }}>
       {/* Top bar */}
       <nav className="bg-gray-700 text-white flex justify-end items-center p-4" >
         <div className="flex space-x-4 mr-3">
@@ -82,32 +88,32 @@ export default function Home() {
       </nav>
 
       {/* Contact Section */}
-      <div className="home-content">
+      <div data-aos="fade-up" className="home-content">
         <Contact />
       </div>
 
       {/* Other Sections */}
-      <div className="services-content">
+      <div data-aos="fade-up" className="services-content">
         <OtherServices />
       </div>
 
-      <div className="about-section">
+      <div data-aos="fade-up" className="about-section">
         <About />
       </div>
 
-      <div className="about-section">
+      <div data-aos="fade-up" className="about-section">
         <HomeGallery />
       </div>
 
-      <div className="about-section">
+      <div data-aos="fade-up" className="about-section">
         <FooterLogo />
       </div>
 
-      <div className="about-section">
+      <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 
-      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+      <div data-aos="fade-up" className="flex w-full bg-black p-4 justify-center text-white text-sm">
         <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
       </div>
     </div>

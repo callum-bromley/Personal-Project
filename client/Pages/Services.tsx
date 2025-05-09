@@ -5,8 +5,14 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+   useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,7 +62,7 @@ export default function Services() {
   };
 
   return (
-    <div style={{ fontFamily: "Lato, sans-serif" }}>
+    <div data-aos="fade-up" style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Top bar */}
       <nav className="bg-gray-700 text-white flex justify-end items-center p-4">
         <div className="flex space-x-4 mr-3">
@@ -76,7 +82,7 @@ export default function Services() {
       </nav>
 
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
+      <nav data-aos="fade-up" className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
         
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
         <div className="space-x-6 flex-shrink-0 flex items-center"         style={{ fontFamily: "Playfair Display, serif" }}
@@ -118,13 +124,13 @@ export default function Services() {
       </nav>
 
       {/* Contact Form Section */}
-      <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
+      <section data-aos="fade-up" className="contact">
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
             >
             Services</span>
-            <p className="mr-40">Explore Our Full Range of Expert Roofing Solutions for Residential and Commercial Needs, Including Installations, Repairs, and Maintenance.</p>
+            <p data-aos="fade-up" className="mr-40">Explore Our Full Range of Expert Roofing Solutions for Residential and Commercial Needs, Including Installations, Repairs, and Maintenance.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -154,13 +160,13 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up"className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <div data-aos="fade-up"className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md">
+        <div data-aos="fade-up"className=" text-md">
   <div>
     At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
   </div>
@@ -172,8 +178,8 @@ export default function Services() {
   </div>
 </div>
 
-<section className="max-w-6xl mx-auto px-4 py-12">
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section data-aos="fade-up" className="max-w-6xl mx-auto px-4 py-12">
+  <div data-aos="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     
     {/* Residential Roofing */}
     <a href="/services/residential" className="block">
@@ -227,9 +233,9 @@ export default function Services() {
 </section>
 
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
-  <div className="grid grid-cols-3 gap-12">
+  <div data-aos="fade-up" className="grid grid-cols-3 gap-12">
 
     <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
     <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
@@ -245,14 +251,14 @@ export default function Services() {
 
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 
-      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+      <div data-aos="fade-up" className="flex w-full bg-black p-4 justify-center text-white text-sm">
 
    <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
     </div>
