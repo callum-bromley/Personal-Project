@@ -21,7 +21,7 @@ export const HomeGallery = () => {
 
       <div className="flex flex-col items-center justify-center text-center">
   <h1 className="text-white">/</h1>
-  <p>We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+  <p>Take a Look at Some of Our Recent Roofing Projects and See the Quality Work We Do.</p>
 </div>
 
 <div className="px-44 mt-8 relative">
