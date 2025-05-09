@@ -52,22 +52,22 @@ export default function Home() {
     <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
       Maintenance
     </a>
-    <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
+    <a href="/services/commercial" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">
       Commercial
     </a>
 
     {/* Additional Services */}
     <div className="relative group/additional">
   <div className="flex items-center px-3 py-2 text-sm pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
-    <span>Additional Services</span>
+  <a href="/services/additionalservices"> Additional Services</a>
     <span className="ml-2">▸</span>
   </div>
 
   <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
-    <a href="/services/option1" className="block px-4 py-2 text-sm hover:bg-blue-400">Leak Repairs</a>
-    <a href="/services/option2" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
-    <a href="/services/option3" className="block px-4 py-2 text-sm hover:bg-blue-400">Wall Cladding</a>
-    <a href="/services/option4" className="block px-4 py-2 text-sm hover:bg-blue-400">Flashings</a>
+    <a href="/services/leakrepairs" className="block px-4 py-2 text-sm hover:bg-blue-400">Leak Repairs</a>
+    <a href="/services/gutters" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
+    <a href="/services/wallcladding" className="block px-4 py-2 text-sm hover:bg-blue-400">Wall Cladding</a>
+    <a href="/services/flashings" className="block px-4 py-2 text-sm hover:bg-blue-400">Flashings</a>
   </div>
  
 </div>
@@ -162,7 +162,7 @@ export default function Home() {
 
 
       <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
-   <p>© 2025 Geros Roofing - Designed by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
     </div>
 
 
