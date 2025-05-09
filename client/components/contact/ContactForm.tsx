@@ -30,7 +30,7 @@ export const ContactForm = () => {
 
       if (data.success) {
         setResult("");
-        event.target.reset();
+        (event.target as HTMLFormElement).reset();
 
         // Optionally show a success toast
         toast.success("Message sent successfully!", {

@@ -39,8 +39,8 @@ export default function Home() {
           {/* Dropdown for Services */}
           <div className="relative group">
   <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
-    <span>Services</span>
-    <span className="ml-2">▾</span>
+  <a href="/services" >
+       Services </a>    <span className="ml-2">▾</span>
   </button>
 
   
@@ -79,7 +79,7 @@ export default function Home() {
           <span className="mx-2 text-blue-600 flex items-center">|</span>
           <a href="/gallery" className="text-md hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/gallery" className="text-md hover:text-blue-600 px-3">About</a>
+          <a href="/about" className="text-md hover:text-blue-600 px-3">About</a>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
           <a href="/contact" className="text-md hover:text-blue-600 px-3">Contact Us</a>
           <span className="mx-2 text-white flex items-center">|</span>

@@ -118,7 +118,7 @@ export default function Services() {
         <div className="contact-container">
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block">
-            Flashings</span>
+            Services</span>
             <p>We offer decades of combined experience in the roofing industry.</p>
           </div>
 
