@@ -152,7 +152,7 @@ export default function Services() {
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <span className="mx-3 text-4xl font-bold text-black-500">GUTTERS</span>
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
