@@ -76,7 +76,8 @@ export default function Home() {
       </nav>
 
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
+      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20"         style={{ fontFamily: "Playfair Display, serif" }}
+      >
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
         <div className="space-x-6 flex-shrink-0 flex items-center">
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
@@ -119,7 +120,8 @@ export default function Home() {
       <section className="contact">
         <div className="contact-container">
           <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block">
+            <span className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
+            >
 Residential Roofing            </span>
             <p>We offer decades of combined experience in the roofing industry.</p>
           </div>

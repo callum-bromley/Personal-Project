@@ -77,8 +77,10 @@ export default function Services() {
 
       {/* Main Navbar */}
       <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
+        
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
-        <div className="space-x-6 flex-shrink-0 flex items-center">
+        <div className="space-x-6 flex-shrink-0 flex items-center"         style={{ fontFamily: "Playfair Display, serif" }}
+        >
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
@@ -119,7 +121,8 @@ export default function Services() {
       <section className="contact">
         <div className="contact-container">
           <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block">
+            <span className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
+            >
             Services</span>
             <p>We offer decades of combined experience in the roofing industry.</p>
           </div>

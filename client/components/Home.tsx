@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div style={{ fontFamily: 'Lato, sans-serif' }}>
       {/* Top bar */}
-      <nav className="bg-gray-700 text-white flex justify-end items-center p-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+      <nav className="bg-gray-700 text-white flex justify-end items-center p-4" >
         <div className="flex space-x-4 mr-3">
           <a href="/" aria-label="Facebook" className="hover:text-blue-400">
             <FaFacebookF />

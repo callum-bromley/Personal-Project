@@ -54,9 +54,12 @@ export default function Services() {
   };
 
   return (
-    <div style={{ fontFamily: "Lato, sans-serif" }}>
+    <div>
       {/* Top bar */}
-      <nav className="bg-gray-700 text-white flex justify-end items-center p-4">
+      <nav
+        className="bg-gray-700 text-white flex justify-end items-center p-4"
+     
+      >
         <div className="flex space-x-4 mr-3">
           <a href="/" aria-label="Facebook" className="hover:text-blue-400">
             <FaFacebookF />
@@ -74,16 +77,19 @@ export default function Services() {
       </nav>
 
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
+      <nav
+        className="bg-white-600 text-black p-8 flex justify-between items-center h-20"
+        style={{ fontFamily: "Playfair Display, serif" }}
+      >
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
         <div className="space-x-6 flex-shrink-0 flex items-center">
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-          <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
-  <a href="/services" >
-       Services </a>    <span className="ml-2">▾</span>
-  </button>
+            <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
+              <a href="/services">Services</a>
+              <span className="ml-2">▾</span>
+            </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
               <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Residential Roofing</a>
               <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Maintenance</a>
@@ -107,10 +113,8 @@ export default function Services() {
           <span className="mx-2 text-blue-600">|</span>
           <span className="text-md px-3 text-blue-600">About</span>
           <span className="mx-2 text-blue-600 flex items-center">|</span>
-
           <a href="/contact" className="text-md hover:text-blue-600 px-3">Contact Us</a>
           <span className="mx-2 text-white">|</span>
-
         </div>
       </nav>
 
@@ -118,8 +122,9 @@ export default function Services() {
       <section className="contact">
         <div className="contact-container">
           <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block">
-            About Us</span>
+            <span className="text-5xl font-bold text-white mb-4 block classy-font" >
+              About Us
+            </span>
             <p>We offer decades of combined experience in the roofing industry.</p>
           </div>
 
