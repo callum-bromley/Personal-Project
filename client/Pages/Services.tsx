@@ -80,9 +80,9 @@ export default function Services() {
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-            <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
-              <span>Services</span>
-              <span className="ml-2">▾</span>
+            <button className="flex items-center text-md px-3 focus:outline-none">
+            <span className="text-md text-blue-600">Services</span>
+            <span className="ml-2">▾</span>
             </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
               <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Residential Roofing</a>

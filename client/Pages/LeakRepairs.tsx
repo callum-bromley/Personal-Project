@@ -80,22 +80,22 @@ export default function Services() {
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-            <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
-              <span>Services</span>
-              <span className="ml-2">▾</span>
-            </button>
+          <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none text-blue-600">
+  <a href="/services" >
+       Services </a>    <span className="ml-2">▾</span>
+  </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
               <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Residential Roofing</a>
               <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Maintenance</a>
               <a href="/services/commercial" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Commercial</a>
               <div className="relative group/additional">
-                <div className="flex items-center px-3 py-2 text-sm pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
+                <div className="flex items-center px-3 py-2 text-sm pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer text-blue-600">
                   <a href="/services/additionalservices">Additional Services</a>
                   <span className="ml-2">▸</span>
                 </div>
                 <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
-                  <a href="/services/leakrepairs" className="block px-4 py-2 text-sm hover:bg-blue-400">Leak Repairs</a>
-                  <a href="/services/gutters" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
+                <span className=" block text-sm  px-4 py-2 text-blue-600">Leak Repairs</span>
+                <a href="/services/gutters" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
                   <a href="/services/wallcladding" className="block px-4 py-2 text-sm hover:bg-blue-400">Wall Cladding</a>
                   <a href="/services/flashings" className="block px-4 py-2 text-sm hover:bg-blue-400">Flashings</a>
                 </div>

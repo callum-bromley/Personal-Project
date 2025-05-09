@@ -80,10 +80,10 @@ export default function Services() {
           <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-            <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
-              <span>Services</span>
-              <span className="ml-2">▾</span>
-            </button>
+          <button className="flex items-center text-md hover:text-blue-600 px-3 focus:outline-none">
+  <a href="/services" >
+       Services </a>    <span className="ml-2">▾</span>
+  </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
               <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Residential Roofing</a>
               <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Maintenance</a>
@@ -103,7 +103,7 @@ export default function Services() {
             </div>
           </div>
           <span className="mx-2 text-blue-600">|</span>
-          <a href="/gallery" className="text-md hover:text-blue-600 px-3">Work Gallery</a>
+          <span className="text-md px-3 text-blue-600">Work Gallery</span>
           <span className="mx-2 text-blue-600">|</span>
           <a href="/about" className="text-md hover:text-blue-600 px-3">About</a>
           <span className="mx-2 text-blue-600">|</span>

@@ -33,8 +33,9 @@ export default function Home() {
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
 
         <div className="space-x-6 flex-shrink-0 flex items-center">
-          <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
+  <span className="text-md px-3 text-blue-600">Home</span>
+  <span className="mx-2 text-blue-600 flex items-center">|</span>
+
 
           {/* Dropdown for Services */}
           <div className="relative group">
