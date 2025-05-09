@@ -37,6 +37,7 @@
     "framer-motion": "^12.10.4",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
+    "styled-components": "^6.1.18",
     "superagent": "^8.1.2"
   },
   "devDependencies": {

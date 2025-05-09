@@ -1,3 +1,7 @@
+/* Importing Libre Baskerville font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+/* Main contact styling */
 .contact {
   font-family: 'Lato', sans-serif;
   position: relative;
@@ -6,7 +10,7 @@
   align-items: center;
   min-height: 85vh;
   background-color: transparent;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .contact-container {
@@ -22,9 +26,19 @@
   text-align: left;
   color: white;
   padding-right: 50px;
+  padding-bottom: 120px;
   font-family: 'Lato', sans-serif; /* Applied Lato */
 }
 
+/* Add a classy font style to the "Geros Roofing" text */
+.contact-text span.classy-font {
+  font-family: 'Libre Baskerville', serif; /* Libre Baskerville for classy look */
+  font-weight: 700;
+  font-size: 3rem;
+  color: white; /* Ensure the text is white */
+}
+
+/* Styling for other text in the contact section */
 .contact-text h1 {
   font-size: 32px;
 }
@@ -34,6 +48,7 @@
   line-height: 1.5;
 }
 
+/* Button styling for the quote button */
 .quote-btn {
   padding: 12px 20px;
   font-size: 18px;
@@ -49,6 +64,7 @@
   background-color: pink;
 }
 
+/* Contact section background image and overlay */
 .contact::before {
   content: '';
   position: absolute;
@@ -74,6 +90,7 @@
   z-index: -1;
 }
 
+/* Form styling */
 form {
   flex: 1;
   max-width: 500px;
@@ -91,6 +108,7 @@ form h2 {
   text-align: center;
 }
 
+/* Input box styling */
 .input-box {
   margin-top: 15px;
 }
@@ -111,8 +129,8 @@ form h2 {
   height: 150px;
   resize: none;
 }
-/* #374151 */
-/* #60A5FA */
+
+/* Form button styling */
 form button {
   width: 100%;
   height: 50px;
@@ -132,6 +150,7 @@ form button:hover {
   background: #60A5FA;
 }
 
+/* Text spacing and styling adjustments */
 .contact-text {
   padding-right: 0;
   margin-bottom: 20px;
@@ -143,13 +162,14 @@ form {
 
 .contact-text span {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .contact-text p {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
+/* Button container for stacked buttons */
 .button-container {
   display: flex;
   flex-direction: column; /* Stack buttons vertically */
@@ -157,16 +177,16 @@ form {
   margin-top: 20px;
 }
 
+/* Link styling */
 .blue-link {
-  color: blue;               
-  text-decoration: underline; 
-  font-size: 13px;            
-  font-weight: bold;         
-  display: block;             
-
+  color: blue;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
   margin-top: 15px;
 }
 
 .link:hover {
-  color: #1D4ED8; 
+  color: #1D4ED8;
 }

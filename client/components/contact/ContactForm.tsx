@@ -63,14 +63,21 @@ export const ContactForm = () => {
     <section className="contact">
       <div className="contact-container">
         <div className="contact-text">
-          <span className="text-5xl font-bold text-white mb-4 block">
-            Welcome to my Website!
-          </span>
-          <p>
-            We offer decades of combined experience in the roofing industry.
+          <span className="classy-font">
+          Raising the Standard 
+</span>
+<span className="classy-font">
+        of Roofing 
+
+</span>
+<span className="classy-font">
+ in Auckland
+</span>
+
+          <p className="mr-40 ">
+            Focused on quality and dependability, we provide expert roofing services you can trust, with skilled craftsmanship that delivers lasting results.
           </p>
         </div>
-
         <form onSubmit={onSubmit}>
           <div className="input-box">
             <input
@@ -121,7 +128,7 @@ export const ContactForm = () => {
         {result && <p>{result}</p>}
       </div>
 
-      {/* Toast container to hold all the toasts */}
+      {/* Toast container */}
       <ToastContainer />
     </section>
   );
