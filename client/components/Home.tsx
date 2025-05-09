@@ -113,7 +113,7 @@ export default function Home() {
         <Footer />
       </div>
 
-      <div data-aos="fade-up" className="flex w-full bg-black p-4 justify-center text-white text-sm">
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
         <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
       </div>
     </div>
