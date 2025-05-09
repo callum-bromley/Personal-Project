@@ -82,20 +82,21 @@ export default function Services() {
       </nav>
 
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20"         style={{ fontFamily: "Playfair Display, serif" }}
-      >
+      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20">
+        
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
-        <div className="space-x-6 flex-shrink-0 flex items-center">
+        <div className="space-x-6 flex-shrink-0 flex items-center"         style={{ fontFamily: "Playfair Display, serif" }}
+        >
           <a href="/" className="text-lg hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-          <button className="flex items-center text-lg hover:text-blue-600 px-3 focus:outline-none text-blue-600">
-  <a href="/services" >
-       Services </a>    <span className="ml-2">▾</span>
-  </button>
+            <button className="flex items-center text-lg px-3 focus:outline-none">
+            <span className="text-lg text-blue-600">Services</span>
+            <span className="ml-2">▾</span>
+            </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
-            <span className="block text-md pl-8 px-3 py-2 text-blue-600">Residential Roofing</span>
-            <a href="/services/maintenance" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Maintenance</a>
+              <a href="/services/residential" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Residential Roofing</a>
+              <a href="/services/maintenance" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Maintenance</a>
               <a href="/services/commercial" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Commercial</a>
               <div className="relative group/additional">
                 <div className="flex items-center px-3 py-2 text-md pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
@@ -111,7 +112,6 @@ export default function Services() {
               </div>
             </div>
           </div>
-
           <span className="mx-2 text-blue-600">|</span>
           <a href="/gallery" className="text-lg hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600">|</span>
