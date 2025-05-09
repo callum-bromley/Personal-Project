@@ -81,37 +81,37 @@ export default function Services() {
         <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
         <div className="space-x-6 flex-shrink-0 flex items-center"         style={{ fontFamily: "Playfair Display, serif" }}
         >
-          <a href="/" className="text-md hover:text-blue-600 px-3">Home</a>
+          <a href="/" className="text-lg hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-            <button className="flex items-center text-md px-3 focus:outline-none">
-            <span className="text-md text-blue-600">Services</span>
+            <button className="flex items-center text-lg px-3 focus:outline-none">
+            <span className="text-lg text-blue-600">Services</span>
             <span className="ml-2">▾</span>
             </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
-              <a href="/services/residential" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Residential Roofing</a>
-              <a href="/services/maintenance" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Maintenance</a>
-              <a href="/services/commercial" className="block px-3 py-2 text-sm hover:bg-blue-400 pl-8">Commercial</a>
+              <a href="/services/residential" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Residential Roofing</a>
+              <a href="/services/maintenance" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Maintenance</a>
+              <a href="/services/commercial" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Commercial</a>
               <div className="relative group/additional">
-                <div className="flex items-center px-3 py-2 text-sm pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
+                <div className="flex items-center px-3 py-2 text-md pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
                   <a href="/services/additionalservices">Additional Services</a>
                   <span className="ml-2">▸</span>
                 </div>
                 <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
-                  <a href="/services/leakrepairs" className="block px-4 py-2 text-sm hover:bg-blue-400">Leak Repairs</a>
-                  <a href="/services/gutters" className="block px-4 py-2 text-sm hover:bg-blue-400">Gutters</a>
-                  <a href="/services/wallcladding" className="block px-4 py-2 text-sm hover:bg-blue-400">Wall Cladding</a>
-                  <a href="/services/flashings" className="block px-4 py-2 text-sm hover:bg-blue-400">Flashings</a>
+                  <a href="/services/leakrepairs" className="block px-4 py-2 text-md hover:bg-blue-400">Leak Repairs</a>
+                  <a href="/services/gutters" className="block px-4 py-2 text-md hover:bg-blue-400">Gutters</a>
+                  <a href="/services/wallcladding" className="block px-4 py-2 text-md hover:bg-blue-400">Wall Cladding</a>
+                  <a href="/services/flashings" className="block px-4 py-2 text-md hover:bg-blue-400">Flashings</a>
                 </div>
               </div>
             </div>
           </div>
           <span className="mx-2 text-blue-600">|</span>
-          <a href="/gallery" className="text-md hover:text-blue-600 px-3">Work Gallery</a>
+          <a href="/gallery" className="text-lg hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600">|</span>
-          <a href="/about" className="text-md hover:text-blue-600 px-3">About</a>
+          <a href="/about" className="text-lg hover:text-blue-600 px-3">About</a>
           <span className="mx-2 text-blue-600">|</span>
-          <a href="/contact" className="text-md hover:text-blue-600 px-3">Contact Us</a>
+          <a href="/contact" className="text-lg hover:text-blue-600 px-3">Contact Us</a>
           <span className="mx-2 text-white">|</span>
 
         </div>
