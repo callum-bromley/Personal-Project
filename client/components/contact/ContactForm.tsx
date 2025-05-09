@@ -1,16 +1,24 @@
 import React from "react";
 import "./Contact.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ContactForm = () => {
-  const [result, setResult] = React.useState("")
+  const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setResult("Sending....")
+    event.preventDefault();
+
+    // Show the sending toast notification
+    toast.info("Sending... Your message is being processed.", {
+      autoClose: 3000,
+      closeButton: true,
+    });
+
+    setResult("");
 
     const formData = new FormData(event.target as HTMLFormElement);
-
-    formData.append("access_key", "2620a2b0-0e42-4390-8eab-f780c681e724")
+    formData.append("access_key", "2620a2b0-0e42-4390-8eab-f780c681e724");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -18,18 +26,36 @@ export const ContactForm = () => {
         body: formData,
       });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (data.success) {
-        setResult("")
-        event.target.reset()
+        setResult("");
+        event.target.reset();
+
+        // Optionally show a success toast
+        toast.success("Message sent successfully!", {
+          autoClose: 3000,
+          closeButton: true,
+        });
       } else {
-        console.log("Error", data)
-        setResult(data.message)
+        console.log("Error", data);
+        setResult(data.message);
+
+        // Optionally show an error toast
+        toast.error(data.message || "Something went wrong.", {
+          autoClose: 3000,
+          closeButton: true,
+        });
       }
     } catch (error) {
-      console.log("Error:", error)
-      setResult("Something went wrong. Please try again.")
+      console.log("Error:", error);
+      setResult("");
+
+      // Optionally show an error toast
+      toast.error("Something went wrong. Please try again later.", {
+        autoClose: 3000,
+        closeButton: true,
+      });
     }
   };
 
@@ -94,6 +120,9 @@ export const ContactForm = () => {
         </form>
         {result && <p>{result}</p>}
       </div>
+
+      {/* Toast container to hold all the toasts */}
+      <ToastContainer />
     </section>
-  )
-}
+  );
+};

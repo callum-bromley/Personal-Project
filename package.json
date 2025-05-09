@@ -34,8 +34,9 @@
     "@emotion/styled": "^11.14.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "framer-motion": "^12.9.7",
+    "framer-motion": "^12.10.4",
     "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5",
     "superagent": "^8.1.2"
   },
   "devDependencies": {
