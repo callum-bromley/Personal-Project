@@ -121,7 +121,9 @@ export default function Services() {
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block"style={{ fontFamily: "Playfair Display, serif" }}>
             Leak Repairs</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-40">Quick and Reliable Leak Detection and Repair Services to Prevent Water Damage and Protect Your Property.
+
+</p>
           </div>
 
           <form onSubmit={onSubmit}>

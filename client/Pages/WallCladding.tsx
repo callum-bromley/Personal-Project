@@ -121,7 +121,9 @@ export default function Services() {
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Wall Cladding</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-52">Durable and Aesthetic Wall Cladding Options to Enhance Your Building’s Look and Protection.
+
+</p>
           </div>
 
           <form onSubmit={onSubmit}>

@@ -124,7 +124,7 @@ export default function Services() {
             <span className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
             >
             Services</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-40">Explore Our Full Range of Expert Roofing Solutions for Residential and Commercial Needs, Including Installations, Repairs, and Maintenance.</p>
           </div>
 
           <form onSubmit={onSubmit}>

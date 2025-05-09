@@ -125,7 +125,7 @@ export default function Services() {
             <span className="text-5xl font-bold text-white mb-4 block classy-font" >
               About Us
             </span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-60">Learn About Our Experienced Team and Our Commitment to Delivering Top-Notch Roofing Services.</p>
           </div>
 
           <form onSubmit={onSubmit}>

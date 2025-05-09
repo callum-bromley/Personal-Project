@@ -121,7 +121,7 @@ export default function Services() {
             <span className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
             >
             Commercial Roofing</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-40">Trusted Roofing Solutions for Commercial Properties, Providing Efficient Installations, Repairs, and Maintenance.</p>
           </div>
 
           <form onSubmit={onSubmit}>

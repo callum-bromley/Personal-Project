@@ -123,7 +123,7 @@ export default function Home() {
             <span className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
             >
 Residential Roofing            </span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-40">Offering High-Quality Roofing Services to Protect Your Home, From New Installations to Repairs and Replacements.</p>
           </div>
 
           <form onSubmit={onSubmit}>

@@ -119,7 +119,7 @@ export default function Services() {
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Contact Us!</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-72">Get in Touch for a Free Estimate, Roof Inspection, or Any Questions About Our Services.</p>
           </div>
 
           <form onSubmit={onSubmit}>

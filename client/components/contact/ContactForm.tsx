@@ -74,7 +74,7 @@ export const ContactForm = () => {
  in Auckland
 </span>
 
-          <p className="mr-40 ">
+          <p className="mr-40 mb-32 ">
             Focused on quality and dependability, we provide expert roofing services you can trust, with skilled craftsmanship that delivers lasting results.
           </p>
         </div>

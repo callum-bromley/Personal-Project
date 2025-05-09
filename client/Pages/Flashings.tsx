@@ -121,7 +121,7 @@ export default function Services() {
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Flashings</span>
-            <p>We offer decades of combined experience in the roofing industry.</p>
+            <p className="mr-56">Professional Flashing Services to Protect Your Roof from Water Infiltration Around Edges and Vents.</p>
           </div>
 
           <form onSubmit={onSubmit}>
