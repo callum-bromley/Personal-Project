@@ -3,6 +3,8 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
+import { FooterLogo } from "../components/FooterLogo";
 
 export default function Services() {
   const [result, setResult] = React.useState("");
@@ -145,6 +147,113 @@ export default function Services() {
         </div>
         <ToastContainer />
       </section>
+      <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div className=" text-md">
+  <div>
+    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
+  </div>
+  <div className="mt-2">
+    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
+  </div>
+  <div className="mt-2">
+    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
+  </div>
+</div>
+
+<section className="max-w-6xl mx-auto px-4 py-12">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    {/* Residential Roofing */}
+    <a href="/services/residential" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Residential Roofing</h3>
+        <p>Protect your home with high-quality roofing tailored for durability and design.</p>
+      </div>
+    </a>
+
+    {/* Maintenance */}
+    <a href="/services/maintenance" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Maintenance</h3>
+        <p>Extend the life of your roof with regular inspections and upkeep.</p>
+      </div>
+    </a>
+
+    {/* Leak Repairs */}
+    <a href="/services/leakrepairs" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Leak Repairs</h3>
+        <p>Quick and effective leak detection and sealing to prevent costly damage.</p>
+      </div>
+    </a>
+
+    {/* Gutters */}
+    <a href="/services/gutters" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Gutters</h3>
+        <p>Install and maintain gutters to control water flow and protect your foundation.</p>
+      </div>
+    </a>
+
+    {/* Wall Cladding */}
+    <a href="/services/wallcladding" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Wall Cladding</h3>
+        <p>Improve insulation and appearance with professional wall cladding installation.</p>
+      </div>
+    </a>
+
+    {/* Flashings */}
+    <a href="/services/flashings" className="block">
+      <div className="bg-white shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">Flashings</h3>
+        <p>Prevent water entry at joints and edges with properly installed flashings.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<div className="px-24 mt-4 relative">
+
+  <div className="grid grid-cols-3 gap-12">
+
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+
     </div>
+    </div>
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+  
+    </div>
+    <div className="about-section">
+            <FooterLogo />
+          </div>
+    <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
+    </div>
+    
   );
 }
