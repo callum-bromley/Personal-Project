@@ -3,6 +3,8 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
+import { FooterLogo } from "../components/FooterLogo";
 
 export default function Home() {
   const [result, setResult] = React.useState("");
@@ -145,6 +147,59 @@ Residential Roofing            </span>
         </div>
         <ToastContainer />
       </section>
+      <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div className=" text-md">
+  <div>
+    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
+  </div>
+  <div className="mt-2">
+    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
+  </div>
+  <div className="mt-2">
+    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
+  </div>
+</div>
+<h1 className="text-white">/</h1>
+
+
+<div className="px-24 mt-4 relative">
+
+  <div className="grid grid-cols-3 gap-12">
+
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+
+    </div>
+    </div>
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+  
+    </div>
+    <div className="about-section">
+            <FooterLogo />
+          </div>
+    <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
     </div>
   );
 }
