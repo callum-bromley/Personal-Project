@@ -3,6 +3,8 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
+import { FooterLogo } from "../components/FooterLogo";
 
 
 export default function Services() {
@@ -148,6 +150,66 @@ export default function Services() {
         </div>
         <ToastContainer />
       </section>
+      <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span className="mx-3 text-4xl font-bold text-black-500">ADDITIONAL SERVICES</span>
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div className=" text-md mx-40 mt-2">
+        <div>
+        At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we provide expert services beyond roofing to keep your property protected and looking its best. Our wall cladding enhances both durability and style, while our custom gutters ensure proper water drainage to prevent damage.</div>
+<div className="mt-6 mx-40">
+We also offer fast, reliable leak repairs to stop water issues before they spread, and professional flashing installation to seal vulnerable areas and keep your roof watertight.</div>
+<div className="mt-6">
+Whatever your needs, you can count on <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span> for lasting quality and peace of mind.
+
+</div>
+
+
+</div>
+<h1 className="text-white">/</h1>
+
+<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+  Contact us to learn more!
+</a>
+
+<h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
+
+<div className="px-24 mt-4 relative">
+
+  <div className="grid grid-cols-3 gap-12">
+
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+
+    </div>
+    </div>
+    <h1 className="text-white">/</h1>
+    <h1 className="text-white">/</h1>
+
+<h1 className="text-white">/</h1>
+
+    
+  
+    </div>
+    <div className="about-section">
+            <FooterLogo />
+          </div>
+    <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
     </div>
   );
 }
