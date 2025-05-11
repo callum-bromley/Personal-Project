@@ -3,6 +3,8 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
+import { FooterLogo } from "../components/FooterLogo";
 
 export default function Services() {
   const [result, setResult] = React.useState("");
@@ -147,6 +149,60 @@ export default function Services() {
         </div>
         <ToastContainer />
       </section>
+      <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span className="mx-3 text-4xl font-bold text-black-500">MAINTENANCE</span>
+          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div className=" text-md mx-40 mt-2">
+        <div>
+        Regular roof maintenance is essential to extending the life of your roofing system and preventing costly repairs. At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we offer tailored maintenance plans that help identify potential issues early—before they turn into major problems.        </div>
+        
+        <div className="mt-6 mx-16">
+        Our services include comprehensive inspections, cleaning, minor repairs, and sealant touch-ups to keep your roof in optimal condition.        </div>
+        <div className="mt-6 mb-4">
+        Whether for a residential or commercial property, our proactive approach to maintenance ensures that your roof stays strong, safe, and weather-ready throughout the year, saving you money and stress in the long run.        </div>
+
+
+
+
+</div>
+<h1 className="text-white">/</h1>
+
+
+<div className="px-24 mt-4 relative">
+
+  <div className="grid grid-cols-3 gap-12">
+
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+
+    </div>
+    </div>
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+    <h1 className="text-white">/</h1>
+
+    </div>
+    <div className="about-section">
+            <FooterLogo />
+          </div>
+    <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
     </div>
   );
 }

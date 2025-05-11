@@ -154,21 +154,22 @@ Residential Roofing            </span>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <span className="mx-3 text-4xl font-bold text-black-500">RESIDENTIAL ROOFING</span>
           <div className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md">
-  <div>
-    At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in high-quality roofing services tailored to protect and enhance your home or business.
-  </div>
-  <div className="mt-2">
-    Whether you need a full roof replacement, minor repairs, or routine maintenance, our experienced team delivers reliable craftsmanship using durable materials built to withstand the elements.
-  </div>
-  <div className="mt-2">
-    From residential and commercial roofing all the way to gutters, we handle it all — with a commitment to safety, transparency, and customer satisfaction.
-  </div>
+        <div className=" text-md mx-40 mt-2">
+        <div>
+          At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we provide high-quality residential roofing services tailored to protect your home and enhance its curb appeal. Whether you&apos;re building a new house or replacing an aging roof, our skilled team works with premium materials and proven techniques to ensure a long-lasting result.
+        </div>
+        
+        <div className="mt-6 mx-16">
+          We take the time to understand your needs, offering a variety of styles and finishes to suit both your budget and aesthetic preferences.
+        </div>
+        <div className="mt-6 mb-4">
+          From initial inspection to final installation, our residential roofing services prioritize safety, energy efficiency, and structural integrity—so your family stays protected and comfortable year-round.
+        </div>
 </div>
 <h1 className="text-white">/</h1>
 
