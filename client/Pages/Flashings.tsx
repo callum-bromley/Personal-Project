@@ -173,6 +173,12 @@ export default function Services() {
 </div>
 <h1 className="text-white">/</h1>
 
+<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+  Contact us to learn more!
+</a>
+
+<h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
 
 <div className="px-24 mt-4 relative">
 
@@ -185,16 +191,9 @@ export default function Services() {
     </div>
     </div>
     <h1 className="text-white">/</h1>
-
     <h1 className="text-white">/</h1>
 
-    <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
-  Contact us to learn more!
-</a>
-
-    <h1 className="text-white">/</h1>
-    <h1 className="text-white">/</h1>
-    <h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
 
   
     </div>
