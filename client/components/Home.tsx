@@ -101,7 +101,9 @@ export default function Home() {
           <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
-        <p data-aos="fade-up" >We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+        <p data-aos="fade-up" className="mx-52" >We provide expert roofing solutions for both residential and commercial properties, including installations, maintenance, and repairs. Our team is committed to quality craftsmanship, lasting materials, and dependable service—helping you protect what matters most.
+
+</p>
       </div>
 
       {/* Smaller Card Layout */}
@@ -110,27 +112,28 @@ export default function Home() {
           <img src="/images/maera4.jpeg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Residential Roofing</h2>
           <p className="text-gray-700 text-sm mt-2">
-            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
-          </p>
-          <a href="/services/residential" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          Comprehensive roofing solutions designed to safeguard your home, enhance curb appeal, and provide long-term protection against the elements.          </p>
+          <a href="/services/residential" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
         </div>
 
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
           <img src="/images/maintenence1.jpeg" alt="Maintenance" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Maintenance</h2>
           <p className="text-gray-700 text-sm mt-2">
-            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
-          </p>
-          <a href="/services/maintenance" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          Proactive roof maintenance services that extend the life of your roofing system, prevent costly damage, and ensure year-round performance and safety.
+
+</p>
+          <a href="/services/maintenance" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
         </div>
 
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
           <img src="/images/commercial1.jpeg" alt="Commercial Roofing" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Commercial Roofing</h2>
           <p className="text-gray-700 text-sm mt-2">
-            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
-          </p>
-          <a href="/services/commercial" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+          High-performance roofing systems tailored to meet the structural and operational demands of commercial buildings, ensuring durability and minimal disruption.
+
+</p>
+          <a href="/services/commercial" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
         </div>
       </div>
 

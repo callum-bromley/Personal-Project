@@ -13,7 +13,7 @@ export const OtherServices = () => {
 
       <div className="flex flex-col items-center justify-center text-center">
   <h1 className="text-white">/</h1>
-  <p className="mx-52">Explore Our Wide Range of Specialized Roofing Solutions, From Leak Repairs and Gutters to Wall Cladding and Flashings. We Offer Custom Services Tailored to Meet Your Unique Property Needs, Ensuring Comprehensive Protection and Enhanced Comfort.</p>
+  <p className="mx-52">Explore our wide range of specialized roofing solutions, from leak repairs and gutters to wall cladding and flashings. We offer custom services tailored to meet your unique property needs, ensuring comprehensive protection and enhanced comfort.</p>
 </div>
 
       <div className="photo-gallery flex justify-center gap-40 mt-8">
