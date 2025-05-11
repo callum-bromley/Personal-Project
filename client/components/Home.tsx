@@ -92,6 +92,50 @@ export default function Home() {
         <Contact />
       </div>
 
+      <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        <p data-aos="fade-up" >We are excited to assist you with all your needs. Feel free to contact us or browse our services and projects to learn more!</p>
+      </div>
+
+      {/* Smaller Card Layout */}
+      <div className="flex justify-center flex-wrap gap-10 mt-6">
+        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
+          <img src="/images/maera4.jpeg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <h2 className="text-lg font-semibold mt-3">Residential Roofing</h2>
+          <p className="text-gray-700 text-sm mt-2">
+            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
+          </p>
+          <a href="/services/residential" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+        </div>
+
+        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
+          <img src="/images/maintenence1.jpeg" alt="Maintenance" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <h2 className="text-lg font-semibold mt-3">Maintenance</h2>
+          <p className="text-gray-700 text-sm mt-2">
+            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
+          </p>
+          <a href="/services/maintenance" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+        </div>
+
+        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
+          <img src="/images/commercial1.jpeg" alt="Commercial Roofing" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <h2 className="text-lg font-semibold mt-3">Commercial Roofing</h2>
+          <p className="text-gray-700 text-sm mt-2">
+            No two aspects of your home work together quite like windows and doors. They are the openings to the outside, and the barriers between your home and extreme weather conditions.
+          </p>
+          <a href="/services/commercial" className="text-blue-600 hover:underline text-sm mt-2 inline-block">Learn More</a>
+        </div>
+      </div>
+
+      <h1 className="text-white">/</h1>
+
       {/* Other Sections */}
       <div data-aos="fade-up" className="services-content">
         <OtherServices />
