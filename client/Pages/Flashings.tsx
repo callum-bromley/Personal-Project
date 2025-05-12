@@ -83,8 +83,12 @@ export default function Services() {
       </nav>
 
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-20" style={{ fontFamily: "Playfair Display, serif" }}>
-        <h1 className="text-4xl font-bold flex-grow ml-40">Geros</h1>
+       <nav
+        className="bg-white-600 text-black p-8 flex justify-between items-center h-24"
+        style={{ fontFamily: "Playfair Display, serif" }}
+      >
+<img src="/images/geroslogo4.png" alt="Photo1"   className="h-20 w-auto rounded-md ml-20" 
+ />  
         <div className="space-x-6 flex-shrink-0 flex items-center">
           <a href="/" className="text-lg hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
