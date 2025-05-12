@@ -3,7 +3,7 @@ export const FooterLogo = () => {
     <div className="flex w-full bg-gray-700 p-4 justify-center">
       {/* Left section: Disney logo centered more to the middle */}
       <div className="flex justify-center w-auto pr-4 mr-24">
-        <img src="/images/disney.png" alt="Geros Roofing" className="w-24 h-auto rounded-lg" />
+        <img src="/images/geroslogo5.png" alt="Geros Roofing" className="w-auto h-20 rounded-lg mt-4" />
       </div>
 
       {/* Right section: Other logos, centered with a gap between them */}
