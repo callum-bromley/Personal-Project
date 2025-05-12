@@ -5,8 +5,14 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -118,12 +124,12 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
             >
             Maintenance</span>
-            <p className="mr-40">Ensure Your Roof’s Longevity with Our Routine Maintenance Services, Including Inspections, Cleaning, and Repairs.</p>
+            <p data-aos="fade-up" className="mr-40">Ensure Your Roof’s Longevity with Our Routine Maintenance Services, Including Inspections, Cleaning, and Repairs.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -153,19 +159,19 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">MAINTENANCE</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">MAINTENANCE</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md mx-40 mt-2">
+        <div data-aos="fade-up" className=" text-md mx-40 mt-2">
         <div>
         Regular roof maintenance is essential to extending the life of your roofing system and preventing costly repairs. At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we offer tailored maintenance plans that help identify potential issues early—before they turn into major problems.        </div>
         
-        <div className="mt-6 mx-16">
+        <div data-aos="fade-up" className="mt-6 mx-16">
         Our services include comprehensive inspections, cleaning, minor repairs, and sealant touch-ups to keep your roof in optimal condition.        </div>
-        <div className="mt-6 mb-4">
+        <div data-aos="fade-up" className="mt-6 mb-4">
         Whether for a residential or commercial property, our proactive approach to maintenance ensures that your roof stays strong, safe, and weather-ready throughout the year, saving you money and stress in the long run.        </div>
 
 
@@ -174,14 +180,14 @@ export default function Services() {
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -197,10 +203,10 @@ export default function Services() {
 <h1 className="text-white">/</h1>
 
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 

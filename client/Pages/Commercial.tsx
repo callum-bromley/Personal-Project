@@ -5,9 +5,15 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -119,12 +125,12 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"         style={{ fontFamily: "Playfair Display, serif" }}
             >
             Commercial Roofing</span>
-            <p className="mr-40">Trusted Roofing Solutions for Commercial Properties, Providing Efficient Installations, Repairs, and Maintenance.</p>
+            <p data-aos="fade-up" className="mr-40">Trusted Roofing Solutions for Commercial Properties, Providing Efficient Installations, Repairs, and Maintenance.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -154,31 +160,31 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">COMMERCIAL ROOFING</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">COMMERCIAL ROOFING</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md mx-40 mt-2">
+        <div data-aos="fade-up" className=" text-md mx-40 mt-2">
         <div>
-        <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span> offers dependable commercial roofing solutions designed for durability, performance, and minimal disruption to your operations. Whether you&apos;re managing an office building, retail space, or industrial facility, our team brings the expertise to handle projects of any size.        </div>
+        <span data-aos="fade-up" className="text-blue-600 font-semibold text-lg ">Geros Roofing</span> offers dependable commercial roofing solutions designed for durability, performance, and minimal disruption to your operations. Whether you&apos;re managing an office building, retail space, or industrial facility, our team brings the expertise to handle projects of any size.        </div>
         
-        <div className="mt-6 mx-16">
+        <div data-aos="fade-up" className="mt-6 mx-16">
         We specialize in a range of commercial roofing systems—including flat, low-slope, and metal roofs—each installed with attention to detail and compliance with industry standards.        </div>
-        <div className="mt-6 mb-4">
+        <div data-aos="fade-up" className="mt-6 mb-4">
         Our commercial services include full installations, re-roofing, inspections, and repairs, all backed by clear communication, safety protocols, and long-term warranties that give you confidence and peace of mind.        </div>
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -196,10 +202,10 @@ export default function Services() {
 
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 

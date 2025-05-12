@@ -5,8 +5,14 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -117,11 +123,11 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Gutters</span>
-            <p className="mr-48">Expert Gutter Installations and Maintenance to Safeguard Your Property from Water Damage.
+            <p data-aos="fade-up" className="mr-48">Expert Gutter Installations and Maintenance to Safeguard Your Property from Water Damage.
 
 </p>
           </div>
@@ -153,37 +159,37 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">GUTTERS</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">GUTTERS</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md">
+        <div data-aos="fade-up" className=" text-md">
         <div>
   At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in reliable and efficient gutter services to protect your home or business from water damage.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-4 mx-16">
   Whether you&apos;re in need of gutter installation, repair, or maintenance, our experienced team ensures that your gutters function properly, diverting water away from your property and preventing costly damage.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-4 mx-16">
   We use high-quality materials that are built to withstand the elements, and our expert team ensures that every gutter system is installed with precision and care for long-lasting performance.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-4 mx-16">
   From routine cleaning to major repairs, our gutter services provide peace of mind, keeping your home or business safe, dry, and protected from the damaging effects of water runoff.
 </div>
 
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -200,10 +206,10 @@ export default function Services() {
 
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 

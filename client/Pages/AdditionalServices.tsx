@@ -5,9 +5,15 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -119,12 +125,12 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}
             >
             Additional Services</span>
-            <p className="mr-56">Specialized Roofing Services to Address All Your Needs, Including Leak Repairs, Gutters, Wall Cladding and Flashings.</p>
+            <p data-aos="fade-up" className="mr-56">Specialized Roofing Services to Address All Your Needs, Including Leak Repairs, Gutters, Wall Cladding and Flashings.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -154,18 +160,18 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">ADDITIONAL SERVICES</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">ADDITIONAL SERVICES</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md mx-40 mt-2">
+        <div data-aos="fade-up" className=" text-md mx-40 mt-2">
         <div>
         At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we provide expert services beyond roofing to keep your property protected and looking its best. Our wall cladding enhances both durability and style, while our custom gutters ensure proper water drainage to prevent damage.</div>
-<div className="mt-6 mx-40">
+<div data-aos="fade-up" className="mt-6 mx-40">
 We also offer fast, reliable leak repairs to stop water issues before they spread, and professional flashing installation to seal vulnerable areas and keep your roof watertight.</div>
-<div className="mt-6">
+<div data-aos="fade-up" className="mt-6">
 Whatever your needs, you can count on <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span> for lasting quality and peace of mind.
 
 </div>
@@ -174,14 +180,14 @@ Whatever your needs, you can count on <span className="text-blue-600 font-semibo
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -199,10 +205,10 @@ Whatever your needs, you can count on <span className="text-blue-600 font-semibo
     
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 

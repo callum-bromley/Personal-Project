@@ -15,7 +15,7 @@ export default function Home() {
     AOS.init({ duration: 1000 });
   }, [])
   return (
-    <div data-aos="fade-up" style={{ fontFamily: 'Lato, sans-serif' }}>
+    <div  style={{ fontFamily: 'Lato, sans-serif' }}>
       {/* Top bar */}
       <nav className="bg-gray-700 text-white flex justify-end items-center p-4" >
         <div className="flex space-x-4 mr-3">

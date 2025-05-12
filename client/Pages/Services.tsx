@@ -62,7 +62,7 @@ export default function Services() {
   };
 
   return (
-    <div data-aos="fade-up" style={{ fontFamily: "Lato, sans-serif" }}>
+    <div style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Top bar */}
       <nav className="bg-gray-700 text-white flex justify-end items-center p-4">
         <div className="flex space-x-4 mr-3">
@@ -124,7 +124,7 @@ export default function Services() {
       </nav>
 
       {/* Contact Form Section */}
-      <section data-aos="fade-up" className="contact">
+      <section  className="contact">
         <div data-aos="fade-up" className="contact-container">
           <div data-aos="fade-up" className="contact-text">
             <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"        style={{ fontFamily: "Playfair Display, serif" }}

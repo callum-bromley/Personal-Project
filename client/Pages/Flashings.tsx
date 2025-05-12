@@ -5,9 +5,15 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -118,11 +124,11 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Flashings</span>
-            <p className="mr-56">Professional Flashing Services to Protect Your Roof from Water Infiltration Around Edges and Vents.</p>
+            <p data-aos="fade-up" className="mr-56">Professional Flashing Services to Protect Your Roof from Water Infiltration Around Edges and Vents.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -152,20 +158,20 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">FLASHINGS</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">FLASHINGS</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md">
+        <div data-aos="fade-up" className=" text-md">
         <div>
   At <span className="text-blue-600 font-semibold text-lg ">Geros Roofing</span>, we specialize in expert flashing installation and repair services to protect your home or business from water intrusion, ensuring roof joints, chimneys, skylights, and walls stay dry.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-4 mx-16">
   Whether you&apos;re dealing with damaged flashing or need new installations, we use high-quality, durable materials that provide long-lasting protection against leaks and water damage.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-4 mx-16">
   Our flashing services are available for both residential and commercial properties, offering reliable craftsmanship to keep your roof and walls safe from the elements.
 </div>
 
@@ -173,14 +179,14 @@ export default function Services() {
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -197,10 +203,10 @@ export default function Services() {
 
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 

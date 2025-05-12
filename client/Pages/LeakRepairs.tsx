@@ -5,8 +5,14 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -117,11 +123,11 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block"style={{ fontFamily: "Playfair Display, serif" }}>
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block"style={{ fontFamily: "Playfair Display, serif" }}>
             Leak Repairs</span>
-            <p className="mr-40">Quick and Reliable Leak Detection and Repair Services to Prevent Water Damage and Protect Your Property.
+            <p data-aos="fade-up" className="mr-40">Quick and Reliable Leak Detection and Repair Services to Prevent Water Damage and Protect Your Property.
 
 </p>
           </div>
@@ -153,37 +159,37 @@ export default function Services() {
       <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
         <h1 className="text-white">/</h1>
         <div className="flex items-center justify-center">
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span className="mx-3 text-4xl font-bold text-black-500">LEAK REPAIRS</span>
-          <div className="w-[80px] h-[2px] bg-gray-500"></div>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">LEAK REPAIRS</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
         </div>
         <h1 className="text-white">/</h1>
         
-        <div className=" text-md">
+        <div data-aos="fade-up" className=" text-md">
         <div>
   At <span className="text-blue-600 font-semibold text-lg">Geros Roofing</span>, we specialize in fast and effective leak repair services, ensuring that your home or business stays dry and secure.
 </div>
-<div className="mt-4 mx-16">
+<div data-aos="fade-up" className="mt-2 mx-16">
   Whether it&apos;s a small drip or a major leak, our experienced team quickly identifies the source and provides lasting solutions to prevent further damage. We understand the urgency of leak issues and respond promptly to protect your property.
 </div>
-<div className="mt-4">
+<div data-aos="fade-up" className="mt-6">
   Our leak repair services include thorough inspections, precision patching, and the use of durable materials that withstand the elements, ensuring long-term protection for your roof and structure.
 </div>
-<div className="mt-4">
+<div data-aos="fade-up" className="mt-6">
   No matter the size of the leak, our team is committed to restoring your peace of mind with transparent pricing, reliable craftsmanship, and a dedication to customer satisfaction.
 </div>
 
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
   Contact us to learn more!
 </a>
 
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
 
-<div className="px-24 mt-4 relative">
+<div data-aos="fade-up" className="px-24 mt-4 relative">
 
   <div className="grid grid-cols-3 gap-12">
 
@@ -201,10 +207,10 @@ export default function Services() {
     
   
     </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
             <FooterLogo />
           </div>
-    <div className="about-section">
+    <div data-aos="fade-up" className="about-section">
         <Footer />
       </div>
 
