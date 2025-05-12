@@ -89,7 +89,7 @@ export default function Home() {
       </nav>
 
       {/* Contact Section */}
-      <div data-aos="fade-up" className="home-content">
+      <div className="home-content">
         <Contact />
       </div>
 

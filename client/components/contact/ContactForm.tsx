@@ -61,20 +61,20 @@ export const ContactForm = () => {
 
   return (
     <section className="contact">
-      <div className="contact-container">
-        <div className="contact-text">
-          <span className="classy-font">
+      <div data-aos="fade-up" className="contact-container">
+        <div data-aos="fade-up" className="contact-text">
+          <span data-aos="fade-up" className="classy-font">
           Raising the Standard 
 </span>
-<span className="classy-font">
+<span data-aos="fade-up" className="classy-font">
         of Roofing 
 
 </span>
-<span className="classy-font">
+<span data-aos="fade-up" className="classy-font">
  in Auckland
 </span>
 
-          <p className="mr-40 mb-32 ">
+          <p data-aos="fade-up" className="mr-40 mb-32 ">
             Focused on quality and dependability, we provide expert roofing services you can trust, with skilled craftsmanship that delivers lasting results.
           </p>
         </div>
