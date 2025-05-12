@@ -203,10 +203,10 @@ export default function Services() {
 <h1 className="text-white">/</h1>
 
     </div>
-    <div data-aos="fade-up" className="about-section">
+    <div className="about-section">
             <FooterLogo />
           </div>
-    <div data-aos="fade-up" className="about-section">
+    <div className="about-section">
         <Footer />
       </div>
 

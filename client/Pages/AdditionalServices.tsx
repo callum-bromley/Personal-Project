@@ -205,10 +205,10 @@ Whatever your needs, you can count on <span className="text-blue-600 font-semibo
     
   
     </div>
-    <div data-aos="fade-up" className="about-section">
+    <div className="about-section">
             <FooterLogo />
           </div>
-    <div data-aos="fade-up" className="about-section">
+    <div className="about-section">
         <Footer />
       </div>
 

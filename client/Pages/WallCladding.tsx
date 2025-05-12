@@ -207,7 +207,7 @@ export default function Services() {
 
   
     </div>
-    <div data-aos="fade-up" className="about-section">
+    <div className="about-section">
             <FooterLogo />
           </div>
     <div className="about-section">
