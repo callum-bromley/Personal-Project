@@ -11,12 +11,12 @@ export const About = () => {
         <p className="text-white mt-2">
 /    </p>
         <p>
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequ
-        </p>
+At <span className="text-blue-700">Geros Roofing</span>, we are proud to be Auckland’s trusted roofing experts. With years of local experience, we offer reliable solutions for everything from repairs to full roof replacements. We understand the challenges of Auckland’s weather and use only quality materials designed to last.        </p>
         <p className="text-white mt-2">
 /    </p>
         <p>
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+Our commitment to clear communication and top-notch craftsmanship ensures that every job is completed to the highest standard. Whether you need urgent repairs or a new roof, we’re here to provide peace of mind and long-lasting results for your home or business.
+
         </p>
         <p className="text-white mt-2">
 /    </p>

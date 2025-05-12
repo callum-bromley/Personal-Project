@@ -153,11 +153,11 @@ export default function Home() {
         <HomeGallery />
       </div>
 
-      <div data-aos="fade-up" className="about-section">
+      <div className="about-section">
         <FooterLogo />
       </div>
 
-      <div data-aos="fade-up" className="about-section">
+      <div className="about-section">
         <Footer />
       </div>
 
