@@ -3,9 +3,16 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Footer from "../components/Footer";
+import { FooterLogo } from "../components/FooterLogo";
 
 export default function Services() {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -120,11 +127,11 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
             Work Gallery</span>
-            <p className="mr-72">View Our Completed Projects to See the Quality of Our Roofing Services in Action.
+            <p data-aos="fade-up" className="mr-72">View Our Completed Projects to See the Quality of Our Roofing Services in Action.
 
 </p>
           </div>
@@ -152,6 +159,69 @@ export default function Services() {
         </div>
         <ToastContainer />
       </section>
+            <h1 className="text-white">/</h1>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">GUTTERS</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div data-aos="fade-up" className=" text-md">
+Take a Look at Some of Our Recent Roofing Projects and See the Quality Work We Do.
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div data-aos="fade-up" className="px-24 mt-4 relative">
+
+  <div className="grid grid-cols-3 gap-12">
+
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+
+    </div>
+    </div>
+    <h1 className="text-white">/</h1>
+    <h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
+
+    
+    <div className="about-section">
+            <FooterLogo />
+          </div>
+    <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+
+   <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+    </div>
     </div>
   );
 }
