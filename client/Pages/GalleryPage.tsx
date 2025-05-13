@@ -185,24 +185,24 @@ Take a Look at Some of Our Recent Roofing Projects and See the Quality Work We D
 
   <div className="grid grid-cols-3 gap-12">
 
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
 
     </div>
     </div>
