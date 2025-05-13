@@ -89,7 +89,7 @@ export default function Services() {
         className="bg-white-600 text-black p-8 flex justify-between items-center h-24"
         style={{ fontFamily: "Playfair Display, serif" }}
       >
-<img src="/images/geroslogo4.png" alt="Photo1"   className="h-20 w-auto rounded-md ml-20" 
+<img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/geroslogo4_zb5lwt.png" alt="Photo1"   className="h-20 w-auto rounded-md ml-20" 
  />  
        <div className="space-x-6 flex-shrink-0 flex items-center">
           <a href="/" className="text-lg hover:text-blue-600 px-3">Home</a>
