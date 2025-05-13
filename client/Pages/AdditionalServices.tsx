@@ -184,7 +184,7 @@ Whatever your needs, you can count on <span className="text-blue-600 font-semibo
 </div>
 <h1 className="text-white">/</h1>
 
-<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300">
+<a href="/contact" data-aos="fade-up" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-300 mt-4">
   Contact us to learn more!
 </a>
 
