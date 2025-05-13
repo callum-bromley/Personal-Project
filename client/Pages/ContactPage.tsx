@@ -3,9 +3,16 @@ import "../components/contact/Contact.css";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { FooterLogo } from "../components/FooterLogo";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Footer from "../components/Footer";
 
 export default function Services() {
+   useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, [])
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -75,20 +82,19 @@ export default function Services() {
       </nav>
 
       {/* Main Navbar */}
-       <nav
+      <nav
         className="bg-white-600 text-black p-8 flex justify-between items-center h-24"
         style={{ fontFamily: "Playfair Display, serif" }}
       >
-<img src="/images/geroslogo4.png" alt="Photo1"   className="h-20 w-auto rounded-md ml-20" 
- />  
+        <img src="/images/geroslogo4.png" alt="Photo1" className="h-20 w-auto rounded-md ml-20" />
         <div className="space-x-6 flex-shrink-0 flex items-center">
           <a href="/" className="text-lg hover:text-blue-600 px-3">Home</a>
           <span className="mx-2 text-blue-600">|</span>
           <div className="relative group">
-          <button className="flex items-center text-lg hover:text-blue-600 px-3 focus:outline-none">
-  <a href="/services" >
-       Services </a>    <span className="ml-2">▾</span>
-  </button>
+            <button className="flex items-center text-lg hover:text-blue-600 px-3 focus:outline-none">
+              <a href="/services">Services</a>
+              <span className="ml-2">▾</span>
+            </button>
             <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
               <a href="/services/residential" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Residential Roofing</a>
               <a href="/services/maintenance" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">Maintenance</a>
@@ -114,7 +120,6 @@ export default function Services() {
           <span className="mx-2 text-blue-600">|</span>
           <span className="text-lg px-3 text-blue-600">Contact Us</span>
           <span className="mx-2 text-white">|</span>
-
         </div>
       </nav>
 
@@ -123,7 +128,8 @@ export default function Services() {
         <div className="contact-container">
           <div className="contact-text">
             <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
-            Contact Us!</span>
+              Contact Us!
+            </span>
             <p className="mr-72">Get in Touch for a Free Estimate, Roof Inspection, or Any Questions About Our Services.</p>
           </div>
 
@@ -150,6 +156,37 @@ export default function Services() {
         </div>
         <ToastContainer />
       </section>
+      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 className="text-white">/</h1>
+        <div className="flex items-center justify-center">
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">CONTACT US</span>
+          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+        </div>
+        <h1 className="text-white">/</h1>
+        
+        <div data-aos="fade-up" className=" text-md mx-44">
+        <div>
+Whether you have a quick question or you&apos;re ready to get started on your roofing project, we&apos;re here to help. No job is too big or small—our team is happy to provide advice, a free quote, or simply point you in the right direction. Contact us today and let’s talk about how we can protect your home with quality roofing solutions.
+
+</div>
+</div>
+
+
+
+</div>
+      
+    <div className="about-section">
+        <FooterLogo />
+      </div>
+
+      <div className="about-section">
+        <Footer />
+      </div>
+
+      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
+        <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+      </div>
     </div>
   );
 }

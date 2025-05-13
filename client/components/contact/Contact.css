@@ -190,3 +190,120 @@ form {
 .link:hover {
   color: #1D4ED8;
 }
+
+
+
+
+
+.contact-landscape {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+  background-color: white;
+  color: #1f2937;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  width: 100%;
+  gap: 60px;
+}
+
+/* Left side: Text */
+.contact-info {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info span.classy-font {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.contact-info h1 {
+  font-size: 1.875rem;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.contact-info p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Right side: Form */
+.contact-form {
+  flex: 1;
+  padding: 0;
+}
+
+.contact-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  background-color: white;
+  color: #111827;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: #3B82F6;
+  outline: none;
+}
+
+.input-field.message {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit Button */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #2563EB;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
