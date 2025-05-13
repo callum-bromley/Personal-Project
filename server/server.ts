@@ -4,6 +4,9 @@ import cors, { CorsOptions } from 'cors'
 
 const server = express()
 
+server.use('/images', express.static(Path.join(__dirname, 'public/images')));
+
+
 server.get('/api/v1/greeting', (req, res) => {
   const greetings = ['hola', 'hi', 'hello', 'howdy']
   const index = Math.floor(Math.random() * greetings.length)
