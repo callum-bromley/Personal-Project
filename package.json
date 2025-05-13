@@ -17,8 +17,8 @@
     "test": "vitest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
-    "render:build": "npm install && npm run build && npm prune --omit=dev && NODE_ENV='production' npm run knex migrate:latest",
-"render:start": "node dist/server.js"
+    "render:build": "npm install && npm run build && npm prune --omit=dev",
+    "render:start": "node dist/server.js"
   },
   "keywords": [
     "frontend"
@@ -38,7 +38,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "framer-motion": "^12.10.4",
-    "pg": "^8.16.0",
+    "knex": "^3.1.0",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
     "styled-components": "^6.1.18",
