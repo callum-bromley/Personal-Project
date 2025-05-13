@@ -22,7 +22,7 @@ export const OtherServices = () => {
       <div className="photo-gallery flex justify-center gap-14 mb-8">
       <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
       <img
-            src="/images/maera4.jpeg"
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg"
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
@@ -34,7 +34,7 @@ export const OtherServices = () => {
 
         <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
           <img
-            src="/images/maera4.jpeg"
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg"
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
@@ -45,7 +45,7 @@ export const OtherServices = () => {
 
         <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
           <img
-            src="/images/maera4.jpeg"
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg"
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />
@@ -56,7 +56,7 @@ export const OtherServices = () => {
 
         <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
           <img
-            src="/images/maera4.jpeg"
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg"
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />

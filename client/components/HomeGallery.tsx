@@ -28,13 +28,13 @@ export const HomeGallery = () => {
 
   <div className="grid grid-cols-3 gap-4">
 
-    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
 
-    <img src="/images/maera4.jpeg" alt="Photo4" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo5" className="w-full rounded-md" />
-    <img src="/images/maera4.jpeg" alt="Photo6" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo4" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo5" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo6" className="w-full rounded-md" />
   </div>
 
   <button className="view-more-btn absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">

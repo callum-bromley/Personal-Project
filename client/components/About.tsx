@@ -23,7 +23,7 @@ Our commitment to clear communication and top-notch craftsmanship ensures that e
       </div>
       <div className="image-section">
         <div className="image-container">
-          <img src="/images/maera3.jpeg" alt="Modern house with roofing" />
+          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera3_napiwd.jpg" alt="Modern house with roofing" />
         </div>
       </div>
     </div>
