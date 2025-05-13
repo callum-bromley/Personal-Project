@@ -110,7 +110,7 @@ export default function Home() {
       {/* Smaller Card Layout */}
       <div className="flex justify-center flex-wrap gap-10 mt-6">
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="/images/maera4.jpeg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Residential Roofing</h2>
           <p className="text-gray-700 text-sm mt-2">
           Comprehensive roofing solutions designed to safeguard your home, enhance curb appeal, and provide long-term protection against the elements.          </p>
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
 
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="/images/maintenence1.jpeg" alt="Maintenance" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100739/maintenence1_hacydu.jpg" alt="Maintenance" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Maintenance</h2>
           <p className="text-gray-700 text-sm mt-2">
           Proactive roof maintenance services that extend the life of your roofing system, prevent costly damage, and ensure year-round performance and safety.
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
 
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="/images/commercial1.jpeg" alt="Commercial Roofing" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100459/commercial1_jsdlbr.jpg" alt="Commercial Roofing" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Commercial Roofing</h2>
           <p className="text-gray-700 text-sm mt-2">
           High-performance roofing systems tailored to meet the structural and operational demands of commercial buildings, ensuring durability and minimal disruption.
