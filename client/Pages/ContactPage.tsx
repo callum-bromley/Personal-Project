@@ -125,12 +125,12 @@ export default function Services() {
 
       {/* Contact Form Section */}
       <section className="contact">
-        <div className="contact-container">
-          <div className="contact-text">
-            <span className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
+        <div data-aos="fade-up" className="contact-container">
+          <div data-aos="fade-up" className="contact-text">
+            <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block" style={{ fontFamily: "Playfair Display, serif" }}>
               Contact Us!
             </span>
-            <p className="mr-72">Get in Touch for a Free Estimate, Roof Inspection, or Any Questions About Our Services.</p>
+            <p data-aos="fade-up" className="mr-72">Get in Touch for a Free Estimate, Roof Inspection, or Any Questions About Our Services.</p>
           </div>
 
           <form onSubmit={onSubmit}>
@@ -172,7 +172,19 @@ Whether you have a quick question or you&apos;re ready to get started on your ro
 </div>
 </div>
 
-
+<div data-aos="fade-up" style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}>
+        <div style={{ textAlign: "center" }}>
+          <h1 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#000" }}>Maera Geros</h1>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", marginTop: "20px" }}>
+            <div></div>
+            <div style={{ padding: "10px" }}><strong>Email:</strong> maera.geros@example.com</div>
+            <div style={{ padding: "10px" }}><strong>Phone Number:</strong> (022) 789 012</div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+<h1 className="text-white">/</h1>
+<h1 className="text-white">/</h1>
 
 </div>
       
