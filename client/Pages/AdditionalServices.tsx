@@ -8,6 +8,8 @@ import { FooterLogo } from "../components/FooterLogo";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet'
+
 
 
 export default function Services() {
@@ -220,6 +222,9 @@ Whatever your needs, you can count on <span className="text-blue-600 font-semibo
 
    <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
     </div>
+    <Helmet>
+            <title>Additional Services | Geros Roofing</title>
+          </Helmet>
     </div>
   );
 }

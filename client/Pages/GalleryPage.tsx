@@ -8,6 +8,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
 import { FooterLogo } from "../components/FooterLogo";
+import { Helmet } from 'react-helmet'
+
 
 export default function Services() {
   useEffect(() => {
@@ -222,6 +224,9 @@ Take a Look at Some of Our Recent Roofing Projects and See the Quality Work We D
 
    <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
     </div>
+    <Helmet>
+            <title>Gallery | Geros Roofing</title>
+          </Helmet>
     </div>
   );
 }
