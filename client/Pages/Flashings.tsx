@@ -194,7 +194,7 @@ export default function Services() {
 
   <div className="grid grid-cols-3 gap-12">
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQojxL4yLZd4Hdnh70v8qBwu0nA5TLB78dcv6uGqV3MvClWVvDHz6vaEdg8HfrM6vW8rN8&usqp=CAU" alt="Photo1" className="w-full rounded-md" />
+    <img src="/images/maera4.jpeg" alt="Photo1" className="w-full rounded-md" />
     <img src="/images/maera4.jpeg" alt="Photo2" className="w-full rounded-md" />
     <img src="/images/maera4.jpeg" alt="Photo3" className="w-full rounded-md" />
 
