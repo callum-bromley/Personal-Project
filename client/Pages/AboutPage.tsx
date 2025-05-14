@@ -136,29 +136,12 @@ export default function Services() {
             <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block classy-font" >
               About Us
             </span>
-            <p data-aos="fade-up" className="mr-60">Learn About Our Experienced Team and Our Commitment to Delivering Top-Notch Roofing Services.</p>
+            <p data-aos="fade-up" className="mr-60">Learn About Our Experienced Team and Our Commitment to </p>
+                        <p data-aos="fade-up" className="mr-60 -mt-16">Delivering Top-Notch Roofing Services.</p>
+
           </div>
 
-          <form onSubmit={onSubmit}>
-            <div className="input-box">
-              <input type="text" className="field" placeholder="Name" name="name" required />
-            </div>
-            <div className="input-box">
-              <input type="email" className="field" placeholder="Email" name="email" required />
-            </div>
-            <div className="input-box">
-              <input type="text" className="field" placeholder="Phone" name="phone" required />
-            </div>
-            <div className="input-box">
-              <input type="text" className="field" placeholder="Address" name="address" required />
-            </div>
-            <div className="input-box">
-              <textarea name="message" className="field mess" placeholder="Tell us a bit about the job..." required />
-            </div>
-            <button type="submit">Get a Free Quote!</button>
-          </form>
-
-          {result && <p>{result}</p>}
+          
         </div>
         <ToastContainer />
       </section>
