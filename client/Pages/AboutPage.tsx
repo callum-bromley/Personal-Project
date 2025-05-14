@@ -92,8 +92,7 @@ export default function Services() {
             <span data-aos="fade-up" className="text-5xl font-bold text-white mb-4 block classy-font" >
               About Us
             </span>
-            <p data-aos="fade-up" className="mr-60">Learn About Our Experienced Team and Our Commitment to </p>
-                        <p data-aos="fade-up" className="mr-60 -mt-16">Delivering Top-Notch Roofing Services.</p>
+            <p data-aos="fade-up" className="mr-[800px]">Learn About Our Experienced Team and Our Commitment to Delivering Top-Notch Roofing Services.</p>
 
           </div>
 
