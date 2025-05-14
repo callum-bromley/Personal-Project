@@ -37,9 +37,26 @@ export const HomeGallery = () => {
     <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197468/commercial1_gsckww.jpg" alt="Photo6" className="w-full h-full rounded-md" />
   </div>
 
-  <button className="view-more-btn absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
-    View More
-  </button>
+<a
+  href="/gallery"
+  className="view-more-btn"
+  style={{
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    display: 'block',
+    textAlign: 'center',
+  }}
+>
+  View More
+</a>
+
+
+
+
+
+
 </div>
 <h1 className="text-white">/</h1>
 <h1 className="text-white">/</h1>
