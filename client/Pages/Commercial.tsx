@@ -80,7 +80,7 @@ export default function Services() {
           Give us a call today!
         </h1>
         <h1 className="text-md font-semibold m-0 text-right ml-2 mr-4">
-          (022) 123 456
+          (022) 106 6710
         </h1>
       </nav>
 
