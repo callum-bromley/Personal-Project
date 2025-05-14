@@ -193,9 +193,9 @@ export default function Services() {
 
   <div className="grid grid-cols-3 gap-12">
 
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197468/commercial1_gsckww.jpg" alt="Photo1" className="w-full h-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197468/commercial2_ansb8q.jpg" alt="Photo2" className="w-full h-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197537/commercial3_adkt1z.jpg" alt="Photo3" className="w-full h-full rounded-md" />
 
     </div>
     </div>
