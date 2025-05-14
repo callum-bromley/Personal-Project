@@ -195,9 +195,9 @@ Residential Roofing            </span>
 
   <div className="grid grid-cols-3 gap-12">
 
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747199457/residential1_q3kkkz.jpg" alt="Photo1" className="w-full h-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747199457/residential2_jwpdzk.jpg" alt="Photo2" className="w-full h-full rounded-md" />
+    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747199457/residential3_iztz9q.jpg" alt="Photo3" className="w-full h-full rounded-md" />
 
     </div>
     </div>

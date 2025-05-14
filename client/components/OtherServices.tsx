@@ -45,7 +45,7 @@ export const OtherServices = () => {
 
         <div className="w-[320px] h-[295px] border rounded-lg shadow-lg bg-white overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg"
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197163/wallcladding3_rkkn2f.jpg"
             alt="Windows & Doors"
             className="w-full h-[230px] object-cover border-4 border-blue-500"
           />

@@ -114,7 +114,7 @@ export default function Home() {
       {/* Smaller Card Layout */}
       <div className="flex justify-center flex-wrap gap-10 mt-6">
         <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
+          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747199457/residential1_q3kkkz.jpg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
           <h2 className="text-lg font-semibold mt-3">Residential Roofing</h2>
           <p className="text-gray-700 text-sm mt-2">
           Comprehensive roofing solutions designed to safeguard your home, enhance curb appeal, and provide long-term protection against the elements.          </p>
