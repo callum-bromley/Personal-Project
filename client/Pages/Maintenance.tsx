@@ -194,11 +194,29 @@ export default function Services() {
 
 <div data-aos="fade-up" className="px-24 mt-4 relative">
 
-  <div className="grid grid-cols-3 gap-12">
+<div className="grid grid-cols-3 gap-12">
+  <div className="h-[500px] overflow-hidden rounded-md">
+    <img
+      src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197776/maintenance1_p7k1kl.jpg"
+      alt="Photo1"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="h-[500px] overflow-hidden rounded-md">
+    <img
+      src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197787/maintenance2_ekqsv9.jpg"
+      alt="Photo2"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="h-[500px] overflow-hidden rounded-md">
+    <img
+      src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747197785/maintenance3_yvoxub.jpg"
+      alt="Photo3"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo1" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo2" className="w-full rounded-md" />
-    <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/maera4_orb04n.jpg" alt="Photo3" className="w-full rounded-md" />
 
     </div>
     </div>
