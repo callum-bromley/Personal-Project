@@ -179,8 +179,8 @@ Whether you have a quick question or you&apos;re ready to get started on your ro
           <h1 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#000" }}>Maera Geros</h1>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", marginTop: "20px" }}>
             <div></div>
-            <div style={{ padding: "10px" }}><strong>Email:</strong> maera.geros@example.com</div>
-            <div style={{ padding: "10px" }}><strong>Phone Number:</strong> (022) 789 012</div>
+            <div style={{ padding: "10px" }}><strong>Email:</strong> ihimaerageros111@gmail.com</div>
+            <div style={{ padding: "10px" }}><strong>Phone Number:</strong> (022) 106 6710</div>
             <div></div>
           </div>
         </div>
