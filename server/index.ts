@@ -1,8 +1,8 @@
 import server from './server.ts'
 
-const port = process.env.PORT || 3000
+const port = Number(process.env.PORT) || 3000
 
-server.listen(port, function () {
+server.listen(port, '0.0.0.0', function () {
   // eslint-disable-next-line no-console
   console.log('Listening on port', port)
 })
