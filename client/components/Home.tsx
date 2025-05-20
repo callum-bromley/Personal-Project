@@ -32,7 +32,7 @@ export default function Home() {
           </a>
         </div>
         <h1 className="text-md font-semibold m-0 text-right ml-4">
-          Give us a call today!
+          ive us a call today!
         </h1>
         <h1 className="text-md font-semibold m-0 text-right ml-2 mr-4">
           (022) 106 6710
