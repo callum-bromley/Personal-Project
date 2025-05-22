@@ -157,7 +157,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Callum Bromleyy
+            Callum Bromley
           </a>
         </p>
       </div>
