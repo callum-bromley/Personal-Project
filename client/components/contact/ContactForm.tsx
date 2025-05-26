@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ContactForm = () => {
-  const [result, setResult] = React.useState("");
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -57,86 +57,107 @@ export const ContactForm = () => {
     }
   };
 
+  const TextSection = (
+    <div data-aos="fade-up" className="contact-text mb-10 md:mb-0 md:flex-1">
+      <span
+        data-aos="fade-up"
+        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
+      >
+        Raising the Standard
+      </span>
+      <span
+        data-aos="fade-up"
+        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
+      >
+        of Roofing
+      </span>
+      <span
+        data-aos="fade-up"
+        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
+      >
+        in Auckland
+      </span>
+
+      <p
+        data-aos="fade-up"
+        className="mt-6 text-gray-700 leading-relaxed pr-0 md:pr-20"
+      >
+        Focused on quality and dependability, we provide expert roofing
+        services you can trust, with skilled craftsmanship that delivers
+        lasting results.
+      </p>
+    </div>
+  );
+
+  const FormSection = (
+    <form onSubmit={onSubmit} className="flex-1 space-y-6">
+      <div className="input-box">
+        <input
+          type="text"
+          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Name"
+          name="name"
+          required
+        />
+      </div>
+      <div className="input-box">
+        <input
+          type="email"
+          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Email"
+          name="email"
+          required
+        />
+      </div>
+      <div className="input-box">
+        <input
+          type="text"
+          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Phone"
+          name="phone"
+          required
+        />
+      </div>
+      <div className="input-box">
+        <input
+          type="text"
+          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Address"
+          name="address"
+          required
+        />
+      </div>
+      <div className="input-box">
+        <textarea
+          name="message"
+          className="field mess w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
+          placeholder="Tell us a bit about the job..."
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className={`w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors duration-300 ${
+          isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+        }`}
+      >
+        {isSubmitting ? "Sending..." : "Get a Free Quote!"}
+      </button>
+      {result && <p className="mt-4 text-red-600 font-medium">{result}</p>}
+    </form>
+  );
+
   return (
     <section className="contact px-4 sm:px-6 md:px-8 lg:px-16 py-8 max-w-4xl mx-auto">
-      <div data-aos="fade-up" className="contact-container flex flex-col md:flex-row md:space-x-12">
-        {/* Left Text */}
-        <div data-aos="fade-up" className="contact-text mb-10 md:mb-0 md:flex-1">
-          <span data-aos="fade-up" className="classy-font block text-3xl sm:text-4xl font-serif leading-tight">
-            Raising the Standard
-          </span>
-          <span data-aos="fade-up" className="classy-font block text-3xl sm:text-4xl font-serif leading-tight">
-            of Roofing
-          </span>
-          <span data-aos="fade-up" className="classy-font block text-3xl sm:text-4xl font-serif leading-tight">
-            in Auckland
-          </span>
-
-          <p data-aos="fade-up" className="mt-6 text-gray-700 leading-relaxed pr-0 md:pr-20">
-            Focused on quality and dependability, we provide expert roofing services you can trust, with skilled craftsmanship that delivers lasting results.
-          </p>
-        </div>
-
-        {/* Form */}
-        <form onSubmit={onSubmit} className="flex-1 space-y-6">
-          <div className="input-box">
-            <input
-              type="text"
-              className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Name"
-              name="name"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="email"
-              className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Email"
-              name="email"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="text"
-              className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Phone"
-              name="phone"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="text"
-              className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Address"
-              name="address"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <textarea
-              name="message"
-              className="field mess w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
-              placeholder="Tell us a bit about the job..."
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={`w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors duration-300 ${
-              isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-            }`}
-          >
-            {isSubmitting ? "Sending..." : "Get a Free Quote!"}
-          </button>
-          {result && <p className="mt-4 text-red-600 font-medium">{result}</p>}
-        </form>
+      <div
+        data-aos="fade-up"
+        className="contact-container flex flex-col md:flex-row md:space-x-12"
+      >
+        {TextSection}
+        {FormSection}
       </div>
 
-      {/* Toast container */}
       <ToastContainer />
     </section>
   );
