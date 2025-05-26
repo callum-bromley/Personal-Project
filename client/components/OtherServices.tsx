@@ -3,8 +3,10 @@ import "./contact/Contact.css"
 export const OtherServices = () => {
   return (
     <div>
+      <div className="text-white">
       <p>/</p>
       <p>/</p><p>/</p>
+      </div>
       <div className="flex items-center justify-center">
         <div className="w-[80px] h-[2px] bg-gray-500"></div>
         <span className="mx-3 text-4xl font-bold text-black-500">ADDITIONAL SERVICES</span>
