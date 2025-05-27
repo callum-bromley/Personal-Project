@@ -57,107 +57,78 @@ export const ContactForm = () => {
     }
   };
 
-  const TextSection = (
-    <div data-aos="fade-up" className="contact-text mb-10 md:mb-0 md:flex-1">
-      <span
-        data-aos="fade-up"
-        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
-      >
-        Raising the Standard
-      </span>
-      <span
-        data-aos="fade-up"
-        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
-      >
-        of Roofing
-      </span>
-      <span
-        data-aos="fade-up"
-        className="classy-font block text-3xl sm:text-4xl font-serif leading-tight"
-      >
-        in Auckland
-      </span>
-
-      <p
-        data-aos="fade-up"
-        className="mt-6 text-gray-700 leading-relaxed pr-0 md:pr-20"
-      >
-        Focused on quality and dependability, we provide expert roofing
-        services you can trust, with skilled craftsmanship that delivers
-        lasting results.
-      </p>
-    </div>
-  );
-
-  const FormSection = (
-    <form onSubmit={onSubmit} className="flex-1 space-y-6">
-      <div className="input-box">
-        <input
-          type="text"
-          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="Name"
-          name="name"
-          required
-        />
-      </div>
-      <div className="input-box">
-        <input
-          type="email"
-          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="Email"
-          name="email"
-          required
-        />
-      </div>
-      <div className="input-box">
-        <input
-          type="text"
-          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="Phone"
-          name="phone"
-          required
-        />
-      </div>
-      <div className="input-box">
-        <input
-          type="text"
-          className="field w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="Address"
-          name="address"
-          required
-        />
-      </div>
-      <div className="input-box">
-        <textarea
-          name="message"
-          className="field mess w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
-          placeholder="Tell us a bit about the job..."
-          required
-        />
-      </div>
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className={`w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors duration-300 ${
-          isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-        }`}
-      >
-        {isSubmitting ? "Sending..." : "Get a Free Quote!"}
-      </button>
-      {result && <p className="mt-4 text-red-600 font-medium">{result}</p>}
-    </form>
-  );
-
   return (
-    <section className="contact px-4 sm:px-6 md:px-8 lg:px-16 py-8 max-w-4xl mx-auto">
-      <div
-        data-aos="fade-up"
-        className="contact-container flex flex-col md:flex-row md:space-x-12"
-      >
-        {TextSection}
-        {FormSection}
-      </div>
+    <section className="contact px-4 sm:px-6 md:px-8 lg:px-16 py-12 max-w-5xl mx-auto">
+      <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+        {/* Text Section */}
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl font-serif classy-font mb-2">
+            Raising the Standard
+          </h2>
+          <h2 className="text-3xl sm:text-4xl font-serif classy-font mb-2">
+            of Roofing
+          </h2>
+          <h2 className="text-3xl sm:text-4xl font-serif classy-font mb-6">
+            in Auckland
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            Focused on quality and dependability, we provide expert roofing
+            services you can trust, with skilled craftsmanship that delivers
+            lasting results.
+          </p>
+        </div>
 
+        {/* Form Section */}
+        <form
+          onSubmit={onSubmit}
+          className="flex-1 space-y-5 w-full max-w-md mx-auto md:mx-0"
+        >
+          <input
+            type="text"
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Name"
+            name="name"
+            required
+          />
+          <input
+            type="email"
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Email"
+            name="email"
+            required
+          />
+          <input
+            type="text"
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Phone"
+            name="phone"
+            required
+          />
+          <input
+            type="text"
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Address"
+            name="address"
+            required
+          />
+          <textarea
+            name="message"
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
+            placeholder="Tell us a bit about the job..."
+            required
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition duration-300 ${
+              isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+            }`}
+          >
+            {isSubmitting ? "Sending..." : "Get a Free Quote!"}
+          </button>
+          {result && <p className="text-red-600 mt-2">{result}</p>}
+        </form>
+      </div>
       <ToastContainer />
     </section>
   );
