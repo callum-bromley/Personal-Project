@@ -120,7 +120,7 @@ export default function Services() {
           <span className="mx-2 text-blue-600">|</span>
           <a href="/gallery" className="text-lg hover:text-blue-600 px-3">Work Gallery</a>
           <span className="mx-2 text-blue-600">|</span>
-          <a href="/about" className="text-lg hover:text-blue-600 px-3">Abou</a>
+          <a href="/about" className="text-lg hover:text-blue-600 px-3">About</a>
           <span className="mx-2 text-blue-600">|</span>
           <a href="/contact" className="text-lg hover:text-blue-600 px-3">Contact Us</a>
           <span className="mx-2 text-white">|</span>
