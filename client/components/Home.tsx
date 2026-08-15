@@ -306,53 +306,55 @@ export default function Home() {
 
       {/* Services Section */}
       <div className="mx-auto mr-24 ml-24 grid max-w-[1400px] grid-cols-1 items-center px-8 md:grid-cols-5">
-        {/* Text - 3/5 */}
-        <div className="md:col-span-3">
-          {/* Services Heading */}
-          <div
-            className="flex items-center gap-4"
-            data-aos="fade-down"
-            data-aos-duration="1000"
-          >
-            <img
-              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
-              alt="MaiHealth"
-              className="h-20 w-20 rounded-full object-contain"
-            />
 
-            <h2 className="text-4xl font-bold text-[#c4161b]">
-              Services
-            </h2>
-          </div>
+  {/* Image - 2/5 */}
+  <div className="flex translate-y-5 justify-center md:col-span-2 md:order-1">
+    <img
+      src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
+      alt="MaiHealth"
+      className="w-[105%] rounded-3xl object-contain"
+    />
+  </div>
 
-          <p className="mr-24 mt-8 text-[19px] leading-8 text-black">
-            Our goal is to provide quality access to healthcare through our
-            virtual healthcare service, designed to complement existing
-            clinics who are seeking innovative ways to continue providing
-            their patients with a timely, quality service particularly in
-            regions where there are low levels of availability for clinical
-            staff.
-          </p>
+  {/* Text - 3/5 */}
+  <div className="md:col-span-3 md:order-2">
+    {/* Services Heading */}
+    <div
+      className="flex items-center gap-4"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
+      <img
+        src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
+        alt="MaiHealth"
+        className="h-20 w-20 ml-20 rounded-full object-contain"
+      />
 
-          <p className="mr-24 mt-4 text-[19px] leading-8 text-black">
-            All our services are now offered virtually, by phone or an online
-            forum.
-          </p>
+      <h2 className="text-4xl font-bold text-[#c4161b]">
+        Services
+      </h2>
+    </div>
 
-          <p className="mr-24 mt-4 text-[19px] italic leading-8 text-black">
-            Please note that we support contracted clinics only.
-          </p>
-        </div>
+    <p className="ml-24 mt-8 text-[19px] leading-8 text-black">
+      Our goal is to provide quality access to healthcare through our
+      virtual healthcare service, designed to complement existing
+      clinics who are seeking innovative ways to continue providing
+      their patients with a timely, quality service particularly in
+      regions where there are low levels of availability for clinical
+      staff.
+    </p>
 
-        {/* Image - 2/5 */}
-        <div className="flex translate-y-5 justify-center md:col-span-2">
-          <img
-            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
-            alt="MaiHealth"
-            className="w-[105%] rounded-3xl object-contain"
-          />
-        </div>
-      </div>
+    <p className="ml-24 mt-4 text-[19px] leading-8 text-black">
+      All our services are now offered virtually, by phone or an online
+      forum.
+    </p>
+
+    <p className="ml-24 mt-4 text-[19px] italic leading-8 text-black">
+      Please note that we support contracted clinics only.
+    </p>
+  </div>
+
+</div>
 
       <br />
       <br />
