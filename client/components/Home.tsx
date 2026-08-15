@@ -403,7 +403,7 @@ export default function Home() {
 
 
           {/* Email */}
-          <div className="flex items-center gap-4 text-lg">
+          <div className="flex items-center gap-2 ml-12 text-lg">
 
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.11_PM_fapw6n.png"
@@ -414,12 +414,13 @@ export default function Home() {
             <span>
               care@maihealth.nz
             </span>
+            
 
           </div>
 
 
           {/* Phone 1 */}
-          <div className="flex items-center gap-4 text-lg">
+          <div className="flex items-center gap-2 ml-2 text-lg">
 
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754308/Screenshot_2026-08-15_at_12.34.30_PM_q8wttz.png"
@@ -435,7 +436,7 @@ export default function Home() {
 
 
           {/* Phone 2 */}
-          <div className="flex items-center gap-4 text-lg">
+          <div className="flex items-center gap-2 ml-2 text-lg">
 
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.16_PM_ereda2.png"
