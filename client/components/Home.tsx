@@ -339,7 +339,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="mt-8 text-[19px] leading-8 text-black">
+          <p className="mt-8 text-[19px] mr-12 leading-8 text-black">
             Our goal is to provide quality access to healthcare through our
             virtual healthcare service, designed to complement existing
             clinics who are seeking innovative ways to continue providing
