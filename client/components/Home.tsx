@@ -39,7 +39,7 @@ export default function Home() {
 
             {/* Our Team */}
             <Link
-              to="/services"
+              to="/team"
               className="px-2 text-lg text-black transition-all duration-500 hover:scale-110 hover:text-[#c4161b]"
             >
               Our Team

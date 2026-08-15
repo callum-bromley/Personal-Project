@@ -58,12 +58,10 @@ export default function MeetTheTeam() {
 
   const maxPosition = team.length - 3;
 
-  // Refresh AOS when this component loads
   useEffect(() => {
     AOS.refresh();
   }, []);
 
-  // Auto-scroll carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMember((current) =>
@@ -89,30 +87,32 @@ export default function MeetTheTeam() {
   return (
     <section className="w-full overflow-hidden bg-[#c4161b] py-16">
 
-      {/* Heading */}
-      <div
-        className="mb-8 ml-36 flex items-center gap-4"
-        data-aos="fade-down"
-        data-aos-duration="1000"
-      >
-        <img
-          src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786750775/Screenshot_2026-08-15_at_11.39.23_AM_kt1vir.png"
-          alt="MaiHealth"
-          className="h-16 w-16 rounded-full object-contain"
-        />
+      {/* Heading Container */}
+      <div className="mx-auto w-full max-w-[1450px] px-8">
+        <div
+          className="mb-8 ml-16 flex items-center gap-4"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <img
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786750775/Screenshot_2026-08-15_at_11.39.23_AM_kt1vir.png"
+            alt="MaiHealth"
+            className="h-16 w-16 rounded-full object-contain"
+          />
 
-        <h2 className="text-4xl font-bold text-white">
-          Meet Our Team
-        </h2>
+          <h2 className="text-4xl font-bold text-white">
+            Meet Our Team
+          </h2>
+        </div>
       </div>
 
       {/* Carousel */}
-      <div className="mx-auto flex max-w-[1500px] items-center gap-4 px-8">
+      <div className="mx-auto flex w-full max-w-[1500px] items-center gap-4 px-8">
 
         {/* Left Arrow */}
         <button
           onClick={previousMember}
-          className="mr-4 flex h-14 w-14 shrink-0 items-center justify-center text-5xl text-white transition hover:scale-110"
+          className="flex h-14 w-14 shrink-0 items-center justify-center text-5xl text-white transition hover:scale-110"
           aria-label="Previous team members"
         >
           ←
@@ -125,7 +125,9 @@ export default function MeetTheTeam() {
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${currentMember * (100 / 3)}%)`,
+              transform: `translateX(-${
+                currentMember * (100 / 3)
+              }%)`,
             }}
           >
             {team.map((member, index) => (
@@ -133,7 +135,6 @@ export default function MeetTheTeam() {
                 key={`${member.name}-${index}`}
                 className="w-full shrink-0 px-3 md:w-1/3"
               >
-
                 {/* Card */}
                 <div className="flex h-[400px] flex-col items-center rounded-3xl bg-white p-10 text-center shadow-lg">
 
@@ -163,7 +164,7 @@ export default function MeetTheTeam() {
         {/* Right Arrow */}
         <button
           onClick={nextMember}
-          className="ml-4 flex h-14 w-14 shrink-0 items-center justify-center text-5xl text-white transition hover:scale-110"
+          className="flex h-14 w-14 shrink-0 items-center justify-center text-5xl text-white transition hover:scale-110"
           aria-label="Next team members"
         >
           →
