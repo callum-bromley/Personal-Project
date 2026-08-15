@@ -1,135 +1,92 @@
-import React from "react";
-import "./Contact.css";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 export const ContactForm = () => {
-  const [result, setResult] = React.useState("");
-
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    // Show the sending toast notification
-    toast.info("Sending... Your message is being processed.", {
-      autoClose: 3000,
-      closeButton: true,
-    });
-
-    setResult("");
-
-    const formData = new FormData(event.target as HTMLFormElement);
-    formData.append("access_key", "2620a2b0-0e42-4390-8eab-f780c681e724");
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setResult("");
-        (event.target as HTMLFormElement).reset();
-
-        // Optionally show a success toast
-        toast.success("Message sent successfully!", {
-          autoClose: 3000,
-          closeButton: true,
-        });
-      } else {
-        console.log("Error", data);
-        setResult(data.message);
-
-        // Optionally show an error toast
-        toast.error(data.message || "Something went wrong.", {
-          autoClose: 3000,
-          closeButton: true,
-        });
-      }
-    } catch (error) {
-      console.log("Error:", error);
-      setResult("");
-
-      // Optionally show an error toast
-      toast.error("Something went wrong. Please try again later.", {
-        autoClose: 3000,
-        closeButton: true,
-      });
-    }
-  };
-
   return (
-    <section className="contact">
-      <div data-aos="fade-up" className="contact-container">
-        <div data-aos="fade-up" className="contact-text">
-          <span data-aos="fade-up" className="classy-font">
-          Raising the Standard 
-</span>
-<span data-aos="fade-up" className="classy-font">
-        of Roofing 
+    <section className="relative m-0 min-h-[745px] w-full overflow-hidden p-0">
 
-</span>
-<span data-aos="fade-up" className="classy-font">
- in Auckland
-</span>
+      {/* Background Image */}
+      <img
+        src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786692250/mai_health_background_bbvnva.webp"
+        alt="Mai Health"
+        className="absolute inset-0 m-0 h-full w-full object-cover"
+      />
 
-          <p data-aos="fade-up" className="mr-40 mb-32 ">
-            Focused on quality and dependability, we provide expert roofing services you can trust, with skilled craftsmanship that delivers lasting results.
-          </p>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex min-h-[650px] w-full items-center justify-center px-6">
+        <div
+          data-aos="fade-up"
+          className="w-full max-w-5xl text-center text-white"
+        >
+
+          {/* Small heading */}
+         
+          {/* Main heading */}
+          <h1 className="text-5xl font-medium leading-[1.05] tracking-tight mt-60 md:text-6xl lg:text-7xl">
+            
+
+            Healthcare{" "}
+
+            {/* Across Aotearoa + curved underline */}
+            <span className="relative inline-block" style={{ color: "#c4161b" }}>
+              Across Aotearoa.
+
+              <svg
+                className="pointer-events-none absolute -bottom-11 -left-[3%] h-auto w-[108%] overflow-visible"
+                viewBox="0 0 500 55"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 25 C130 15, 260 20, 380 20 C430 20, 465 24, 492 32"
+                  stroke="#dc2626"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  pathLength="1"
+                  className="animate-draw-underline"
+                />
+              </svg>
+            </span>
+          </h1>
+
+        
+
+          {/* Link */}
+          <div className="mt-16">
+            <a
+              href="/services"
+              className="inline-block border-b-2 border-white pb-1 text-sm font-semibold text-white transition-all duration-200 hover:border-[#c4161b] hover:text-[#c4161b]"
+            >
+              Explore our services →
+            </a>
+          </div>
+
         </div>
-        <form onSubmit={onSubmit}>
-          <div className="input-box">
-            <input
-              type="text"
-              className="field"
-              placeholder="Name"
-              name="name"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="email"
-              className="field"
-              placeholder="Email"
-              name="email"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="text"
-              className="field"
-              placeholder="Phone"
-              name="phone"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="text"
-              className="field"
-              placeholder="Address"
-              name="address"
-              required
-            />
-          </div>
-          <div className="input-box">
-            <textarea
-              name="message"
-              className="field mess"
-              placeholder="Tell us a bit about the job..."
-              required
-            />
-          </div>
-          <button type="submit">Get a Free Quote!</button>
-        </form>
-        {result && <p>{result}</p>}
       </div>
 
-      {/* Toast container */}
-      <ToastContainer />
+      {/* Underline animation */}
+      <style>
+        {`
+          @keyframes drawUnderline {
+            from {
+              stroke-dasharray: 1;
+              stroke-dashoffset: 1;
+            }
+
+            to {
+              stroke-dasharray: 1;
+              stroke-dashoffset: 0;
+            }
+          }
+
+          .animate-draw-underline {
+            animation: drawUnderline 0.6s ease-out 0.2s forwards;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+          }
+        `}
+      </style>
+
     </section>
   );
 };

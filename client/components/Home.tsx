@@ -1,178 +1,426 @@
 import Contact from "../components/contact/Contact";
-import { OtherServices } from "../components/OtherServices";
-import { About } from "../components/About";
 import "./contact/Contact.css";
-import { HomeGallery } from "../components/HomeGallery";
-import Footer from "../components/Footer";
-import { FaFacebookF, FaGoogle } from 'react-icons/fa';
-import { FooterLogo } from "../components/FooterLogo";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Helmet } from 'react-helmet'
-
+import { Link } from "react-router-dom";
+import MeetTheTeam from "./contact/carousel";
 
 export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
-  }, [])
-  
+  }, []);
+
   return (
-    
-    <div  style={{ fontFamily: 'Lato, sans-serif' }}>
-      {/* Top bar */}
-      <nav className="bg-gray-700 text-white flex justify-end items-center p-4" >
-        <div className="flex space-x-4 mr-3">
-          <a href="/" aria-label="Facebook" className="hover:text-blue-400">
-            <FaFacebookF />
-          </a>
-          <a href="/" aria-label="Google" className="hover:text-blue-400">
-            <FaGoogle />
-          </a>
-        </div>
-        <h1 className="text-md font-semibold m-0 text-right ml-4">
-          Give us a call today!
-        </h1>
-        <h1 className="text-md font-semibold m-0 text-right ml-2 mr-4">
-          (022) 106 6710
-        </h1>
-      </nav>
-
+    <div>
       {/* Main Navbar */}
-      <nav className="bg-white-600 text-black p-8 flex justify-between items-center h-24" style={{ fontFamily: 'Playfair Display, serif' }}>
-      <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100454/geroslogo4_zb5lwt.png" alt="Photo1"   className="h-20 w-auto rounded-md ml-20" 
- />
+      <nav className="sticky top-0 z-50 flex h-20 items-center justify-between bg-white p-8 text-black shadow-md">
+        {/* Logo */}
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg"
+            alt="MaiHealth Logo"
+            className="ml-48 h-16 w-auto rounded-md transition-all duration-300 hover:scale-110"
+          />
+        </Link>
 
-        <div className="space-x-6 flex-shrink-0 flex items-center">
-          <span className="text-lg px-3 text-blue-600">Home</span>
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
+        {/* Navigation */}
+        <div className="mr-48 flex items-center space-x-4">
+          {/* Home */}
+          <Link
+            to="/"
+            className="px-2 text-lg text-red-600 transition-all duration-500 hover:scale-110 hover:text-[#c4161b]"
+          >
+            Home
+          </Link>
 
-          {/* Dropdown for Services */}
-          <div className="relative group">
-            <button className="flex items-center text-lg hover:text-blue-600 px-3 focus:outline-none">
-              <a href="/services">Services</a>
-              <span className="ml-2">▾</span>
-            </button>
+          {/* Our Team */}
+          <Link
+            to="/services"
+            className="px-2 text-lg text-black transition-all duration-500 hover:scale-110 hover:text-[#c4161b]"
+          >
+            Our Team
+          </Link>
 
-            <div className="absolute left-0 mt-6 w-48 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
-              <a href="/services/residential" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">
-                Residential Roofing
-              </a>
-              <a href="/services/maintenance" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">
-                Maintenance
-              </a>
-              <a href="/services/commercial" className="block px-3 py-2 text-md hover:bg-blue-400 pl-8">
-                Commercial
-              </a>
+          {/* Services */}
+          <Link
+            to="/services"
+            className="px-2 text-lg text-black transition-all duration-500 hover:scale-110 hover:text-[#c4161b]"
+          >
+            Services
+          </Link>
 
-              {/* Additional Services */}
-              <div className="relative group/additional">
-                <div className="flex items-center px-3 py-2 text-md pl-8 hover:bg-blue-400 group-hover/additional:bg-blue-400 cursor-pointer">
-                  <a href="/services/additionalservices"> Additional Services</a>
-                  <span className="ml-2">▸</span>
-                </div>
-
-                <div className="absolute left-full top-0 w-48 bg-white text-black shadow-lg opacity-0 group-hover/additional:opacity-100 invisible group-hover/additional:visible transition-all duration-300 ease-in-out z-50">
-                  <a href="/services/leakrepairs" className="block px-4 py-2 text-md hover:bg-blue-400">Leak Repairs</a>
-                  <a href="/services/gutters" className="block px-4 py-2 text-md hover:bg-blue-400">Gutters</a>
-                  <a href="/services/wallcladding" className="block px-4 py-2 text-md hover:bg-blue-400">Wall Cladding</a>
-                  <a href="/services/flashings" className="block px-4 py-2 text-md hover:bg-blue-400">Flashings</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/gallery" className="text-lg hover:text-blue-600 px-3">Work Gallery</a>
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/about" className="text-lg hover:text-blue-600 px-3">About</a>
-          <span className="mx-2 text-blue-600 flex items-center">|</span>
-          <a href="/contact" className="text-lg hover:text-blue-600 px-3">Contact Us</a>
-          <span className="mx-2 text-white flex items-center">|</span>
+          {/* Contact */}
+          <Link
+            to="/contact"
+            className="px-2 text-lg text-black transition-all duration-500 hover:scale-110 hover:text-[#c4161b]"
+          >
+            Contact
+          </Link>
         </div>
       </nav>
 
-      {/* Contact Section */}
+      {/* Hero / Contact Section */}
       <div className="home-content">
         <Contact />
       </div>
 
-      <h1 className="text-white">/</h1>
-      <div className="additional-info" style={{ padding: '20px', textAlign: 'center' }}>
+      {/* Information Section */}
+      <div className="additional-info px-24 py-16">
         <h1 className="text-white">/</h1>
-        <div className="flex items-center justify-center">
-          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
-          <span data-aos="fade-up" className="mx-3 text-4xl font-bold text-black-500">OUR SERVICES</span>
-          <div data-aos="fade-up" className="w-[80px] h-[2px] bg-gray-500"></div>
+
+        {/* Main heading */}
+        <h2 className="text-4xl font-bold text-[#c4161b]">
+          Bringing change to your health experience.
+        </h2>
+
+        {/* Second paragraph */}
+        <p className="mt-8 max-w-[90%] text-xl leading-8 text-black">
+          At MaiHealth, we put you and whānau at the heart of healthcare.
+          Providing a people-centred health service that builds trusted and
+          genuine relationships. Helping you reconnect with your health, feel
+          supported in your journey and become active in your own wellbeing.
+          Our kaupapa is to walk alongside you and your whānau, supporting you
+          to take charge of your hauora.
+        </p>
+
+        {/* Main paragraph */}
+        <p className="mt-8 w-[90%] text-xl leading-8 text-black">
+          Our goal is to provide access to a better healthcare system to all of
+          Aotearoa, focusing on the communities that need it most.
+        </p>
+      </div>
+
+      <br />
+      <br />
+
+      {/* Values Section */}
+      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-4 px-8 md:grid-cols-3">
+        {/* Box 1 */}
+        <div className="rounded-3xl bg-[#c4161b] p-8 shadow-md">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786706926/2ce937b80d20c109e0a0a618d088c0d8-removebg-preview_zw6m7r.png"
+              alt="MaiHealth Logo"
+              className="mt-4 h-32 w-auto rounded-md"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            />
+          </div>
+
+          {/* Title */}
+          <div className="mt-2 text-left">
+            <span className="ml-6 text-xl font-thin text-white">
+              Our Values
+            </span>
+          </div>
+
+          {/* Value */}
+          <div className="ml-6 mr-8 mt-2">
+            <span className="text-3xl font-semibold text-white">
+              Care
+            </span>
+
+            <span className="mx-2 text-3xl font-semibold text-white">
+              ·
+            </span>
+
+            <span className="text-3xl font-semibold italic text-white">
+              Manaaki
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="mb-8 ml-6 mr-6 mt-6 leading-7 text-white/90">
+            We care about the people we help and the time we give them. We are
+            present and compassionate with our patients.
+          </p>
         </div>
-        <h1 className="text-white">/</h1>
-        <p data-aos="fade-up" className="mx-52" >We provide expert roofing solutions for both residential and commercial properties, including installations, maintenance, and repairs. Our team is committed to quality craftsmanship, lasting materials, and dependable service—helping you protect what matters most.
 
-</p>
-      </div>
+        {/* Box 2 */}
+        <div className="rounded-3xl bg-[#c4161b] p-8 shadow-md">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786706925/0c2efba7995055084826bf29da078284-removebg-preview_eh8hnt.png"
+              alt="MaiHealth Logo"
+              className="mt-4 h-32 w-auto rounded-md"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            />
+          </div>
 
-      {/* Smaller Card Layout */}
-      <div className="flex justify-center flex-wrap gap-10 mt-6">
-        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747199457/residential1_q3kkkz.jpg" alt="Roofing Project" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
-          <h2 className="text-lg font-semibold mt-3">Residential Roofing</h2>
-          <p className="text-gray-700 text-sm mt-2">
-          Comprehensive roofing solutions designed to safeguard your home, enhance curb appeal, and provide long-term protection against the elements.          </p>
-          <a href="/services/residential" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
+          {/* Title */}
+          <div className="mt-2 text-left">
+            <span className="ml-6 text-xl font-thin text-white">
+              Our Values
+            </span>
+          </div>
+
+          {/* Value */}
+          <div className="ml-6 mr-8 mt-2">
+            <span className="text-3xl font-semibold text-white">
+              Partnership
+            </span>
+
+            <span className="mx-2 text-3xl font-semibold text-white">
+              ·
+            </span>
+
+            <span className="text-3xl font-semibold italic text-white">
+              Mahi Tahi
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="mb-8 ml-6 mr-6 mt-6 leading-7 text-white/90">
+            True partnerships require us to work together, to listen and
+            communicate effectively to ensure we are always working towards a
+            solution.
+          </p>
         </div>
 
-        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100739/maintenence1_hacydu.jpg" alt="Maintenance" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
-          <h2 className="text-lg font-semibold mt-3">Maintenance</h2>
-          <p className="text-gray-700 text-sm mt-2">
-          Proactive roof maintenance services that extend the life of your roofing system, prevent costly damage, and ensure year-round performance and safety.
+        {/* Box 3 */}
+        <div className="rounded-3xl bg-[#c4161b] p-8 shadow-md">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786706925/bc1fcd5e5699303411814370217c9816-Photoroom_c4e2yi.png"
+              alt="MaiHealth Logo"
+              className="mt-4 h-32 w-auto rounded-md"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            />
+          </div>
 
-</p>
-          <a href="/services/maintenance" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
+          {/* Title */}
+          <div className="mt-2 text-left">
+            <span className="ml-6 text-xl font-thin text-white">
+              Our Values
+            </span>
+          </div>
+
+          {/* Value */}
+          <div className="ml-6 mr-8 mt-2">
+            <span className="text-3xl font-semibold text-white">
+              Respect
+            </span>
+
+            <span className="mx-2 text-3xl font-semibold text-white">
+              ·
+            </span>
+
+            <span className="text-3xl font-semibold italic text-white">
+              Whakaute
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="mb-8 ml-6 mr-6 mt-6 leading-7 text-white/90">
+            We are respectful of everyone’s differences, we are open minded
+            and hold no judgement. We focus on enhancing mana.
+          </p>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* Model of Care Section */}
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-20 px-8 md:grid-cols-3">
+        {/* Text - 2/3 */}
+        <div className="md:col-span-2">
+          {/* Model of Care Heading */}
+          <div
+            className="flex items-center gap-4"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+          >
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786751668/Screenshot_2026-08-15_at_11.54.19_AM_jnhpp2.png"
+              alt="MaiHealth"
+              className="h-20 w-20 rounded-full object-contain"
+            />
+
+            <h2 className="text-4xl font-bold text-[#c4161b]">
+              Model of Care
+            </h2>
+          </div>
+
+          <p className="mr-16 mt-8 text-2xl font-extralight leading-8 text-black">
+            Our model of care supplements and enhances the core primary
+            services that exist but are frequently overwhelmed, inaccessible,
+            and/or under-delivering to certain population groups.
+          </p>
+
+          <p className="mr-16 mt-8 text-[19px] leading-8 text-black">
+            Central to our model of care are Health Navigators who take over
+            the burden of accessing and navigating health care systems for
+            individuals and their whanau. Our Health Navigators aim to support
+            an individual or their whanau to ensure their health and wellbeing
+            needs are met in line with their expectations and values.
+          </p>
+
+          <p className="mr-16 mt-8 text-[19px] leading-8 text-black">
+            Māori, Pasifika, those with disabilities as well as other
+            marginalized cultural people are often subjected to poor
+            healthcare. This demographic is near to our heart and is a key
+            motivator for us as a team. Our goal is to bring high quality and
+            effective health care at the lowest possible cost to these
+            marginalized groups. We want those that access our service and
+            those that work in it feel a strong sense of respect that is given
+            and received.
+          </p>
         </div>
 
-        <div data-aos="fade-up" className="w-[300px] text-center border rounded-lg shadow-lg p-4">
-          <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1747100459/commercial1_jsdlbr.jpg" alt="Commercial Roofing" className="w-full h-[200px] object-cover rounded-lg shadow-md border-2 border-blue-400" />
-          <h2 className="text-lg font-semibold mt-3">Commercial Roofing</h2>
-          <p className="text-gray-700 text-sm mt-2">
-          High-performance roofing systems tailored to meet the structural and operational demands of commercial buildings, ensuring durability and minimal disruption.
-
-</p>
-          <a href="/services/commercial" className="text-blue-600 underline hover:underline text-sm mt-2 inline-block">Learn More</a>
+        {/* Image - 1/3 */}
+        <div className="flex justify-center">
+          <img
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786751755/Screenshot_2026-08-15_at_11.55.40_AM_dosxrc.png"
+            alt="MaiHealth"
+            className="h-auto w-full translate-y-5 rounded-3xl object-cover"
+          />
         </div>
       </div>
 
-      <h1 className="text-white">/</h1>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-      {/* Other Sections */}
-      <div data-aos="fade-up" className="services-content">
-        <OtherServices />
+      {/* Meet the Team */}
+      <MeetTheTeam />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      {/* Services Section */}
+      <div className="mx-auto mr-24 ml-24 grid max-w-[1400px] grid-cols-1 items-center px-8 md:grid-cols-5">
+        {/* Text - 3/5 */}
+        <div className="md:col-span-3">
+          {/* Services Heading */}
+          <div
+            className="flex items-center gap-4"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+          >
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
+              alt="MaiHealth"
+              className="h-20 w-20 rounded-full object-contain"
+            />
+
+            <h2 className="text-4xl font-bold text-[#c4161b]">
+              Services
+            </h2>
+          </div>
+
+          <p className="mr-24 mt-8 text-[19px] leading-8 text-black">
+            Our goal is to provide quality access to healthcare through our
+            virtual healthcare service, designed to complement existing
+            clinics who are seeking innovative ways to continue providing
+            their patients with a timely, quality service particularly in
+            regions where there are low levels of availability for clinical
+            staff.
+          </p>
+
+          <p className="mr-24 mt-4 text-[19px] leading-8 text-black">
+            All our services are now offered virtually, by phone or an online
+            forum.
+          </p>
+
+          <p className="mr-24 mt-4 text-[19px] italic leading-8 text-black">
+            Please note that we support contracted clinics only.
+          </p>
+        </div>
+
+        {/* Image - 2/5 */}
+        <div className="flex translate-y-5 justify-center md:col-span-2">
+          <img
+            src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
+            alt="MaiHealth"
+            className="w-[105%] rounded-3xl object-contain"
+          />
+        </div>
       </div>
 
-      <div data-aos="fade-up" className="about-section">
-        <About />
-      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-      <div data-aos="fade-up" className="about-section">
-        <HomeGallery />
-      </div>
+      {/* Footer Contact */}
+      <footer className="w-full px-12 py-10 text-lg text-black">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-center gap-20">
+          {/* Logo */}
+          <div>
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg"
+              alt="MaiHealth Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </div>
 
-      <div className="about-section">
-        <FooterLogo />
-      </div>
+          {/* Email */}
+          <div className="flex items-center gap-4 text-lg">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.11_PM_fapw6n.png"
+              alt="Email"
+              className="h-10 w-10 object-contain"
+            />
 
-      <div className="about-section">
-        <Footer />
-      </div>
+            <span>care@maihealth.nz</span>
+          </div>
 
-      <div className="flex w-full bg-black p-4 justify-center text-white text-sm">
-        <p>© 2025 Geros Roofing - Website by <a href="https://www.linkedin.com/in/callum-bromley-78bab3362/" className="underline" target="_blank" rel="noopener noreferrer" >Callum Bromley</a></p>
+          {/* Phone 1 */}
+          <div className="flex items-center gap-4 text-lg">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754308/Screenshot_2026-08-15_at_12.34.30_PM_q8wttz.png"
+              alt="Phone"
+              className="h-10 w-10 object-contain"
+            />
+
+            <span>021 360 320</span>
+          </div>
+
+          {/* Phone 2 */}
+          <div className="flex items-center gap-4 text-lg">
+            <img
+              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.16_PM_ereda2.png"
+              alt="Phone"
+              className="h-10 w-10 object-contain"
+            />
+
+            <span>8700</span>
+          </div>
+        </div>
+      </footer>
+
+      {/* Copyright */}
+      <div className="flex w-full justify-center bg-[#c4161b] p-4 text-sm text-white">
+        <p>
+          Copyright © 2026 MaiHealth - Website by{" "}
+          <a
+            href="https://www.linkedin.com/in/callum-bromley-78bab3362/"
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Callum Bromley
+          </a>
+        </p>
       </div>
-       <>
-      <Helmet>
-        <title>Home | Geros Roofing</title>
-      </Helmet>
-    </>
     </div>
   );
 }
