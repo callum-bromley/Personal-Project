@@ -55,74 +55,63 @@ const team = [
 
 export default function MeetTheTeam() {
   const [currentMember, setCurrentMember] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
+  const [visibleMembers, setVisibleMembers] = useState(3);
 
   /*
-    Used to restart the auto-scroll timer
-    whenever the user clicks something.
-  */
-  const [resetTimer, setResetTimer] = useState(0);
-
-  /*
-    Responsive number of cards:
-
-    Mobile  = 1
-    Tablet  = 2
-    Desktop = 3
+    Change how many people are visible depending
+    on the screen width.
   */
   useEffect(() => {
-    const updateCardsPerView = () => {
+    const updateVisibleMembers = () => {
       if (window.innerWidth < 768) {
-        setCardsPerView(1);
+        // Phone
+        setVisibleMembers(1);
       } else if (window.innerWidth < 1024) {
-        setCardsPerView(2);
+        // Tablet
+        setVisibleMembers(2);
       } else {
-        setCardsPerView(3);
+        // Laptop / desktop / monitor
+        setVisibleMembers(3);
       }
     };
 
-    updateCardsPerView();
+    updateVisibleMembers();
 
-    window.addEventListener("resize", updateCardsPerView);
+    window.addEventListener("resize", updateVisibleMembers);
 
     return () => {
-      window.removeEventListener("resize", updateCardsPerView);
+      window.removeEventListener("resize", updateVisibleMembers);
     };
   }, []);
 
   /*
-    Maximum carousel position
+    Maximum position changes depending on how many
+    people are currently visible.
   */
   const maxPosition = Math.max(
     0,
-    team.length - cardsPerView
+    team.length - visibleMembers
   );
 
   /*
-    Make sure the current position doesn't become invalid
-    when changing screen size.
+    Keep current position valid when changing
+    between phone/tablet/desktop sizes.
   */
   useEffect(() => {
     if (currentMember > maxPosition) {
       setCurrentMember(maxPosition);
     }
-  }, [cardsPerView, currentMember, maxPosition]);
+  }, [visibleMembers, maxPosition, currentMember]);
 
   /*
-    Refresh AOS
+    AOS
   */
   useEffect(() => {
     AOS.refresh();
   }, []);
 
   /*
-    Auto-scroll
-
-    5000 milliseconds = 5 seconds.
-
-    The resetTimer dependency means the timer
-    starts again whenever Next, Previous or a dot
-    is clicked.
+    Auto-scroll every 5 seconds.
   */
   useEffect(() => {
     const interval = setInterval(() => {
@@ -132,14 +121,7 @@ export default function MeetTheTeam() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [maxPosition, resetTimer]);
-
-  /*
-    Restart the timer
-  */
-  const restartTimer = () => {
-    setResetTimer((value) => value + 1);
-  };
+  }, [maxPosition]);
 
   /*
     Previous button
@@ -148,8 +130,6 @@ export default function MeetTheTeam() {
     setCurrentMember((current) =>
       current <= 0 ? maxPosition : current - 1
     );
-
-    restartTimer();
   };
 
   /*
@@ -159,75 +139,54 @@ export default function MeetTheTeam() {
     setCurrentMember((current) =>
       current >= maxPosition ? 0 : current + 1
     );
-
-    restartTimer();
   };
 
   /*
-    Dot navigation
+    Each card takes up 1 / visibleMembers
+    of the carousel.
   */
-  const goToMember = (index: number) => {
-    setCurrentMember(index);
-
-    restartTimer();
-  };
+  const cardWidth = 100 / visibleMembers;
 
   return (
-    <section className="w-full overflow-hidden bg-[#c4161b] py-12 sm:py-14 md:py-16">
+    <section className="w-full overflow-hidden bg-[#c4161b] py-10 sm:py-12 md:py-16">
 
       {/* =========================
           Heading
       ========================= */}
-      <div className="mx-auto w-full max-w-[1450px] px-4 sm:px-6 md:px-8">
+      <div className="mx-auto w-full max-w-[1450px] px-5 sm:px-8">
 
         <div
-          className="mb-8 flex items-center gap-3 sm:gap-4 md:ml-8 lg:ml-16"
+          className="mb-8 flex items-center gap-3 sm:gap-4 md:mb-10"
           data-aos="fade-down"
           data-aos-duration="1000"
         >
+
+          {/* Heading Icon */}
           <img
             src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786750775/Screenshot_2026-08-15_at_11.39.23_AM_kt1vir.png"
             alt="MaiHealth"
             className="h-12 w-12 shrink-0 rounded-full object-contain sm:h-14 sm:w-14 md:h-16 md:w-16"
           />
 
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          {/* Heading */}
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-4xl">
             Meet Our Team
           </h2>
+
         </div>
       </div>
 
       {/* =========================
           Carousel
       ========================= */}
-      <div className="mx-auto flex w-full max-w-[1500px] items-center gap-2 px-2 sm:gap-4 sm:px-6 md:px-8">
+      <div className="mx-auto flex w-full max-w-[1500px] items-center gap-1 px-2 sm:gap-3 sm:px-5 md:gap-4 md:px-8">
 
         {/* =========================
             Left Arrow
         ========================= */}
         <button
           onClick={previousMember}
-          className="
-            flex
-            h-10
-            w-10
-            shrink-0
-            items-center
-            justify-center
-            rounded-full
-            text-3xl
-            text-white
-            transition-all
-            duration-300
-            hover:scale-110
-            hover:bg-white/10
-            sm:h-12
-            sm:w-12
-            sm:text-4xl
-            md:h-14
-            md:w-14
-            md:text-5xl
-          "
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-3xl text-white transition-all duration-300 hover:scale-110 hover:bg-white/20 hover:text-white sm:h-12 sm:w-12 sm:text-4xl md:h-14 md:w-14 md:text-5xl"
           aria-label="Previous team members"
         >
           ←
@@ -238,119 +197,53 @@ export default function MeetTheTeam() {
         ========================= */}
         <div className="min-w-0 flex-1 overflow-hidden">
 
-          {/* Moving Track */}
+          {/* =========================
+              Moving Track
+          ========================= */}
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
               transform: `translateX(-${
-                currentMember * (100 / cardsPerView)
+                currentMember * cardWidth
               }%)`,
             }}
           >
+
             {team.map((member, index) => (
               <div
                 key={`${member.name}-${index}`}
-                className={`
-                  w-full
-                  shrink-0
-                  px-1.5
-                  sm:px-2
-                  ${
-                    cardsPerView === 1
-                      ? "md:w-1/2 lg:w-1/3"
-                      : cardsPerView === 2
-                        ? "w-1/2 lg:w-1/3"
-                        : "w-1/3"
-                  }
-                `}
+                className="shrink-0 px-2 sm:px-3"
+                style={{
+                  width: `${cardWidth}%`,
+                }}
               >
 
                 {/* =========================
                     Card
                 ========================= */}
-                <div
-                  className="
-                    flex
-                    h-[330px]
-                    flex-col
-                    items-center
-                    rounded-2xl
-                    bg-white
-                    p-5
-                    text-center
-                    shadow-lg
-                    sm:h-[360px]
-                    sm:rounded-3xl
-                    sm:p-7
-                    md:h-[400px]
-                    md:p-10
-                  "
-                >
+                <div className="flex min-h-[360px] w-full flex-col items-center rounded-3xl bg-white p-5 text-center shadow-lg sm:min-h-[380px] sm:p-7 md:h-[400px] md:p-10">
 
                   {/* Photo */}
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="
-                      h-36
-                      w-36
-                      rounded-full
-                      object-cover
-                      sm:h-44
-                      sm:w-44
-                      md:h-52
-                      md:w-52
-                    "
+                    className="h-36 w-36 shrink-0 rounded-full object-cover sm:h-44 sm:w-44 md:h-52 md:w-52"
                   />
 
                   {/* Name */}
-                  <h3
-                    className="
-                      mt-4
-                      flex
-                      min-h-[56px]
-                      w-full
-                      items-start
-                      justify-center
-                      text-xl
-                      font-semibold
-                      leading-7
-                      text-black
-                      sm:mt-5
-                      sm:min-h-[64px]
-                      sm:text-2xl
-                      sm:leading-8
-                      md:mt-6
-                      md:min-h-[64px]
-                    "
-                  >
+                  <h3 className="mt-5 flex min-h-[64px] w-full items-start justify-center text-xl font-semibold leading-7 text-black sm:mt-6 sm:text-2xl sm:leading-8">
                     {member.name}
                   </h3>
 
                   {/* Role */}
-                  <p
-                    className="
-                      mt-1
-                      flex
-                      min-h-[48px]
-                      w-full
-                      items-start
-                      justify-center
-                      text-base
-                      leading-6
-                      text-gray-500
-                      sm:mt-2
-                      sm:min-h-[56px]
-                      sm:text-lg
-                      sm:leading-7
-                    "
-                  >
+                  <p className="mt-2 flex min-h-[64px] w-full items-start justify-center text-base leading-6 text-gray-500 sm:text-lg sm:leading-7">
                     {member.role}
                   </p>
 
                 </div>
               </div>
             ))}
+
           </div>
         </div>
 
@@ -359,27 +252,7 @@ export default function MeetTheTeam() {
         ========================= */}
         <button
           onClick={nextMember}
-          className="
-            flex
-            h-10
-            w-10
-            shrink-0
-            items-center
-            justify-center
-            rounded-full
-            text-3xl
-            text-white
-            transition-all
-            duration-300
-            hover:scale-110
-            hover:bg-white/10
-            sm:h-12
-            sm:w-12
-            sm:text-4xl
-            md:h-14
-            md:w-14
-            md:text-5xl
-          "
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-3xl text-white transition-all duration-300 hover:scale-110 hover:bg-white/20 hover:text-white sm:h-12 sm:w-12 sm:text-4xl md:h-14 md:w-14 md:text-5xl"
           aria-label="Next team members"
         >
           →
@@ -390,29 +263,20 @@ export default function MeetTheTeam() {
       {/* =========================
           Dots
       ========================= */}
-      <div className="mt-7 flex justify-center gap-2 sm:mt-8 sm:gap-3">
+      <div className="mt-6 flex justify-center gap-2 sm:mt-8 sm:gap-3">
 
         {Array.from({
           length: maxPosition + 1,
         }).map((_, index) => (
           <button
             key={index}
-            onClick={() => goToMember(index)}
+            onClick={() => setCurrentMember(index)}
             aria-label={`Go to team position ${index + 1}`}
-            className={`
-              h-2.5
-              w-2.5
-              rounded-full
-              transition-all
-              duration-300
-              sm:h-3
-              sm:w-3
-              ${
-                currentMember === index
-                  ? "scale-125 bg-white"
-                  : "bg-white/50 hover:bg-white/80"
-              }
-            `}
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 sm:h-3 sm:w-3 ${
+              currentMember === index
+                ? "scale-125 bg-white"
+                : "bg-white/50 hover:bg-white/80"
+            }`}
           />
         ))}
 
