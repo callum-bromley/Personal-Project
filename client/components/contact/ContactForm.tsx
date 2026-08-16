@@ -1,4 +1,4 @@
-export const ContactForm = () => {
+export const Background = () => {
   return (
     <section className="relative m-0 min-h-[700px] w-full overflow-hidden p-0 sm:min-h-[750px] md:min-h-[850px] lg:min-h-[800px]">
 

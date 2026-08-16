@@ -1,5 +1,4 @@
-import Contact from "../components/contact/Contact";
-import "./contact/Contact.css";
+import { Background } from "./contact/ContactForm";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -48,7 +47,7 @@ export default function Home() {
               to="/"
               className="rounded-full px-3 py-2 text-base text-red-600 transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
             >
-              Home
+              Hommmme
             </Link>
 
             {/* Our Team */}
@@ -185,7 +184,7 @@ export default function Home() {
             Hero / Contact Section
         ========================= */}
         <div className="home-content">
-          <Contact />
+          <Background />
         </div>
 
         {/* =========================
