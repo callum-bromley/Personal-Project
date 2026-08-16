@@ -1,4 +1,4 @@
-import { Background } from "./contact/ContactForm";
+import { Background } from "./contact/Background";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
