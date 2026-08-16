@@ -7,6 +7,7 @@ import MeetTheTeam from "./contact/carousel";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -28,7 +29,10 @@ export default function Home() {
           <Link
             to="/"
             className="shrink-0"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              setServicesOpen(false);
+            }}
           >
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg"
@@ -40,12 +44,12 @@ export default function Home() {
           {/* =========================
               Desktop Navigation
           ========================= */}
-          <div className="hidden items-center gap-2 md:flex lg:gap-4">
+          <div className="hidden items-center gap-6 md:flex lg:gap-8">
 
             {/* Home */}
             <Link
               to="/"
-              className="rounded-full px-3 py-2 text-base text-red-600 transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
+              className="text-base text-red-600 transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
             >
               Home
             </Link>
@@ -53,23 +57,92 @@ export default function Home() {
             {/* Our Team */}
             <Link
               to="/team"
-              className="rounded-full px-3 py-2 text-base text-black transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
+              className="text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
             >
               Our Team
             </Link>
 
-            {/* Services */}
-            <Link
-              to="/services"
-              className="rounded-full px-3 py-2 text-base text-black transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
+            {/* =========================
+                Services Dropdown
+            ========================= */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
             >
-              Services
-            </Link>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex items-center gap-2 text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
+                aria-expanded={servicesOpen}
+              >
+                Services
+
+                {/* Down Arrow */}
+                <svg
+                  className={`h-4 w-4 transition-transform duration-300 ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown */}
+              <div
+                className={`absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 overflow-hidden bg-white shadow-lg transition-all duration-300 ${
+                  servicesOpen
+                    ? "visible translate-y-0 opacity-100"
+                    : "invisible -translate-y-2 opacity-0"
+                }`}
+              >
+                <div className="flex flex-col py-2">
+
+                  <Link
+                    to="/services"
+                    onClick={() => setServicesOpen(false)}
+                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    All Services
+                  </Link>
+
+                  <Link
+                    to="/services/virtual-health-service"
+                    onClick={() => setServicesOpen(false)}
+                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    Virtual Health Service
+                  </Link>
+
+                  <Link
+                    to="/services/tekākano"
+                    onClick={() => setServicesOpen(false)}
+                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    Te Kākano
+                  </Link>
+
+                  <Link
+                    to="/services/maiwegovy"
+                    onClick={() => setServicesOpen(false)}
+                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    MaiWegovy
+                  </Link>
+
+                </div>
+              </div>
+            </div>
 
             {/* Contact */}
             <Link
               to="/contact"
-              className="rounded-full px-3 py-2 text-base text-black transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
+              className="text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
             >
               Contact
             </Link>
@@ -80,8 +153,11 @@ export default function Home() {
               Mobile Hamburger
           ========================= */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="mr-2 flex h-12 w-12 items-center justify-center rounded-full text-[#c4161b] transition-all duration-300 hover:scale-110 hover:bg-red-50 md:hidden"
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+              setServicesOpen(false);
+            }}
+            className="mr-2 flex h-12 w-12 items-center justify-center text-[#c4161b] transition-all duration-300 hover:scale-110 md:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
           >
@@ -123,9 +199,9 @@ export default function Home() {
             Mobile Menu
         ========================= */}
         <div
-          className={`overflow-hidden border-t border-gray-100 bg-white shadow-md transition-all duration-300 md:hidden ${
+          className={`overflow-hidden border-t border-gray-100 bg-white shadow-md transition-all duration-500 ease-in-out md:hidden ${
             menuOpen
-              ? "max-h-[400px] opacity-100"
+              ? "max-h-[500px] opacity-100"
               : "max-h-0 opacity-0"
           }`}
         >
@@ -136,7 +212,7 @@ export default function Home() {
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-4 py-3 text-lg text-red-600 transition-all duration-300 hover:bg-red-50"
+              className="px-4 py-3 text-lg text-red-600 transition-colors duration-300 hover:text-[#c4161b]"
             >
               Home
             </Link>
@@ -145,25 +221,102 @@ export default function Home() {
             <Link
               to="/team"
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-4 py-3 text-lg text-black transition-all duration-300 hover:bg-red-50 hover:text-[#c4161b]"
+              className="px-4 py-3 text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
             >
               Our Team
             </Link>
 
-            {/* Services */}
-            <Link
-              to="/services"
-              onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-4 py-3 text-lg text-black transition-all duration-300 hover:bg-red-50 hover:text-[#c4161b]"
-            >
-              Services
-            </Link>
+            {/* =========================
+                Mobile Services Dropdown
+            ========================= */}
+            <div>
+
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex w-full items-center justify-between px-4 py-3 text-left text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
+                aria-expanded={servicesOpen}
+              >
+                <span>Services</span>
+
+                <svg
+                  className={`h-5 w-5 transition-transform duration-300 ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              {/* Mobile Services Dropdown */}
+              <div
+                className={`overflow-hidden transition-all duration-400 ease-in-out ${
+                  servicesOpen
+                    ? "max-h-48 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="ml-4 flex flex-col border-l-2 border-[#c4161b]">
+
+                  <Link
+                    to="/services"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setServicesOpen(false);
+                    }}
+                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    All Services
+                  </Link>
+
+                  <Link
+                    to="/services/virtual-health-service"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setServicesOpen(false);
+                    }}
+                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    Virtual Health Service
+                  </Link>
+
+                  <Link
+                    to="/services/tekākano"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setServicesOpen(false);
+                    }}
+                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    Te Kākano
+                  </Link>
+
+                  <Link
+                    to="/services/maiwegovy"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setServicesOpen(false);
+                    }}
+                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
+                  >
+                    MaiWegovy
+                  </Link>
+
+                </div>
+              </div>
+
+            </div>
 
             {/* Contact */}
             <Link
               to="/contact"
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-4 py-3 text-lg text-black transition-all duration-300 hover:bg-red-50 hover:text-[#c4161b]"
+              className="px-4 py-3 text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
             >
               Contact
             </Link>
@@ -175,8 +328,6 @@ export default function Home() {
 
       {/* =========================
           Page Content
-          Padding prevents fixed
-          navbar covering content
       ========================= */}
       <div className="pt-20">
 
@@ -344,7 +495,6 @@ export default function Home() {
 
         </div>
 
-        {/* Spacing */}
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
@@ -400,18 +550,15 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center">
-
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786751755/Screenshot_2026-08-15_at_11.55.40_AM_dosxrc.png"
               alt="MaiHealth"
               className="h-auto w-full max-w-[500px] rounded-3xl object-cover lg:max-w-none"
             />
-
           </div>
 
         </div>
 
-        {/* Spacing */}
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
@@ -419,7 +566,6 @@ export default function Home() {
         ========================= */}
         <MeetTheTeam />
 
-        {/* Spacing */}
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
@@ -428,13 +574,11 @@ export default function Home() {
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 px-4 sm:px-6 md:gap-16 md:px-8 lg:grid-cols-5 lg:px-10">
 
           <div className="flex justify-center lg:col-span-2">
-
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
               alt="MaiHealth"
               className="w-full max-w-[500px] rounded-3xl object-contain lg:max-w-none"
             />
-
           </div>
 
           <div className="lg:col-span-3">
@@ -444,7 +588,6 @@ export default function Home() {
               data-aos="fade-down"
               data-aos-duration="1000"
             >
-
               <img
                 src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
                 alt="MaiHealth"
@@ -454,7 +597,6 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-[#c4161b] sm:text-4xl">
                 Services
               </h2>
-
             </div>
 
             <p className="mt-6 text-base leading-7 text-black sm:mt-8 sm:text-lg md:text-[19px] md:leading-8">
@@ -479,7 +621,6 @@ export default function Home() {
 
         </div>
 
-        {/* Spacing */}
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
@@ -489,7 +630,6 @@ export default function Home() {
 
           <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-center gap-6 sm:gap-8 md:flex-row md:flex-wrap md:gap-10 lg:gap-12">
 
-            {/* Logo */}
             <div>
               <img
                 src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg"
@@ -498,43 +638,31 @@ export default function Home() {
               />
             </div>
 
-            {/* Email */}
             <div className="flex items-center gap-3">
-
               <img
                 src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.11_PM_fapw6n.png"
                 alt="Email"
                 className="h-9 w-9 object-contain sm:h-10 sm:w-10"
               />
-
               <span>care@maihealth.nz</span>
-
             </div>
 
-            {/* Phone */}
             <div className="flex items-center gap-3">
-
               <img
                 src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754308/Screenshot_2026-08-15_at_12.34.30_PM_q8wttz.png"
                 alt="Phone"
                 className="h-9 w-9 object-contain sm:h-10 sm:w-10"
               />
-
               <span>021 360 320</span>
-
             </div>
 
-            {/* Phone 2 */}
             <div className="flex items-center gap-3">
-
               <img
                 src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786754307/Screenshot_2026-08-15_at_12.34.16_PM_ereda2.png"
                 alt="Phone"
                 className="h-9 w-9 object-contain sm:h-10 sm:w-10"
               />
-
               <span>8700</span>
-
             </div>
 
           </div>
