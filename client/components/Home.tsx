@@ -47,7 +47,7 @@ export default function Home() {
               to="/"
               className="rounded-full px-3 py-2 text-base text-red-600 transition-all duration-300 hover:scale-110 hover:text-[#c4161b] lg:text-lg"
             >
-              Hommmme
+              Home
             </Link>
 
             {/* Our Team */}
