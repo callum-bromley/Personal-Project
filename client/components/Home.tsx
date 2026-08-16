@@ -101,7 +101,9 @@ export default function Home() {
                     : "invisible -translate-y-2 opacity-0"
                 }`}
               >
-                <div className="flex flex-col py-2">
+
+                {/* Shorter red line */}
+                <div className="relative ml-4 flex flex-col py-2 pl-0 before:absolute before:bottom-4 before:left-0 before:top-4 before:w-0.5 before:bg-[#c4161b]">
 
                   <Link
                     to="/services"
