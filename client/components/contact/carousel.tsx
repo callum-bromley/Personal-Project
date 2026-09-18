@@ -28,12 +28,6 @@ const team = [
       "https://res.cloudinary.com/dynrnpszg/image/upload/v1786749727/Portrait_Placeholder_w0vjb0.png",
   },
   {
-    name: "Jodi Rangitaawa",
-    role: "Registered Nurse",
-    image:
-      "https://res.cloudinary.com/dynrnpszg/image/upload/v1786749727/Portrait_Placeholder_w0vjb0.png",
-  },
-  {
     name: "Palu Tupou",
     role: "Health Navigator",
     image:

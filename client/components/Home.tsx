@@ -2,16 +2,43 @@ import { Background } from "./contact/Background";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
 import MeetTheTeam from "./contact/carousel";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  // Smooth scroll to a section
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+
+    const section = document.getElementById(id);
+
+    if (section) {
+      const navbarHeight = 80;
+
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: sectionPosition - navbarHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Smooth scroll back to the top
+  const scrollToHome = () => {
+    setMenuOpen(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="w-full overflow-x-hidden">
@@ -26,20 +53,17 @@ export default function Home() {
           {/* =========================
               Logo
           ========================= */}
-          <Link
-            to="/"
+          <button
+            onClick={scrollToHome}
             className="shrink-0"
-            onClick={() => {
-              setMenuOpen(false);
-              setServicesOpen(false);
-            }}
+            aria-label="Go to home"
           >
             <img
               src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg"
               alt="MaiHealth Logo"
               className="h-12 w-auto rounded-md transition-all duration-300 hover:scale-110 sm:h-14 md:h-16"
             />
-          </Link>
+          </button>
 
           {/* =========================
               Desktop Navigation
@@ -47,107 +71,36 @@ export default function Home() {
           <div className="hidden items-center gap-6 md:flex lg:gap-8">
 
             {/* Home */}
-            <Link
-              to="/"
-              className="text-base text-red-600 transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
+            <button
+              onClick={scrollToHome}
+              className="text-base text-red-600 transition-all duration-300 hover:scale-105 hover:text-[#c4161b] lg:text-lg"
             >
               Home
-            </Link>
+            </button>
 
             {/* Our Team */}
-            <Link
-              to="/team"
-              className="text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
+            <button
+              onClick={() => scrollToSection("team")}
+              className="text-base text-black transition-all duration-300 hover:scale-105 hover:text-[#c4161b] lg:text-lg"
             >
               Our Team
-            </Link>
+            </button>
 
-            {/* =========================
-                Services Dropdown
-            ========================= */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+            {/* Services */}
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-base text-black transition-all duration-300 hover:scale-105 hover:text-[#c4161b] lg:text-lg"
             >
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex items-center gap-2 text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
-                aria-expanded={servicesOpen}
-              >
-                Services
-
-                {/* Down Arrow */}
-                <svg
-                  className={`h-4 w-4 transition-transform duration-300 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-
-              {/* Dropdown */}
-              <div
-                className={`absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 overflow-hidden bg-white shadow-lg transition-all duration-300 ${
-                  servicesOpen
-                    ? "visible translate-y-0 opacity-100"
-                    : "invisible -translate-y-2 opacity-0"
-                }`}
-              >
-
-                {/* Shorter red line */}
-                <div className="relative ml-4 flex flex-col py-2 pl-0 before:absolute before:bottom-4 before:left-0 before:top-4 before:w-0.5 before:bg-[#c4161b]">
-
-                  <Link
-                    to="/services"
-                    onClick={() => setServicesOpen(false)}
-                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    All Services
-                  </Link>
-
-                  <Link
-                    to="/services/virtual-health-service"
-                    onClick={() => setServicesOpen(false)}
-                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    Virtual Health Service
-                  </Link>
-
-                  <Link
-                    to="/services/tekākano"
-                    onClick={() => setServicesOpen(false)}
-                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    Te Kākano
-                  </Link>
-
-                  <Link
-                    to="/services/maiwegovy"
-                    onClick={() => setServicesOpen(false)}
-                    className="px-5 py-3 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    MaiWegovy
-                  </Link>
-
-                </div>
-              </div>
-            </div>
+              Services
+            </button>
 
             {/* Contact */}
-            <Link
-              to="/contact"
-              className="text-base text-black transition-colors duration-300 hover:text-[#c4161b] lg:text-lg"
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-base text-black transition-all duration-300 hover:scale-105 hover:text-[#c4161b] lg:text-lg"
             >
               Contact
-            </Link>
+            </button>
 
           </div>
 
@@ -155,10 +108,7 @@ export default function Home() {
               Mobile Hamburger
           ========================= */}
           <button
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-              setServicesOpen(false);
-            }}
+            onClick={() => setMenuOpen(!menuOpen)}
             className="mr-2 flex h-12 w-12 items-center justify-center text-[#c4161b] transition-all duration-300 hover:scale-110 md:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
@@ -211,117 +161,36 @@ export default function Home() {
           <div className="flex flex-col gap-2 px-6 py-4">
 
             {/* Home */}
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="px-4 py-3 text-lg text-red-600 transition-colors duration-300 hover:text-[#c4161b]"
+            <button
+              onClick={scrollToHome}
+              className="px-4 py-3 text-left text-lg text-red-600 transition-colors duration-300 hover:text-[#c4161b]"
             >
               Home
-            </Link>
+            </button>
 
             {/* Our Team */}
-            <Link
-              to="/team"
-              onClick={() => setMenuOpen(false)}
-              className="px-4 py-3 text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
+            <button
+              onClick={() => scrollToSection("team")}
+              className="px-4 py-3 text-left text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
             >
               Our Team
-            </Link>
+            </button>
 
-            {/* =========================
-                Mobile Services Dropdown
-            ========================= */}
-            <div>
-
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between px-4 py-3 text-left text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
-                aria-expanded={servicesOpen}
-              >
-                <span>Services</span>
-
-                <svg
-                  className={`h-5 w-5 transition-transform duration-300 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-
-              {/* Mobile Services Dropdown */}
-              <div
-                className={`overflow-hidden transition-all duration-400 ease-in-out ${
-                  servicesOpen
-                    ? "max-h-48 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="ml-4 flex flex-col border-l-2 border-[#c4161b]">
-
-                  <Link
-                    to="/services"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    All Services
-                  </Link>
-
-                  <Link
-                    to="/services/virtual-health-service"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    Virtual Health Service
-                  </Link>
-
-                  <Link
-                    to="/services/tekākano"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    Te Kākano
-                  </Link>
-
-                  <Link
-                    to="/services/maiwegovy"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="px-5 py-2.5 text-base text-black transition-colors duration-200 hover:text-[#c4161b]"
-                  >
-                    MaiWegovy
-                  </Link>
-
-                </div>
-              </div>
-
-            </div>
+            {/* Services */}
+            <button
+              onClick={() => scrollToSection("services")}
+              className="px-4 py-3 text-left text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
+            >
+              Services
+            </button>
 
             {/* Contact */}
-            <Link
-              to="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="px-4 py-3 text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="px-4 py-3 text-left text-lg text-black transition-colors duration-300 hover:text-[#c4161b]"
             >
               Contact
-            </Link>
+            </button>
 
           </div>
         </div>
@@ -334,9 +203,9 @@ export default function Home() {
       <div className="pt-20">
 
         {/* =========================
-            Hero / Contact Section
+            Hero / Background Section
         ========================= */}
-        <div className="home-content">
+        <div id="home" className="home-content">
           <Background />
         </div>
 
@@ -566,69 +435,77 @@ export default function Home() {
         {/* =========================
             Meet The Team
         ========================= */}
-        <MeetTheTeam />
+        <div id="team">
+          <MeetTheTeam />
+        </div>
 
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
             Services
         ========================= */}
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 px-4 sm:px-6 md:gap-16 md:px-8 lg:grid-cols-5 lg:px-10">
+        <div id="services">
 
-          <div className="flex justify-center lg:col-span-2">
-            <img
-              src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
-              alt="MaiHealth"
-              className="w-full max-w-[500px] rounded-3xl object-contain lg:max-w-none"
-            />
-          </div>
+          <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 px-4 sm:px-6 md:gap-16 md:px-8 lg:grid-cols-5 lg:px-10">
 
-          <div className="lg:col-span-3">
-
-            <div
-              className="flex items-center gap-3 sm:gap-4"
-              data-aos="fade-down"
-              data-aos-duration="1000"
-            >
+            <div className="flex justify-center lg:col-span-2">
               <img
-                src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
+                src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752896/services_phbdlh.webp"
                 alt="MaiHealth"
-                className="h-14 w-14 rounded-full object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+                className="w-full max-w-[500px] rounded-3xl object-contain lg:max-w-none"
               />
-
-              <h2 className="text-3xl font-bold text-[#c4161b] sm:text-4xl">
-                Services
-              </h2>
             </div>
 
-            <p className="mt-6 text-base leading-7 text-black sm:mt-8 sm:text-lg md:text-[19px] md:leading-8">
-              Our goal is to provide quality access to healthcare through our
-              virtual healthcare service, designed to complement existing
-              clinics who are seeking innovative ways to continue providing
-              their patients with a timely, quality service particularly in
-              regions where there are low levels of availability for clinical
-              staff.
-            </p>
+            <div className="lg:col-span-3">
 
-            <p className="mt-4 text-base leading-7 text-black sm:text-lg md:text-[19px] md:leading-8">
-              All our services are now offered virtually, by phone or an online
-              forum.
-            </p>
+              <div
+                className="flex items-center gap-3 sm:gap-4"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <img
+                  src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786752911/Screenshot_2026-08-15_at_12.15.01_PM_y4yeum.png"
+                  alt="MaiHealth"
+                  className="h-14 w-14 rounded-full object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+                />
 
-            <p className="mt-4 text-base italic leading-7 text-black sm:text-lg md:text-[19px] md:leading-8">
-              Please note that we support contracted clinics only.
-            </p>
+                <h2 className="text-3xl font-bold text-[#c4161b] sm:text-4xl">
+                  Services
+                </h2>
+              </div>
+
+              <p className="mt-6 text-base leading-7 text-black sm:mt-8 sm:text-lg md:text-[19px] md:leading-8">
+                Our goal is to provide quality access to healthcare through our
+                virtual healthcare service, designed to complement existing
+                clinics who are seeking innovative ways to continue providing
+                their patients with a timely, quality service particularly in
+                regions where there are low levels of availability for clinical
+                staff.
+              </p>
+
+              <p className="mt-4 text-base leading-7 text-black sm:text-lg md:text-[19px] md:leading-8">
+                All our services are now offered virtually, by phone or an online
+                forum.
+              </p>
+
+              <p className="mt-4 text-base italic leading-7 text-black sm:text-lg md:text-[19px] md:leading-8">
+                Please note that we support contracted clinics only.
+              </p>
+
+            </div>
 
           </div>
-
         </div>
 
         <div className="h-20 sm:h-24 md:h-32" />
 
         {/* =========================
-            Footer
+            Contact / Footer
         ========================= */}
-        <footer className="w-full px-4 py-8 text-base text-black sm:px-6 sm:py-10 sm:text-lg md:px-8">
+        <footer
+          id="contact"
+          className="w-full px-4 py-8 text-base text-black sm:px-6 sm:py-10 sm:text-lg md:px-8"
+        >
 
           <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-center gap-6 sm:gap-8 md:flex-row md:flex-wrap md:gap-10 lg:gap-12">
 
@@ -687,7 +564,6 @@ export default function Home() {
             >
               Callum Bromley
             </a>
-
           </p>
 
         </div>

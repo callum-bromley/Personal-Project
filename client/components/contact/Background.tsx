@@ -13,7 +13,7 @@ export const Background = () => {
       <div className="absolute inset-0 bg-black/55"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-[700px] w-full items-center justify-center px-6 sm:min-h-[650px] md:min-h-[750px] lg:min-h-[880px]">
+      <div className="relative z-10 flex min-h-[700px] w-full items-center justify-center px-6 sm:min-h-[650px] md:min-h-[750px] lg:min-h-[850px]">
 
         <div
           data-aos="fade-up"
