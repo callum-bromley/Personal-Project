@@ -40,7 +40,7 @@ const team = [
       "https://res.cloudinary.com/dynrnpszg/image/upload/v1786749727/Portrait_Placeholder_w0vjb0.png",
   },
   {
-    name: "Dylan Tautori",
+    name: "Dylan Tautari",
     role: "Health Navigator",
     image:
       "https://res.cloudinary.com/dynrnpszg/image/upload/v1786749727/Portrait_Placeholder_w0vjb0.png",
