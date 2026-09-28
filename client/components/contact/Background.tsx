@@ -1,4 +1,30 @@
+
+import { useEffect } from "react";
+import AOS from "aos";
+
 export const Background = () => {
+
+  // Smooth scroll to Services section
+  const scrollToServices = () => {
+    const section = document.getElementById("services");
+
+    if (section) {
+      const navbarHeight = 80;
+
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: sectionPosition - navbarHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <section className="relative m-0 min-h-[700px] w-full overflow-hidden p-0 sm:min-h-[750px] md:min-h-[850px] lg:min-h-[800px]">
 
@@ -21,7 +47,7 @@ export const Background = () => {
         >
 
           {/* Main heading */}
-          <h1 className="mt-32 text-4xl font-medium leading-[1.05] tracking-tight sm:mt-40 sm:text-5xl md:mt-48 md:text-6xl lg:mt-52 lg:text-7xl">
+          <h1 className="mt-32 text-4xl font-medium leading-[1.05] tracking-tight sm:mt-40 md:mt-48 md:text-6xl lg:mt-52 lg:text-7xl">
 
             Healthcare{" "}
 
@@ -52,12 +78,12 @@ export const Background = () => {
 
           {/* Link */}
           <div className="mt-12 sm:mt-14 md:mt-16">
-            <a
-              href="/services"
+            <button
+              onClick={scrollToServices}
               className="inline-block border-b-2 border-white pb-1 text-sm font-semibold text-white transition-all duration-200 hover:border-[#c4161b] hover:text-[#c4161b]"
             >
               Explore our services →
-            </a>
+            </button>
           </div>
 
         </div>
