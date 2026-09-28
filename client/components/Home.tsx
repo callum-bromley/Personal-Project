@@ -11,8 +11,46 @@ export default function Home() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  // Slow, smooth scrolling animation
+  const smoothScrollTo = (targetPosition: number) => {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+
+    // Scroll duration in milliseconds
+    const duration = 1400;
+    let startTime: number | null = null;
+
+    const easeInOutCubic = (t: number) => {
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const animateScroll = (currentTime: number) => {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(
+        0,
+        startPosition + distance * easedProgress
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
   // Smooth scroll to a section
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     setMenuOpen(false);
 
     const section = document.getElementById(id);
@@ -23,10 +61,7 @@ export default function Home() {
       const sectionPosition =
         section.getBoundingClientRect().top + window.pageYOffset;
 
-      window.scrollTo({
-        top: sectionPosition - navbarHeight,
-        behavior: "smooth",
-      });
+      smoothScrollTo(sectionPosition - navbarHeight);
     }
   };
 
@@ -34,10 +69,7 @@ export default function Home() {
   const scrollToHome = () => {
     setMenuOpen(false);
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    smoothScrollTo(0);
   };
 
   return (
