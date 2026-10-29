@@ -1,35 +1,32 @@
-'use server';
+import type { VercelRequest, VercelResponse } from '@vercel/node'
+import { Resend } from 'resend'
 
-import { Resend } from 'resend';
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Pass the ENV variable NAME here, not the raw key text
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-interface FormState {
-  success: boolean;
-  message?: string;
-}
-
-export async function sendQuoteAction(formData: FormData): Promise<FormState> {
-  const name = formData.get('name') as string;
-  const email = formData.get('email') as string;
-  const details = formData.get('message') as string;
-
-  if (!name || !email || !details) {
-    return { success: false, message: 'Please fill in all fields.' };
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, message: 'Method not allowed' })
   }
 
   try {
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
+    const { name, email, message } = body || {}
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ success: false, message: 'Please fill in all fields.' })
+    }
+
     await resend.emails.send({
       from: 'Quote Lead <onboarding@resend.dev>',
-      to: ['callumbromleydev@gmail.com'], 
+      to: ['callumbromleydev@gmail.com'], // Replace with your actual Resend account email
       subject: `New Quote Request from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${details}`,
-    });
+      text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${message}`,
+    })
 
-    return { success: true, message: 'Quote request sent successfully!' };
-  } catch (error) {
-    console.error('Error sending quote request:', error);
-    return { success: false, message: 'Failed to send quote request.' };
+    return res.status(200).json({ success: true, message: 'Quote request sent successfully!' })
+  } catch (error: unknown) {
+    console.error('Vercel Function Error:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Failed to send quote request.'
+    return res.status(500).json({ success: false, message: errorMessage })
   }
 }
