@@ -6,6 +6,7 @@ import OurTeam from '../Pages/OurTeam';
 import Maiwegovy from '../Pages/Maiwegovy';
 import TeKakano from '../Pages/TeKakano';
 import VirtualHealthService from '../Pages/VirtualService';
+import QuoteForm from '../Pages/QuotePage';
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/services/maiwegovy" element={<Maiwegovy />} />
       <Route path="/services/tekākano" element={<TeKakano />} />
       <Route path="/services/virtual-health-service" element={<VirtualHealthService />} />
+      <Route path="/quote" element={<QuoteForm />} />
      
 
 

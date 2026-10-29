@@ -22,7 +22,7 @@ export async function sendQuoteAction(formData: FormData): Promise<FormState> {
   try {
     await resend.emails.send({
       from: 'Quote Lead <onboarding@resend.dev>',
-      to: ['your-email@gmail.com'], // Replace with your real target inbox
+      to: ['callumbromleydev@gmail.com'], 
       subject: `New Quote Request from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${details}`,
     });
