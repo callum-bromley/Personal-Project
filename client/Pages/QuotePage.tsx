@@ -18,14 +18,13 @@ export default function QuoteForm() {
     setStatus({})
 
     try {
-      const response = await fetch('/api/v1/quote', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      })
-
+      const response = await fetch('/api/quote', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ name, email, message }),
+})
       const data: StatusState = await response.json()
       setStatus(data)
 
