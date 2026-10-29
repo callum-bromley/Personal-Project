@@ -79,7 +79,7 @@ export const Background = () => {
           {/* Main heading */}
           <h1 className="mt-32 text-4xl font-medium leading-[1.05] tracking-tight sm:mt-40 md:mt-48 md:text-6xl lg:mt-52 lg:text-7xl">
 
-            Healthcare{" "}
+            Maihealth{" "}
 
             {/* Across Aotearoa + curved underline */}
             <span
