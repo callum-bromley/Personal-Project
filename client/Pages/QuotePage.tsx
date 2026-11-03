@@ -89,7 +89,7 @@ export default function QuoteForm() {
       <div className="absolute -top-24 -left-20 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -right-20 w-96 h-96 bg-gray-200/40 rounded-full blur-3xl pointer-events-none" />
 
-      <header className="mt-16 w-full max-w-4xl pt-2 pb-4 text-center relative z-10">
+      <header className="mt-14 w-full max-w-4xl pt-2 pb-4 text-center relative z-10">
         <img src="https://res.cloudinary.com/dynrnpszg/image/upload/v1786686495/502f887f5c5d67d1ed0a90fefcb996d5_tenjrr.jpg" alt="MaiHealth Logo" className="h-14 mx-auto object-contain" />
       </header>
 
