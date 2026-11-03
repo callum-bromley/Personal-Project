@@ -20,7 +20,7 @@ const router = createBrowserRouter(
       <Route path="/services/maiwegovy" element={<Maiwegovy />} />
       <Route path="/services/tekākano" element={<TeKakano />} />
       <Route path="/services/virtual-health-service" element={<VirtualHealthService />} />
-      <Route path="/quote" element={<QuoteForm />} />
+      <Route path="/form" element={<QuoteForm />} />
      
 
 
