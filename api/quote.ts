@@ -29,7 +29,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     await resend.emails.send({
       from: 'Injury / Illness Form <onboarding@resend.dev>',
-      to: ['callumbromleydev@gmail.com'],
+      to: ['care@maihealth.nz'],
       subject: `New Injury / Illness Form from ${personalDetails.fullName}`,
       text: `--- 1. PERSONAL DETAILS ---
 Full Name: ${personalDetails.fullName}
