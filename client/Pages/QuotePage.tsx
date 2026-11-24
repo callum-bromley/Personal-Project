@@ -5,6 +5,13 @@ interface StatusState {
   message?: string
 }
 
+const GENDER_OPTIONS = [
+  'Male',
+  'Female',
+  'Another gender',
+  'Prefer not to say',
+]
+
 const NZ_ETHNICITY_OPTIONS = [
   'Māori',
   'New Zealand European',
@@ -67,6 +74,7 @@ export default function QuoteForm() {
   const [fullName, setFullName] = useState<string>('')
   const [dob, setDob] = useState<string>('')
   const [gender, setGender] = useState<string>('')
+  const [otherGender, setOtherGender] = useState<string>('')
   const [ethnicity, setEthnicity] = useState<string>('')
   const [otherEthnicity, setOtherEthnicity] = useState<string>('')
   const [address, setAddress] = useState<string>('')
@@ -94,6 +102,7 @@ export default function QuoteForm() {
   const [loading, setLoading] = useState<boolean>(false)
   const [status, setStatus] = useState<StatusState>({})
 
+  const isOtherGender = gender === 'Another gender'
   const isOtherEthnicity = ethnicity === 'Other'
 
   const handleNextStep = (e: FormEvent) => {
@@ -110,13 +119,18 @@ export default function QuoteForm() {
     setLoading(true)
     setStatus({})
 
+    const finalGender =
+      isOtherGender && otherGender.trim()
+        ? `Another gender (${otherGender.trim()})`
+        : gender
+
     const finalEthnicity =
       isOtherEthnicity && otherEthnicity.trim()
         ? `Other (${otherEthnicity.trim()})`
         : ethnicity
 
     const payload = {
-      personalDetails: { fullName, dob, gender, ethnicity: finalEthnicity, address, email, mobile },
+      personalDetails: { fullName, dob, gender: finalGender, ethnicity: finalEthnicity, address, email, mobile },
       medicalHistory: { allergies, healthConditions, medications, pharmacy },
       employer: { occupation, jobTasks },
       injury: { reason, mechanism, injuryDate, bodyPart, locationType, nzLocation },
@@ -134,7 +148,7 @@ export default function QuoteForm() {
 
       if (data.success) {
         setStep(1)
-        setFullName(''); setDob(''); setGender(''); setEthnicity(''); setOtherEthnicity(''); setAddress(''); setEmail(''); setMobile('')
+        setFullName(''); setDob(''); setGender(''); setOtherGender(''); setEthnicity(''); setOtherEthnicity(''); setAddress(''); setEmail(''); setMobile('')
         setAllergies(''); setHealthConditions(''); setMedications(''); setPharmacy('')
         setOccupation(''); setJobTasks('')
         setReason(''); setMechanism(''); setInjuryDate(''); setBodyPart(''); setLocationType(''); setNzLocation('')
@@ -201,7 +215,24 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Gender *</label>
-                  <input type="text" required value={gender} onChange={(e) => setGender(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="e.g. Male / Female / Other" />
+                  <select
+                    required
+                    value={gender}
+                    onChange={(e) => {
+                      setGender(e.target.value)
+                      if (e.target.value !== 'Another gender') setOtherGender('')
+                    }}
+                    className={`w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900 ${
+                      gender === '' ? 'text-slate-400' : 'text-slate-900'
+                    }`}
+                  >
+                    <option value="" disabled>Select gender</option>
+                    {GENDER_OPTIONS.map((option) => (
+                      <option key={option} value={option} className="text-slate-900">
+                        {option}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Ethnicity *</label>
@@ -224,6 +255,20 @@ export default function QuoteForm() {
                     ))}
                   </select>
                 </div>
+
+                {isOtherGender && (
+                  <div className="sm:col-span-2">
+                    <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Please Specify Gender *</label>
+                    <input
+                      type="text"
+                      required
+                      value={otherGender}
+                      onChange={(e) => setOtherGender(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+                      placeholder="Enter your gender"
+                    />
+                  </div>
+                )}
 
                 {isOtherEthnicity && (
                   <div className="sm:col-span-2">
