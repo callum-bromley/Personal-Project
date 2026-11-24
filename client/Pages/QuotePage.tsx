@@ -5,6 +5,49 @@ interface StatusState {
   message?: string
 }
 
+function formatDateWithSlashes(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 8)
+  if (digits.length <= 2) return digits
+  if (digits.length <= 4) return `${digits.slice(0, 2)}/${digits.slice(2)}`
+  return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`
+}
+
+interface MaskedDateInputProps {
+  value: string
+  onChange: (formatted: string) => void
+  required?: boolean
+}
+
+function MaskedDateInput({ value, onChange, required = false }: MaskedDateInputProps) {
+  const template = 'DD/MM/YYYY'
+  const remainingMask = template.slice(value.length)
+
+  return (
+    <div className="relative w-full rounded-xl bg-slate-50 border border-slate-200 focus-within:bg-white focus-within:border-slate-900 transition-colors">
+      {/* Visual background mask layer */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex items-center px-4 py-2.5 text-xs sm:text-sm select-none overflow-hidden whitespace-pre"
+      >
+        <span className="invisible">{value}</span>
+        <span className="text-slate-400">{remainingMask}</span>
+      </div>
+
+      {/* Actual interactive input */}
+      <input
+        type="text"
+        inputMode="numeric"
+        required={required}
+        pattern="\d{2}/\d{2}/\d{4}"
+        title="Please enter a full date in DD/MM/YYYY format"
+        value={value}
+        onChange={(e) => onChange(formatDateWithSlashes(e.target.value))}
+        className="relative z-10 w-full px-4 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 focus:outline-none"
+      />
+    </div>
+  )
+}
+
 export default function QuoteForm() {
   const [step, setStep] = useState<number>(1)
 
@@ -134,7 +177,7 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Date of Birth *</label>
-                  <input type="date" required value={dob} onChange={(e) => setDob(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" />
+                  <MaskedDateInput value={dob} onChange={setDob} required />
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Gender *</label>
@@ -235,7 +278,7 @@ export default function QuoteForm() {
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Date Happened *</label>
-                    <input type="date" required value={injuryDate} onChange={(e) => setInjuryDate(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" />
+                    <MaskedDateInput value={injuryDate} onChange={setInjuryDate} required />
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Which Part of Body? *</label>
