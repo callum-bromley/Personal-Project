@@ -70,6 +70,7 @@ function MaskedDateInput({ value, onChange, required = false }: MaskedDateInputP
 interface PhotonFeature {
   properties: {
     countrycode?: string
+    osm_value?: string
     housenumber?: string
     street?: string
     name?: string
@@ -77,6 +78,7 @@ interface PhotonFeature {
     district?: string
     city?: string
     town?: string
+    state?: string
     postcode?: string
   }
 }
@@ -96,6 +98,13 @@ function formatNzPhotonPharmacy(props: PhotonFeature['properties']): string {
   const city = props.city || props.town
   const locationParts = [streetLine, suburb, city].filter(Boolean).join(', ')
   return locationParts ? `${pharmacyName} — ${locationParts}` : pharmacyName
+}
+
+function formatNzPhotonCityTown(props: PhotonFeature['properties']): string {
+  const placeName = props.name || props.city || props.town || ''
+  if (!placeName) return ''
+  const region = props.state && props.state !== placeName ? props.state : ''
+  return region ? `${placeName}, ${region}` : placeName
 }
 
 function NzAddressInput({
@@ -271,6 +280,103 @@ function NzPharmacyInput({
                 className="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-slate-700 hover:bg-slate-100 transition-colors"
               >
                 {pharmacyOption}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+function NzCityInput({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (val: string) => void
+}) {
+  const [suggestions, setSuggestions] = useState<string[]>([])
+  const [open, setOpen] = useState(false)
+  const [justSelected, setJustSelected] = useState(false)
+
+  useEffect(() => {
+    if (justSelected) {
+      setJustSelected(false)
+      return
+    }
+
+    if (value.trim().length < 2) {
+      setSuggestions([])
+      return
+    }
+
+    const controller = new AbortController()
+    const timer = setTimeout(async () => {
+      try {
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(
+          value
+        )}&osm_tag=place:city&osm_tag=place:town&osm_tag=place:suburb&lat=-41.2865&lon=174.7762&bbox=166.0,-47.5,179.0,-34.0&limit=8`
+        const res = await fetch(url, { signal: controller.signal })
+        const data = await res.json()
+
+        const allowedPlaces = new Set(['city', 'town', 'suburb'])
+
+        const formattedList: string[] = Array.from(
+          new Set(
+            (data.features || [])
+              .filter(
+                (f: PhotonFeature) =>
+                  f.properties?.countrycode === 'NZ' &&
+                  allowedPlaces.has(f.properties?.osm_value || '')
+              )
+              .map((f: PhotonFeature) => formatNzPhotonCityTown(f.properties))
+              .filter((item: string) => item.length > 0)
+          )
+        )
+
+        setSuggestions(formattedList)
+        setOpen(formattedList.length > 0)
+      } catch {
+        // Ignore aborted requests
+      }
+    }, 300)
+
+    return () => {
+      clearTimeout(timer)
+      controller.abort()
+    }
+  }, [value])
+
+  return (
+    <div className="relative">
+      <input
+        type="text"
+        required
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => suggestions.length > 0 && setOpen(true)}
+        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+        placeholder="Start typing city, town, or suburb (e.g. Papakura, Hamilton)"
+        autoComplete="off"
+      />
+
+      {open && suggestions.length > 0 && (
+        <ul className="absolute z-20 mt-1.5 w-full max-h-48 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-lg divide-y divide-slate-100">
+          {suggestions.map((cityOption) => (
+            <li key={cityOption}>
+              <button
+                type="button"
+                onMouseDown={() => {
+                  setJustSelected(true)
+                  onChange(cityOption)
+                  setSuggestions([])
+                  setOpen(false)
+                }}
+                className="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-slate-700 hover:bg-slate-100 transition-colors"
+              >
+                {cityOption}
               </button>
             </li>
           ))}
@@ -601,7 +707,7 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Location in NZ *</label>
-                  <input type="text" required value={nzLocation} onChange={(e) => setNzLocation(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="e.g. Auckland, Wellington" />
+                  <NzCityInput value={nzLocation} onChange={setNzLocation} />
                 </div>
               </div>
               <div className="pt-2 flex justify-between">
