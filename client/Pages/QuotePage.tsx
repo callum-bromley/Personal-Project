@@ -24,6 +24,40 @@ const NZ_ETHNICITY_OPTIONS = [
   'Other',
 ]
 
+const BODY_PART_OPTIONS = [
+  'Lower back / Lumbar spine',
+  'Upper / Mid back',
+  'Neck / Cervical spine',
+  'Left shoulder',
+  'Right shoulder',
+  'Left arm / Elbow',
+  'Right arm / Elbow',
+  'Left wrist / Hand / Fingers',
+  'Right wrist / Hand / Fingers',
+  'Chest / Ribs',
+  'Abdomen / Pelvis',
+  'Hip / Groin',
+  'Left knee',
+  'Right knee',
+  'Left leg / Thigh / Calf',
+  'Right leg / Thigh / Calf',
+  'Left ankle / Foot / Toes',
+  'Right ankle / Foot / Toes',
+  'Head / Face',
+  'Multiple body parts',
+  'Other',
+]
+
+const LOCATION_TYPE_OPTIONS = [
+  'Home',
+  'Commercial / Office / Retail',
+  'Industrial / Manufacturing / Warehouse',
+  'Construction / Building site',
+  'Road / Street / Footpath',
+  'Sport / Recreation facility',
+  'Other',
+]
+
 function formatDateWithSlashes(value: string): string {
   const digits = value.replace(/\D/g, '').slice(0, 8)
   if (digits.length <= 2) return digits
@@ -415,7 +449,9 @@ export default function QuoteForm() {
   const [mechanism, setMechanism] = useState<string>('')
   const [injuryDate, setInjuryDate] = useState<string>('')
   const [bodyPart, setBodyPart] = useState<string>('')
+  const [otherBodyPart, setOtherBodyPart] = useState<string>('')
   const [locationType, setLocationType] = useState<string>('')
+  const [otherLocationType, setOtherLocationType] = useState<string>('')
   const [nzLocation, setNzLocation] = useState<string>('')
 
   const [loading, setLoading] = useState<boolean>(false)
@@ -423,6 +459,8 @@ export default function QuoteForm() {
 
   const isOtherGender = gender === 'Another gender'
   const isOtherEthnicity = ethnicity === 'Other'
+  const isOtherBodyPart = bodyPart === 'Other'
+  const isOtherLocationType = locationType === 'Other'
 
   const handleNextStep = (e: FormEvent) => {
     e.preventDefault()
@@ -448,11 +486,28 @@ export default function QuoteForm() {
         ? `Other (${otherEthnicity.trim()})`
         : ethnicity
 
+    const finalBodyPart =
+      isOtherBodyPart && otherBodyPart.trim()
+        ? `Other (${otherBodyPart.trim()})`
+        : bodyPart
+
+    const finalLocationType =
+      isOtherLocationType && otherLocationType.trim()
+        ? `Other (${otherLocationType.trim()})`
+        : locationType
+
     const payload = {
       personalDetails: { fullName, dob, gender: finalGender, ethnicity: finalEthnicity, address, email, mobile },
       medicalHistory: { allergies, healthConditions, medications, pharmacy },
       employer: { occupation, jobTasks },
-      injury: { reason, mechanism, injuryDate, bodyPart, locationType, nzLocation },
+      injury: {
+        reason,
+        mechanism,
+        injuryDate,
+        bodyPart: finalBodyPart,
+        locationType: finalLocationType,
+        nzLocation,
+      },
     }
 
     try {
@@ -470,7 +525,7 @@ export default function QuoteForm() {
         setFullName(''); setDob(''); setGender(''); setOtherGender(''); setEthnicity(''); setOtherEthnicity(''); setAddress(''); setEmail(''); setMobile('')
         setAllergies(''); setHealthConditions(''); setMedications(''); setPharmacy('')
         setOccupation(''); setJobTasks('')
-        setReason(''); setMechanism(''); setInjuryDate(''); setBodyPart(''); setLocationType(''); setNzLocation('')
+        setReason(''); setMechanism(''); setInjuryDate(''); setBodyPart(''); setOtherBodyPart(''); setLocationType(''); setOtherLocationType(''); setNzLocation('')
       }
     } catch (err) {
       console.error(err)
@@ -698,12 +753,74 @@ export default function QuoteForm() {
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Which Part of Body? *</label>
-                    <input type="text" required value={bodyPart} onChange={(e) => setBodyPart(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="e.g. Lower back, right knee" />
+                    <select
+                      required
+                      value={bodyPart}
+                      onChange={(e) => {
+                        setBodyPart(e.target.value)
+                        if (e.target.value !== 'Other') setOtherBodyPart('')
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900 ${
+                        bodyPart === '' ? 'text-slate-400' : 'text-slate-900'
+                      }`}
+                    >
+                      <option value="" disabled>Select body part</option>
+                      {BODY_PART_OPTIONS.map((option) => (
+                        <option key={option} value={option} className="text-slate-900">
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Location Type *</label>
-                    <input type="text" required value={locationType} onChange={(e) => setLocationType(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="e.g. Commercial, Industrial" />
+                    <select
+                      required
+                      value={locationType}
+                      onChange={(e) => {
+                        setLocationType(e.target.value)
+                        if (e.target.value !== 'Other') setOtherLocationType('')
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900 ${
+                        locationType === '' ? 'text-slate-400' : 'text-slate-900'
+                      }`}
+                    >
+                      <option value="" disabled>Select location type</option>
+                      {LOCATION_TYPE_OPTIONS.map((option) => (
+                        <option key={option} value={option} className="text-slate-900">
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </div>
+
+                  {isOtherBodyPart && (
+                    <div className="sm:col-span-2">
+                      <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Please Specify Body Part *</label>
+                      <input
+                        type="text"
+                        required
+                        value={otherBodyPart}
+                        onChange={(e) => setOtherBodyPart(e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+                        placeholder="Enter affected body part"
+                      />
+                    </div>
+                  )}
+
+                  {isOtherLocationType && (
+                    <div className="sm:col-span-2">
+                      <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Please Specify Location Type *</label>
+                      <input
+                        type="text"
+                        required
+                        value={otherLocationType}
+                        onChange={(e) => setOtherLocationType(e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+                        placeholder="Enter location type"
+                      />
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Location in NZ *</label>
