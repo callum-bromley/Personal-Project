@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react'
+import { useState, useEffect, FormEvent } from 'react'
 
 interface StatusState {
   success?: boolean
@@ -63,6 +63,219 @@ function MaskedDateInput({ value, onChange, required = false }: MaskedDateInputP
         onChange={(e) => onChange(formatDateWithSlashes(e.target.value))}
         className="relative z-10 w-full px-4 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 focus:outline-none"
       />
+    </div>
+  )
+}
+
+interface PhotonFeature {
+  properties: {
+    countrycode?: string
+    housenumber?: string
+    street?: string
+    name?: string
+    suburb?: string
+    district?: string
+    city?: string
+    town?: string
+    postcode?: string
+  }
+}
+
+function formatNzPhotonAddress(props: PhotonFeature['properties']): string {
+  const streetLine = [props.housenumber, props.street || props.name].filter(Boolean).join(' ')
+  const suburb = props.suburb || props.district
+  const city = props.city || props.town
+  const cityPostcode = [city, props.postcode].filter(Boolean).join(' ')
+  return [streetLine, suburb, cityPostcode].filter(Boolean).join(', ')
+}
+
+function formatNzPhotonPharmacy(props: PhotonFeature['properties']): string {
+  const pharmacyName = props.name || 'Pharmacy'
+  const streetLine = [props.housenumber, props.street].filter(Boolean).join(' ')
+  const suburb = props.suburb || props.district
+  const city = props.city || props.town
+  const locationParts = [streetLine, suburb, city].filter(Boolean).join(', ')
+  return locationParts ? `${pharmacyName} — ${locationParts}` : pharmacyName
+}
+
+function NzAddressInput({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (val: string) => void
+}) {
+  const [suggestions, setSuggestions] = useState<string[]>([])
+  const [open, setOpen] = useState(false)
+  const [justSelected, setJustSelected] = useState(false)
+
+  useEffect(() => {
+    if (justSelected) {
+      setJustSelected(false)
+      return
+    }
+
+    if (value.trim().length < 3) {
+      setSuggestions([])
+      return
+    }
+
+    const controller = new AbortController()
+    const timer = setTimeout(async () => {
+      try {
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(
+          value
+        )}&lat=-41.2865&lon=174.7762&bbox=166.0,-47.5,179.0,-34.0&limit=6`
+        const res = await fetch(url, { signal: controller.signal })
+        const data = await res.json()
+
+        const formattedList: string[] = Array.from(
+          new Set(
+            (data.features || [])
+              .filter((f: PhotonFeature) => f.properties?.countrycode === 'NZ')
+              .map((f: PhotonFeature) => formatNzPhotonAddress(f.properties))
+              .filter((addr: string) => addr.length > 0)
+          )
+        )
+
+        setSuggestions(formattedList)
+        setOpen(formattedList.length > 0)
+      } catch {
+        // Ignore aborted requests
+      }
+    }, 300)
+
+    return () => {
+      clearTimeout(timer)
+      controller.abort()
+    }
+  }, [value])
+
+  return (
+    <div className="relative">
+      <input
+        type="text"
+        required
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => suggestions.length > 0 && setOpen(true)}
+        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+        placeholder="Start typing or enter address manually"
+        autoComplete="off"
+      />
+
+      {open && suggestions.length > 0 && (
+        <ul className="absolute z-20 mt-1.5 w-full max-h-48 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-lg divide-y divide-slate-100">
+          {suggestions.map((addressOption) => (
+            <li key={addressOption}>
+              <button
+                type="button"
+                onMouseDown={() => {
+                  setJustSelected(true)
+                  onChange(addressOption)
+                  setSuggestions([])
+                  setOpen(false)
+                }}
+                className="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-slate-700 hover:bg-slate-100 transition-colors"
+              >
+                {addressOption}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+function NzPharmacyInput({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (val: string) => void
+}) {
+  const [suggestions, setSuggestions] = useState<string[]>([])
+  const [open, setOpen] = useState(false)
+  const [justSelected, setJustSelected] = useState(false)
+
+  useEffect(() => {
+    if (justSelected) {
+      setJustSelected(false)
+      return
+    }
+
+    if (value.trim().length < 2) {
+      setSuggestions([])
+      return
+    }
+
+    const controller = new AbortController()
+    const timer = setTimeout(async () => {
+      try {
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(
+          value
+        )}&osm_tag=amenity:pharmacy&lat=-41.2865&lon=174.7762&bbox=166.0,-47.5,179.0,-34.0&limit=8`
+        const res = await fetch(url, { signal: controller.signal })
+        const data = await res.json()
+
+        const formattedList: string[] = Array.from(
+          new Set(
+            (data.features || [])
+              .filter((f: PhotonFeature) => f.properties?.countrycode === 'NZ')
+              .map((f: PhotonFeature) => formatNzPhotonPharmacy(f.properties))
+              .filter((item: string) => item.length > 0)
+          )
+        )
+
+        setSuggestions(formattedList)
+        setOpen(formattedList.length > 0)
+      } catch {
+        // Ignore aborted requests
+      }
+    }, 300)
+
+    return () => {
+      clearTimeout(timer)
+      controller.abort()
+    }
+  }, [value])
+
+  return (
+    <div className="relative">
+      <input
+        type="text"
+        required
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => suggestions.length > 0 && setOpen(true)}
+        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+        placeholder="Start typing pharmacy name or enter manually"
+        autoComplete="off"
+      />
+
+      {open && suggestions.length > 0 && (
+        <ul className="absolute z-20 mt-1.5 w-full max-h-48 overflow-y-auto rounded-xl bg-white border border-slate-200 shadow-lg divide-y divide-slate-100">
+          {suggestions.map((pharmacyOption) => (
+            <li key={pharmacyOption}>
+              <button
+                type="button"
+                onMouseDown={() => {
+                  setJustSelected(true)
+                  onChange(pharmacyOption)
+                  setSuggestions([])
+                  setOpen(false)
+                }}
+                className="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-slate-700 hover:bg-slate-100 transition-colors"
+              >
+                {pharmacyOption}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
@@ -295,7 +508,7 @@ export default function QuoteForm() {
               </div>
               <div>
                 <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Address *</label>
-                <input type="text" required value={address} onChange={(e) => setAddress(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="123 Street, Suburb, City" />
+                <NzAddressInput value={address} onChange={setAddress} />
               </div>
               <div className="pt-2 flex justify-end">
                 <button type="submit" className="py-3 px-6 bg-slate-900 hover:bg-black text-white font-medium text-xs sm:text-sm rounded-xl transition-all">Next: Medical History &rarr;</button>
@@ -324,7 +537,7 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Preferred Pharmacy *</label>
-                  <input type="text" required value={pharmacy} onChange={(e) => setPharmacy(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="Name or location of pharmacy" />
+                  <NzPharmacyInput value={pharmacy} onChange={setPharmacy} />
                 </div>
               </div>
               <div className="pt-2 flex justify-between">
