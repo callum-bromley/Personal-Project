@@ -5,6 +5,18 @@ interface StatusState {
   message?: string
 }
 
+const NZ_ETHNICITY_OPTIONS = [
+  'Māori',
+  'New Zealand European',
+  'Samoan',
+  'Cook Islands Māori',
+  'Tongan',
+  'Niuean',
+  'Chinese',
+  'Indian',
+  'Other',
+]
+
 function formatDateWithSlashes(value: string): string {
   const digits = value.replace(/\D/g, '').slice(0, 8)
   if (digits.length <= 2) return digits
@@ -56,6 +68,7 @@ export default function QuoteForm() {
   const [dob, setDob] = useState<string>('')
   const [gender, setGender] = useState<string>('')
   const [ethnicity, setEthnicity] = useState<string>('')
+  const [otherEthnicity, setOtherEthnicity] = useState<string>('')
   const [address, setAddress] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [mobile, setMobile] = useState<string>('')
@@ -81,6 +94,8 @@ export default function QuoteForm() {
   const [loading, setLoading] = useState<boolean>(false)
   const [status, setStatus] = useState<StatusState>({})
 
+  const isOtherEthnicity = ethnicity === 'Other'
+
   const handleNextStep = (e: FormEvent) => {
     e.preventDefault()
     setStep((prev) => Math.min(prev + 1, 4))
@@ -95,8 +110,13 @@ export default function QuoteForm() {
     setLoading(true)
     setStatus({})
 
+    const finalEthnicity =
+      isOtherEthnicity && otherEthnicity.trim()
+        ? `Other (${otherEthnicity.trim()})`
+        : ethnicity
+
     const payload = {
-      personalDetails: { fullName, dob, gender, ethnicity, address, email, mobile },
+      personalDetails: { fullName, dob, gender, ethnicity: finalEthnicity, address, email, mobile },
       medicalHistory: { allergies, healthConditions, medications, pharmacy },
       employer: { occupation, jobTasks },
       injury: { reason, mechanism, injuryDate, bodyPart, locationType, nzLocation },
@@ -114,7 +134,7 @@ export default function QuoteForm() {
 
       if (data.success) {
         setStep(1)
-        setFullName(''); setDob(''); setGender(''); setEthnicity(''); setAddress(''); setEmail(''); setMobile('')
+        setFullName(''); setDob(''); setGender(''); setEthnicity(''); setOtherEthnicity(''); setAddress(''); setEmail(''); setMobile('')
         setAllergies(''); setHealthConditions(''); setMedications(''); setPharmacy('')
         setOccupation(''); setJobTasks('')
         setReason(''); setMechanism(''); setInjuryDate(''); setBodyPart(''); setLocationType(''); setNzLocation('')
@@ -185,8 +205,40 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Ethnicity *</label>
-                  <input type="text" required value={ethnicity} onChange={(e) => setEthnicity(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="e.g. NZ European, Māori" />
+                  <select
+                    required
+                    value={ethnicity}
+                    onChange={(e) => {
+                      setEthnicity(e.target.value)
+                      if (e.target.value !== 'Other') setOtherEthnicity('')
+                    }}
+                    className={`w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900 ${
+                      ethnicity === '' ? 'text-slate-400' : 'text-slate-900'
+                    }`}
+                  >
+                    <option value="" disabled>Select ethnicity</option>
+                    {NZ_ETHNICITY_OPTIONS.map((option) => (
+                      <option key={option} value={option} className="text-slate-900">
+                        {option}
+                      </option>
+                    ))}
+                  </select>
                 </div>
+
+                {isOtherEthnicity && (
+                  <div className="sm:col-span-2">
+                    <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Please Specify Ethnicity *</label>
+                    <input
+                      type="text"
+                      required
+                      value={otherEthnicity}
+                      onChange={(e) => setOtherEthnicity(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900"
+                      placeholder="Enter your ethnicity"
+                    />
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Email Address *</label>
                   <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-slate-900" placeholder="you@example.com" />
